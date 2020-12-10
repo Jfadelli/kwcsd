@@ -1,0 +1,101 @@
+p{
+    font-size:2rem;
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1024px;
+    margin: 0 auto
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+.home-content{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.h-line{
+    border: 1px solid #666666;
+    width: 90%
+}
+
+.home-content h4, .list h4{
+    font-size: 30px;
+    text-align: center;
+}
+
+.home-content h2{
+    font-size: 4rem;
+    font-weight: 400;
+    text-align: center
+}
+  
+.services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 5vh 0
+}
+
+.services a{
+    text-decoration: none;
+    color: rgb(180 1 1);
+    font-weight: 400;
+    font-size: 1.75rem;
+    color: black;
+    border-bottom: dotted black 1px;
+    line-height: 3rem;
+    width: 50%
+}
+
+.services a:hover{
+    color: gray;
+}
+
+.home-link-to-loopnet a{
+    text-decoration: none;
+    color: rgb(180 1 1);
+    font-weight: 400;
+    font-size: 2rem; 
+}
+
+.home-link-to-loopnet a:hover{
+    color: rgb( 260 1 1)
+}
+
+.motto{
+    font: 30px darkgray;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 5px 0;
+}
+
+.title{
+    font: 60px black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 5px 0;
+}
+
+
+@media (max-width: 1024px){
+    body{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap
+    }
+
+    .content{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap
+      }
+}
