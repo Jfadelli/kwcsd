@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 import Hero from '../static/images/sdskyline.png';
 
+import PropertyGallery from './PropertyGallery'
 import Footer from './footer'
 
 import '../App.css'
@@ -63,7 +64,7 @@ export default function Home() {
                 </section>
                 <hr className="h-line" />
                 <section className="real-estate-news">
-
+                <PropertyGallery/>
                 </section>
             </div>
         </div >
