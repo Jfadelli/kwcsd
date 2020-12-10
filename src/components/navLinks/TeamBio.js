@@ -9,8 +9,6 @@ import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
 
-
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -71,9 +69,9 @@ export default function ServicesOffered() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link style={{textDecoration: 'none'}}  to ='/services/tenant-rep' ><MenuItem onClick={handleClose} >Mark Hughes</MenuItem></Link>
-                    <Link style={{textDecoration: 'none'}}  to = '/services/landlord-rep'><MenuItem onClick={handleClose}className={classes.menuItem}>Libby Brignon</MenuItem></Link>
-                    <Link style={{textDecoration: 'none'}}  to = '/services/Investment-Acq'><MenuItem onClick={handleClose}className={classes.menuItem}>Will Schneider</MenuItem></Link>
+                    <Link style={{textDecoration: 'none'}}  to ='/services/mark-hughes' ><MenuItem onClick={handleClose} >Mark Hughes</MenuItem></Link>
+                    <Link style={{textDecoration: 'none'}}  to = '/services/libby-brignon'><MenuItem onClick={handleClose}className={classes.menuItem}>Libby Brignon</MenuItem></Link>
+                    <Link style={{textDecoration: 'none'}}  to = '/services/will-schnieder'><MenuItem onClick={handleClose}className={classes.menuItem}>Will Schneider</MenuItem></Link>
                     <Link style={{textDecoration: 'none'}}  to = '/services/development-services'><MenuItem onClick={handleClose}className={classes.menuItem}>Someone Else</MenuItem></Link>
                   </MenuList>
                 </ClickAwayListener>

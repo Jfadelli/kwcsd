@@ -71,7 +71,7 @@ export default function ServicesOffered() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link style={{textDecoration: 'none'}}  to ='/services/tenant-rep' ><MenuItem onClick={handleClose} >Your Property Info</MenuItem></Link>
+                    <Link style={{textDecoration: 'none'}}  to ='/contact/contact-form' ><MenuItem onClick={handleClose} >Contact Us</MenuItem></Link>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

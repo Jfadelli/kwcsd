@@ -9,8 +9,6 @@ import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
 
-
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -71,13 +69,10 @@ export default function ServicesOffered() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link style={{textDecoration: 'none'}} to ='/services/tenant-rep' ><MenuItem onClick={handleClose} >Referrals 4 You</MenuItem></Link>
+                    <Link style={{textDecoration: 'none'}} to ='/referrals/referrals4you' ><MenuItem onClick={handleClose} >Referrals 4 You</MenuItem></Link>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
-              
-              
-              
             </Grow>
           )}
         </Popper>

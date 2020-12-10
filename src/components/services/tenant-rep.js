@@ -1,6 +1,6 @@
 import React from 'react'
 import Footer from '../../components/footer'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import '../../style/services.css'
 // import '../../style/index.css'
 

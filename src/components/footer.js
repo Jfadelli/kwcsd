@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../components/static/images/logo.jpg'
+import Logo from '../static/images/logo.jpg'
 // import '../style/footer.css'
 // import '../style/index.css'
 
@@ -11,7 +11,5 @@ export default function Footer() {
             <p>An Equal Opportunity Company. Equal Housing Opportunity.</p>
             <p>All rights reserved.</p>
         </div>
-
-
     )
 }

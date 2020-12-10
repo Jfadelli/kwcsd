@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-//////////////// Style Variables ////////////////
+ //////////////// Style Variables ////////////////
 const cardSize = '50em'
 
 const primaryColor = '#FDFDF4'
@@ -54,8 +54,9 @@ const Label = styled.label`
     color: ${quaternaryColor};
     margin: ${margin};
     font-weight: 700;
-    font-size: 2em
+    font-size: 2em;
 `
+
 const Select = styled.select`
     display: flex;
     color: ${quaternaryColor};
@@ -99,16 +100,14 @@ const Button = styled.button`
 const Error = styled.div`
 color: red;
 background-color: ${secondaryColor};
-font-size: 2em
+font-size: 2em;
 `
 const Break = styled.div`
 background-color: white;
-height: 1vh
+height: 1vh;
 `
 
-
-
-export default {
+const StyleVariables = {
     cardSize,
     primaryColor,
     secondaryColor,
@@ -130,3 +129,5 @@ export default {
     H3,
     P,
 }
+
+export default StyleVariables
