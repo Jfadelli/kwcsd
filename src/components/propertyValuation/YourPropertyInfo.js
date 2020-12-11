@@ -4,8 +4,9 @@ import axios from 'axios'
 import * as Yup from 'yup'
 
 import PropertyValuationSchema from '../validation/PropertyValuationSchema'
-import StyleVariables from '../../styles/StyleVariables'
+import StyledVariables from '../../styles/StyledVariables'
 
+const SV = StyledVariables
 //////////////// Initial Values ////////////////
 const initialValues = {
     name: '',
@@ -123,36 +124,36 @@ export default function YourPropertyInfo(props) {
     return (
         <div>
             {/* <Home /> */}
-            <StyleVariables.CardContainer>
-                <StyleVariables.H2>Property Information</StyleVariables.H2>
-                <StyleVariables.LoginCard>
+            <SV.CardContainer>
+                <SV.H2>Property Information</SV.H2>
+                <SV.LoginCard>
 
-                    <StyleVariables.Form
+                    <SV.Form
                         onSubmit={onSubmit}
                     >
 
-                        <StyleVariables.Label>Enter your name:&nbsp;
-                            <StyleVariables.Input
+                        <SV.Label>Enter your name:&nbsp;
+                            <SV.Input
                                 value={formValues.name}
                                 onChange={onInputChange}
                                 type='text'
                                 placeholder='Name'
                                 name='name'
                             />
-                        </StyleVariables.Label>
+                        </SV.Label>
 
-                        <StyleVariables.Label>Enter your E-mail:&nbsp;*
-                            <StyleVariables.Input
+                        <SV.Label>Enter your E-mail:&nbsp;*
+                            <SV.Input
                                 value={formValues.email}
                                 onChange={onInputChange}
                                 type='email'
                                 placeholder='Email'
                                 name='email'
                             />
-                        </StyleVariables.Label>
+                        </SV.Label>
 
-                        <StyleVariables.Label>Enter your phone:&nbsp;*
-                            <StyleVariables.Input
+                        <SV.Label>Enter your phone:&nbsp;*
+                            <SV.Input
                                 value={formValues.phone}
                                 onChange={onInputChange}
                                 type='tel'
@@ -160,30 +161,30 @@ export default function YourPropertyInfo(props) {
                                 name='phone'
 
                             />
-                        </StyleVariables.Label>
+                        </SV.Label>
 
-                        <StyleVariables.Label>Enter your street address:&nbsp;*
-                            <StyleVariables.Input
+                        <SV.Label>Enter your street address:&nbsp;*
+                            <SV.Input
                                 value={formValues.street_address}
                                 onChange={onInputChange}
                                 type='text'
                                 placeholder='Street Address'
                                 name='street_address'
                             />
-                        </StyleVariables.Label>
+                        </SV.Label>
 
-                        <StyleVariables.Label>Enter your city:&nbsp;*
-                            <StyleVariables.Input
+                        <SV.Label>Enter your city:&nbsp;*
+                            <SV.Input
                                 value={formValues.city}
                                 onChange={onInputChange}
                                 type='text'
                                 placeholder='City'
                                 name='city'
                             />
-                        </StyleVariables.Label>
+                        </SV.Label>
 
-                        <StyleVariables.Label>Enter your zip:&nbsp;*
-                            <StyleVariables.Input
+                        <SV.Label>Enter your zip:&nbsp;*
+                            <SV.Input
                                 value={formValues.zip}
                                 onChange={onInputChange}
                                 type='zip'
@@ -191,20 +192,20 @@ export default function YourPropertyInfo(props) {
                                 name='zip'
                                 maxlength='5'
                             />
-                        </StyleVariables.Label>
+                        </SV.Label>
 
-                        <StyleVariables.Label>Enter your country:&nbsp;*
-                            <StyleVariables.Input
+                        <SV.Label>Enter your country:&nbsp;*
+                            <SV.Input
                                 value={formValues.country}
                                 onChange={onInputChange}
                                 type='text'
                                 placeholder='Country'
                                 name='country'
                             />
-                        </StyleVariables.Label>
+                        </SV.Label>
 
-                        <StyleVariables.Label>Property Type:
-                            <StyleVariables.Select
+                        <SV.Label>Property Type:
+                            <SV.Select
                                 onChange={onInputChange}
                                 value={formValues.property_type}
                                 name='property_type'
@@ -217,72 +218,49 @@ export default function YourPropertyInfo(props) {
                                 <option value='hospitality'>Hospitality</option>
                                 <option value='recreation'>Recreation</option>
                                 <option value='specialty'>Specialty</option>
-                            </StyleVariables.Select>
-                        </StyleVariables.Label>
+                            </SV.Select>
+                        </SV.Label>
 
-                        <StyleVariables.Label>Enter your building square footage:&nbsp;*
-                            <StyleVariables.Input
+                        <SV.Label>Enter your building square footage:&nbsp;*
+                            <SV.Input
                                 value={formValues.building_sf}
                                 onChange={onInputChange}
                                 type='text'
                                 placeholder='Bldg. SF'
                                 name='building_sf'
                             />
-                        </StyleVariables.Label>
+                        </SV.Label>
 
-                        <StyleVariables.Label>Enter your lot square footage:&nbsp;*
-                            <StyleVariables.Input
+                        <SV.Label>Enter your lot square footage:&nbsp;*
+                            <SV.Input
                                 value={formValues.lot_size}
                                 onChange={onInputChange}
                                 type='text'
                                 placeholder='Lot SF'
                                 name='lot_size'
                             />
-                        </StyleVariables.Label>
+                        </SV.Label>
 
 
-                        <StyleVariables.Error>{formErrors.name}</StyleVariables.Error>
-                        <StyleVariables.Error>{formErrors.email}</StyleVariables.Error>
-                        <StyleVariables.Error>{formErrors.phone}</StyleVariables.Error>
-                        <StyleVariables.Error>{formErrors.street_address}</StyleVariables.Error>
-                        <StyleVariables.Error>{formErrors.city}</StyleVariables.Error>
-                        <StyleVariables.Error>{formErrors.zip}</StyleVariables.Error>
-                        <StyleVariables.Error>{formErrors.country}</StyleVariables.Error>
-                        <StyleVariables.Error>{formErrors.building_sf}</StyleVariables.Error>
-                        <StyleVariables.Error>{formErrors.lot_sf}</StyleVariables.Error>
-                        <StyleVariables.Error>{formErrors.property_type}</StyleVariables.Error>
+                        <SV.Error>{formErrors.name}</SV.Error>
+                        <SV.Error>{formErrors.email}</SV.Error>
+                        <SV.Error>{formErrors.phone}</SV.Error>
+                        <SV.Error>{formErrors.street_address}</SV.Error>
+                        <SV.Error>{formErrors.city}</SV.Error>
+                        <SV.Error>{formErrors.zip}</SV.Error>
+                        <SV.Error>{formErrors.country}</SV.Error>
+                        <SV.Error>{formErrors.building_sf}</SV.Error>
+                        <SV.Error>{formErrors.lot_sf}</SV.Error>
+                        <SV.Error>{formErrors.property_type}</SV.Error>
 
 
 
 
-                        <StyleVariables.Button disabled={disabled}>submit</StyleVariables.Button >
-                    </StyleVariables.Form>
-                </StyleVariables.LoginCard>
-            </StyleVariables.CardContainer>
+                        <SV.Button disabled={disabled}>submit</SV  .Button >
+                    </SV.Form>
+                </SV.LoginCard>
+            </SV.CardContainer>
             {/* <Link to={`/SignInPage`}>Sign In</Link> */}
         </div >
     )
 }
-
-                        // <StyleVariables.Error>{formErrors.username}</StyleVariables.Error>
-                        // <StyleVariables.Label>Enter a username:&nbsp;
-                        //     <StyleVariables.Input
-                        //         value={formValues.username}
-                        //         onChange={onInputChange}
-                        //         type='text'
-                        //         placeholder='Username'
-                        //         name='username'
-                        //     />
-                        // </StyleVariables.Label>
-
-                        // <StyleVariables.Error>{formErrors.role}</StyleVariables.Error> 
-                        // <StyleVariables.Label>Select a roll:&nbsp;</StyleVariables.Label>
-                        // <select
-                        //     onChange={onInputChange}
-                        //     value={formValues.role}
-                        //     name='role'
-                        // >
-                        //     <option>-- please select role --</option>
-                        //     <option name='client'>Client</option>
-                        //     <option name='instructor'>Instructor</option>
-                        // </select>

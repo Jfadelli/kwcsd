@@ -7,7 +7,10 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,6 +62,7 @@ export default function ServicesOffered() {
           ref={anchorRef}
           aria-controls={open ? 'menu-list-grow' : undefined}
           aria-haspopup="true"
+          textPrimary="default"
           onClick={handleToggle}
         >
           Services Offered

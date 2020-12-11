@@ -26,7 +26,7 @@ import Referrals4You from './components/referrals/referrals'
 function App() {
   return (
     <div>
-        <Nav />
+      <Nav />
         <Route exact path='/' component={Home}/>
         <Route path='/thank-you' component={ThankYou} />
 

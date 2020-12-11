@@ -8,10 +8,13 @@ import Contact from './navLinks/Contact.js'
 import Referrals from './navLinks/Referrals.js'
 
 import Logo from '../static/images/logo.jpg'
+import StyledVariables from '../styles/StyledVariables.js';
 
-export default function Header() {
+const SV = StyledVariables
+
+export default function Nav() {
   return (
-    <div>
+    <SV.NavBar>
       <Toolbar >
         <a href='/'> <img src={Logo} alt='keller williams commercial' /></a>
         <ServicesOffered />
@@ -20,6 +23,6 @@ export default function Header() {
         <Contact />
         <Referrals />
       </Toolbar>
-    </div>
+    </SV.NavBar>
   );
 }

@@ -19,6 +19,22 @@ const flex = `
     margin: 0 auto;
     `
 //////////////// Styled Components ////////////////
+
+// Navbar
+const NavBar = styled.div`
+    display: flex;
+    flex-direction: row;
+    background-color: ${quinaryColor};
+    height: 5rem;
+    margin: 3.5rem 0;
+`
+
+const NavButton = styled.button`
+
+`
+
+
+
 const LoginCard = styled.div`
     ${flex};
     margin: 10px 0 10px 0;
@@ -107,7 +123,7 @@ background-color: white;
 height: 1vh;
 `
 
-const StyleVariables = {
+const StyledVariables = {
     cardSize,
     primaryColor,
     secondaryColor,
@@ -128,6 +144,8 @@ const StyleVariables = {
     H2,
     H3,
     P,
+    NavBar,
+    NavButton,
 }
 
-export default StyleVariables
+export default StyledVariables
