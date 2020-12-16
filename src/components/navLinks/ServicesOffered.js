@@ -95,9 +95,6 @@ export default function ServicesOffered() {
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
-              
-              
-              
             </Grow>
           )}
         </Popper>
