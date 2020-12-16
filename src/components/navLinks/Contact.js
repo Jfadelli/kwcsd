@@ -14,10 +14,19 @@ import { Link } from 'react-router-dom'
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    overflow: "visible !importants",
   },
   paper: {
     marginRight: theme.spacing(2),
   },
+  navButton: {
+    fontSize: "1.5rem",
+    color: "white",
+    textShadow: "-1px 2px 0 #000"
+  },
+  link:{
+    color: "black"
+  }
 }));
 
 export default function ServicesOffered() {
@@ -59,6 +68,7 @@ export default function ServicesOffered() {
           aria-controls={open ? 'menu-list-grow' : undefined}
           aria-haspopup="true"
           onClick={handleToggle}
+          className={classes.navButton}
         >
           Contact
         </Button>
@@ -71,7 +81,7 @@ export default function ServicesOffered() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link style={{textDecoration: 'none'}}  to ='/contact/contact-form' ><MenuItem onClick={handleClose} >Contact Us</MenuItem></Link>
+                    <Link className={classes.link} style={{textDecoration: 'none'}}  to ='/contact/contact-form' ><MenuItem onClick={handleClose} >Contact Us</MenuItem></Link>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

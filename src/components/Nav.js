@@ -15,9 +15,9 @@ const SV = StyledVariables
 export default function Nav() {
   return (
     <SV.NavBar>
-      <Toolbar >
+      <Toolbar style={{ margin: "0 5%"}} >
         <a href='/'> <img src={Logo} alt='keller williams commercial' /></a>
-        <ServicesOffered />
+        <ServicesOffered/>
         <TeamBio />
         <PropertyValuation />
         <Contact />

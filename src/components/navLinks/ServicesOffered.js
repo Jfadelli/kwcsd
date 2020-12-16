@@ -15,10 +15,21 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    zIndex: "1"
+
   },
   paper: {
     marginRight: theme.spacing(2),
+    backgroundColor:"orange"
   },
+  navButton: {
+    fontSize: "1.5rem",
+    color: "white",
+    textShadow: "-1px 2px 0 #000"
+  },
+  link:{
+    color: "black"
+  }
 }));
 
 export default function ServicesOffered() {
@@ -64,6 +75,7 @@ export default function ServicesOffered() {
           aria-haspopup="true"
           textPrimary="default"
           onClick={handleToggle}
+          className={classes.navButton}
         >
           Services Offered
         </Button>
@@ -76,10 +88,10 @@ export default function ServicesOffered() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link style={{textDecoration: 'none'}} to ='/services/tenant-rep' ><MenuItem onClick={handleClose} >Tenant Representation</MenuItem></Link>
-                    <Link style={{textDecoration: 'none'}} to = '/services/landlord-rep'><MenuItem onClick={handleClose}className={classes.menuItem}>Landlord Representation</MenuItem></Link>
-                    <Link style={{textDecoration: 'none'}} to = '/services/Investment-Acq'><MenuItem onClick={handleClose}className={classes.menuItem}>Investment Acquisition</MenuItem></Link>
-                    <Link style={{textDecoration: 'none'}} to = '/services/development-services'><MenuItem onClick={handleClose}className={classes.menuItem}>Development Services</MenuItem></Link>
+                    <Link className={classes.link} style={{textDecoration: 'none'}} to ='/services/tenant-rep' ><MenuItem onClick={handleClose} >Tenant Representation</MenuItem></Link>
+                    <Link className={classes.link} style={{textDecoration: 'none'}} to = '/services/landlord-rep'><MenuItem onClick={handleClose}>Landlord Representation</MenuItem></Link>
+                    <Link className={classes.link} style={{textDecoration: 'none'}} to = '/services/Investment-Acq'><MenuItem onClick={handleClose}>Investment Acquisition</MenuItem></Link>
+                    <Link className={classes.link} style={{textDecoration: 'none'}} to = '/services/development-services'><MenuItem onClick={handleClose}>Development Services</MenuItem></Link>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

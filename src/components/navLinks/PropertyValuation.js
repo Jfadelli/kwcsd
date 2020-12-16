@@ -18,6 +18,14 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     marginRight: theme.spacing(2),
   },
+  navButton: {
+    fontSize: "1.5rem",
+    color: "white",
+    textShadow: "-1px 2px 0 #000"
+  },
+  link:{
+    color: "black"
+  }
 }));
 
 export default function ServicesOffered() {
@@ -59,6 +67,7 @@ export default function ServicesOffered() {
           aria-controls={open ? 'menu-list-grow' : undefined}
           aria-haspopup="true"
           onClick={handleToggle}
+          className={classes.navButton}
         >
           Property Valuation
         </Button>
@@ -71,7 +80,7 @@ export default function ServicesOffered() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link style={{textDecoration: 'none'}}  to ='/property-valuation/your-property-info' ><MenuItem onClick={handleClose} >Your Property Info</MenuItem></Link>
+                    <Link className={classes.link} style={{textDecoration: 'none'}}  to ='/property-valuation/your-property-info' ><MenuItem onClick={handleClose} >Your Property Info</MenuItem></Link>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

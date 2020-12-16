@@ -1,5 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom'
+import { ThemeProvider } from '@material-ui/core/styles'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import theme from './styles/theme'
 
 // Components
 import Nav from './components/Nav'
@@ -26,30 +29,32 @@ import Referrals4You from './components/referrals/referrals'
 function App() {
   return (
     <div>
-      <Nav />
-        <Route exact path='/' component={Home}/>
-        <Route path='/thank-you' component={ThankYou} />
+      <ThemeProvider theme={theme}>
+      <CssBaseline />
+        <Nav />
+          <Route exact path='/' component={Home}/>
+          <Route path='/thank-you' component={ThankYou} />
 
-        {/* services offered links */}
-        <Route path='/services/tenant-rep' component={TenantRep} />
-        <Route path='/services/landlord-rep' component={LandlordRep} />
-        <Route path='/services/Investment-Acq' component={InvestmentAcquisitionAndSales} />
-        <Route path='/services/development-services' component={DevelopmentServices} />
+          {/* services offered links */}
+          <Route path='/services/tenant-rep' component={TenantRep} />
+          <Route path='/services/landlord-rep' component={LandlordRep} />
+          <Route path='/services/Investment-Acq' component={InvestmentAcquisitionAndSales} />
+          <Route path='/services/development-services' component={DevelopmentServices} />
 
-        {/* team bio links */}
-        <Route path='/services/mark-hughes' component={MarkBio} />
-        <Route path='/services/libby-brignon' component={LibbyBio} />
-        <Route path='/services/will-schnieder' component={WillSchnieder} />
+          {/* team bio links */}
+          <Route path='/services/mark-hughes' component={MarkBio} />
+          <Route path='/services/libby-brignon' component={LibbyBio} />
+          <Route path='/services/will-schnieder' component={WillSchnieder} />
 
-        {/* property valuation links */}
-        <Route path='/property-valuation/your-property-info' component={YourPropertyInfo} />
+          {/* property valuation links */}
+          <Route path='/property-valuation/your-property-info' component={YourPropertyInfo} />
 
-        {/* contact links */}
-        <Route path='/contact/contact-form' component={Contact} />
+          {/* contact links */}
+          <Route path='/contact/contact-form' component={Contact} />
 
-        {/* referral links */}
-        <Route path='/referrals/referrals4you' component={Referrals4You} />
-
+          {/* referral links */}
+          <Route path='/referrals/referrals4you' component={Referrals4You} />
+      </ThemeProvider>
     </div>
   );
 }

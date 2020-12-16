@@ -27,6 +27,7 @@ const NavBar = styled.div`
     background-color: ${quinaryColor};
     height: 5rem;
     margin: 3.5rem 0;
+    padding: 10px
 `
 
 const NavButton = styled.button`
