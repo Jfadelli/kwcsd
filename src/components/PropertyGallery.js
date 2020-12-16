@@ -2,16 +2,10 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import TextTruncate from 'react-text-truncate'
 
-import { Card,
-    CardActionArea,
-    CardMedia,
-    CardContent,
-    Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 
 const useStyles = makeStyles(theme => ({
     root: {
-        // margin: theme.spacing(3),
         display: 'flex',
         flexDirection: "column"
     },
