@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   navButton: {
     fontSize: "1.5rem",
     color: "white",
-    textShadow: "-1px 2px 0 #000"
+    textShadow: "-1px 2px 0 #000",
   },
   link:{
     color: "black"
@@ -73,7 +73,7 @@ export default function ServicesOffered() {
           ref={anchorRef}
           aria-controls={open ? 'menu-list-grow' : undefined}
           aria-haspopup="true"
-          textPrimary="default"
+
           onClick={handleToggle}
           className={classes.navButton}
         >

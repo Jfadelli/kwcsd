@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   navButton: {
     fontSize: "1.5rem",
     color: "white",
-    textShadow: "-1px 2px 0 #000"
+    textShadow: "-1px 2px 0 #000",
   },
   link:{
     color: "black",

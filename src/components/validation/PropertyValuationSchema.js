@@ -33,7 +33,7 @@ const PropertyValuationSchema = Yup.object().shape({
         .required("Zip is Required"),
     country: Yup
         .string()
-        .min(3, "Country must be at least 2 characters long.")
+        .min(3, "Country must greater than 2 characters long.")
         .required("Country is Required"),
     building_sf: Yup
         .string()
