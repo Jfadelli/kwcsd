@@ -9,8 +9,7 @@ import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 
-
-
+import NBS from './styledSheetNavButton'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,13 +21,8 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
     backgroundColor:"orange"
   },
-  navButton: {
-    fontSize: "1.5rem",
-    color: "white",
-    textShadow: "-1px 2px 0 #000",
-    lineHeight: '1.5rem',
-    padding: '0 15px 0 15px'
-  },
+  navButton: NBS
+  ,
   link:{
     color: "black"
   }
@@ -75,7 +69,6 @@ export default function ServicesOffered() {
           ref={anchorRef}
           aria-controls={open ? 'menu-list-grow' : undefined}
           aria-haspopup="true"
-
           onClick={handleToggle}
           className={classes.navButton}
         >

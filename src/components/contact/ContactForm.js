@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import * as Yup from 'yup'
 import Footer from '../footer'
@@ -10,24 +10,25 @@ import contactUsSchema from '../validation/contactUsSchema'
 import './style.css'
 
 
+
 const initialValues = {
     intent: {
-        buy: false,
+        buy: true,
         sell: false,
         lease: false,
         offerToLease: false,
         consult: false
     },
     timeframe: {
-        lessThan3: false,
+        lessThan3: true,
         lessThan6: false,
         lessThan12: false,
         nextYear: false,
     },
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
+    name: 'test',
+    email: 'test@test.test',
+    phone: '6546546545',
+    message: 'hi'
 }
 
 const initialFormErrors = {
@@ -46,15 +47,15 @@ export default function Contact() {
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [disabled, setDisabled] = useState(true);
     const [message, setMessage] = useState([]);
-    const history = useHistory()
 
     //////////////// HELPERS ////////////////
-    const postNewMessage = newMessage => {
-        axios.post('/', newMessage)
-        console.log(newMessage)
+    const postNewMessage = message => {
+        axios.post('http://localhost:3002/send', message)
             .then(res => {
-                setMessage([...message, res.data])
-                console.log(res, 'res')
+                if (res.data.status === 'success'){
+                    alert('Message Sent.');
+                }else if (res.data.status === 'fail') {
+                    alert('Message failed to send.')}
             })
             .catch(err => {
                 console.log(err)
@@ -86,32 +87,22 @@ export default function Contact() {
             ...formValues,
             [name]: value
         })
+        console.log(formValues)
     }
 
-    const onSubmit = evt => {
-        evt.preventDefault() 
-
+    const onSubmitHandler = evt => {
+        evt.preventDefault();
         const newMessage ={
-            intent: {
-                buy: false,
-                sell: false,
-                lease: false,
-                offerToLease: false,
-                consult: false
-            },
-            timeframe: {
-                lessThan3: false,
-                lessThan6: false,
-                lessThan12: false,
-                nextYear: false,
-            },
+            intent: formValues.intent,
+            timeframe: formValues.timeframe,
             name: formValues.name.trim(),
             email: formValues.email.trim(),
             phone: formValues.phone.trim(),
             message: formValues.message.trim()
-        }
-        postNewMessage(newMessage)
-        history.push('/thank-you')
+        };
+        console.log('newMessage',newMessage)
+        setMessage(newMessage);
+        postNewMessage(newMessage);
     }
 
     //////////////// SIDE EFFECTS //////////////// 
@@ -124,8 +115,8 @@ export default function Contact() {
     return (
         <div className="content">
             <div className="content-row">
-                <form className="contact-us">
-                    <label for="intent">I am looking to:</label>
+                <form className="contact-us" onSubmit={onSubmitHandler}>
+                    <label>I am looking to:</label>
                     <select 
                         value={formValues.intent}
                         onChange={onInputChange}
@@ -139,7 +130,7 @@ export default function Contact() {
                         <option value="consult">Consult/Other</option>
                     </select>
 
-                    <label for="timeframe">My Timeframe is:</label>
+                    <label >My Timeframe is:</label>
                     <select 
                         id="timeframe" 
                         type='select'
@@ -187,11 +178,11 @@ export default function Contact() {
                         onChange={onInputChange}
                         type='text' 
                         className="message-box" 
-                        placeholder='Please type your message here'
+                        placeholder='type your message here'
                         name="message"
                     />
 
-                    <button disabled={disabled} onSubmit={onSubmit}> Submit</button>
+                    <button disabled={disabled} onSubmit={onSubmitHandler}> Send</button>
                 </form>
                 <img id="teamworkimg" alt="generic team working together" src={Teamwork} />
             </div>
@@ -199,5 +190,3 @@ export default function Contact() {
         </div>
     )
 }
-
-

@@ -74,7 +74,11 @@ option{
 }
 
 button{
+
     margin: 2rem;
     font-size: 1.25rem;
+    font-weight: 600;
+    width: 100px;
+
     
 }

@@ -9,6 +9,8 @@ import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
 
+import NBS from './styledSheetNavButton'
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -16,12 +18,8 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     marginRight: theme.spacing(2),
   },
-  navButton: {
-    fontSize: "1.5rem",
-    color: "white",
-    textShadow: "-1px 2px 0 #000",
-    padding: '0 15px 0 15px'
-  },
+  navButton: NBS
+    ,
   link:{
     color: "black",
   }

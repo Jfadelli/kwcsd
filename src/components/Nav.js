@@ -8,17 +8,21 @@ import Contact from './navLinks/Contact.js'
 import Referrals from './navLinks/Referrals.js'
 
 import Logo from '../static/images/logo.jpg'
-import StyledVariables from '../styles/StyledVariables.js';
+import StyledVariables from '../styles/StyledVariables.js'
 
 const SV = StyledVariables
+
+const toolBarStyle = {
+  margin: "0 5%",
+}
 
 export default function Nav() {
   return (
     <SV.NavBar>
-      <Toolbar  style={{ margin: "0 5%"}} >
+      <Toolbar  style={toolBarStyle} >
         <a href='/'> <img src={Logo} alt='keller williams commercial' /></a>
         <ServicesOffered />
-        <TeamBio style={{ margin: "0 15%", padding:'30px'}}/>
+        <TeamBio />
         <PropertyValuation />
         <Contact />
         <Referrals />

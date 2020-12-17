@@ -32,8 +32,18 @@ const NavBar = styled.div`
 `
 
 const NavButton = styled.button`
-
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: -1px 2px 0 #000;
+    line-height: 1.5rem;
+    padding: 0 5rem 0 5rem
 `
+
+    /* fontSize: "1.5rem",
+    color: "white",
+    textShadow: "-1px 2px 0 #000",
+    lineHeight: '1.5rem',
+    padding: '0 5rem 0 5rem' */
 
 const LoginCard = styled.div`
     ${flex};
