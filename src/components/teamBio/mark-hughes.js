@@ -1,5 +1,5 @@
 import React from 'react'
-import Mark from '../../static/images/markheadshot.png'
+import HeadShot from '../../static/images/markheadshot.png'
 import Footer from '../footer'
 
 import { Card,
@@ -8,6 +8,18 @@ import { Card,
     CardContent,
     Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
+
+//Agent Information
+const agentName = "Mark Hughes"
+const agentPhone = "858.720.1900"
+const agentEmail = "mhughes@kwcommercial.com"
+const loopnetLink = "http://www.loopnet.com/brokerdirectory/profile/Mark%20Hughes/6glpewv"
+const loopnetListingImage = "https://images1.loopnet.com/i2/hU3AOPYluQ3AhAPo1uUnk0NYB4DiVaZaRga8xQr43dM/112/image.jpg"
+
+// mailto util
+const mailTo = "mailto:"
+const mailtoLink = mailTo+agentEmail
+
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -71,23 +83,24 @@ const MarkBio = () => {
             <div className={classes.flexRow}>
                 <Card className={classes.root}>
                     <CardActionArea>
-                    <CardMedia 
-                        className={classes.headshot}
-                        image={Mark}
-                        title="Mark Hughes Headshot"
-                        />
-                       
+                        <a href={mailtoLink}>
+                            <CardMedia 
+                                className={classes.headshot}
+                                image={HeadShot}
+                                title={agentName + "Headshot"}
+                                />
+                       </a>
                     </CardActionArea>
                     
                     <CardContent>
                         <Typography gutterBottom varient="h5" component="h1" className={classes.title}>
-                            Mark Hughes
+                            {agentName}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            714.614.7357
+                            {agentPhone}
                         <Typography variant="body2" color="textSecondary" component="p">
-                            <a href="mailto:mhughes@kwcommercial.com">
-                            mhghes@kwcommercial.com
+                            <a href={mailtoLink}>
+                                {agentEmail}
                             </a>
                         </Typography>
                         </Typography>
@@ -95,10 +108,10 @@ const MarkBio = () => {
                 </Card>
                 <Card className={classes.propertyCard}>
                     <CardActionArea>
-                        <a href="http://www.loopnet.com/brokerdirectory/profile/Mark%20Hughes/6glpewv"><CardMedia 
+                        <a href={loopnetLink}><CardMedia 
                         className={classes.propertyPhoto}
-                        image="https://images1.loopnet.com/i2/hU3AOPYluQ3AhAPo1uUnk0NYB4DiVaZaRga8xQr43dM/112/image.jpg"
-                        title="Mark Hughes Loopnet Listing"
+                        image={loopnetListingImage}
+                        title= {agentName + " Loopnet Listing"}
                         />
                         </a>
                     </CardActionArea>

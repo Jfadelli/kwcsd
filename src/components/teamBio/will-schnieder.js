@@ -63,7 +63,7 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-const WillSchnieder = () => {
+const WillBio = () => {
     const classes = useStyles()
 
     return (
@@ -118,4 +118,4 @@ const WillSchnieder = () => {
     )
 }
 
-export default WillSchnieder
+export default WillBio

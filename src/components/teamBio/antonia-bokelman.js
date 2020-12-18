@@ -1,5 +1,5 @@
 import React from 'react'
-import Headshot from '../../static/images/van.jpg'
+import Headshot from '../../static/images/antonia.jpg'
 import Footer from '../footer'
 
 import { Card,
@@ -11,10 +11,10 @@ import { makeStyles } from '@material-ui/styles'
 
 
 //Agent Information
-const agentName = "Van Spears"
+const agentName = "Antonia Bokelman"
 const agentPhone = "858.720.1900"
-const agentEmail = "van@kwcommercial.com"
-const loopnetLink = "https://www.loopnet.com/brokerdirectory/profile/van-spears/y4b86cv"
+const agentEmail = "antonia@kwcommercial.com"
+const loopnetLink = "https://www.loopnet.com/brokerdirectory/profile/antonia-bokelman/b11wx38"
 const loopnetListingImage = "https://images1.loopnet.com/i2/vrr4DgyNhPKdBj2AOitNdXYg6ja8S0tMCtxbPo3jgkI/112/image.jpg"
 
 // mailto util
@@ -76,7 +76,7 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-const VanBio = () => {
+const AntoniaBio = () => {
     const classes = useStyles()
 
     return (
@@ -102,7 +102,7 @@ const VanBio = () => {
                             {agentPhone}
                         <Typography variant="body2" color="textSecondary" component="p">
                             <a href={mailtoLink}>
-                                {agentEmail}
+                            {agentEmail}
                             </a>
                         </Typography>
                         </Typography>
@@ -122,11 +122,10 @@ const VanBio = () => {
             <div className={classes.flexCol}>  
                 <section className={classes.p}>
 
-                    <p>Van Spears comes from a deep-rooted background in the construction industry. During his time as a sales operations manager, he negotiated several contracts with national developers on multi-million dollar projects. He built and maintained an effective sales and marketing team with streamlined systems to maximize efficiency. Van brings this breadth of knowledge to his commercial real estate clients to reveal hidden opportunities in commercial and multi-family properties and provide creative solutions that exceed his clients’ goals. </p>
-                    <p>Van spends time weekly in the neighborhoods he serves, providing his clients with timely and accurate information. His hands-on approach to brokerage helps him immerse himself in the trends of the marketplace at a level that can’t be achieved from digital sources alone. He also uses his economics background to empower his clients with high-level investment analysis and market insights that helps them make critical real estate decisions when they need to most.</p>
-                    <p>Who you do business with matters. When you work with Van, you partner with a professional, dedicated, and loyal ally to negotiate on your behalf with the systems in place to streamline buying or selling your properties, and the backing of the #1 Real Estate company in America, KW Commercial. </p>
-                    <p>Whether your plans are to buy, sell or hold, it’s always a great time to talk with Van about your real estate goals. </p>
-                    <p>Contact his KW Commercial office today.</p>
+                    <p>Antonia Bokelman has more than 14 years of experience as a real estate professional representing buyers and sellers in the acquisition and disposition of income producing properties and value-add investments. She earns her client’s trust and loyalty through integrity, diplomacy, and results.  She is fluent in Spanish and English.</p>
+                    <p>What sets Antonia apart is her vision and ability to maximize value for her clients. She adds value through the entire ownership cycle from investment strategy, to property positioning, to pricing and negotiation on purchase or sale. In doing so, Antonia avails her clients to an extensive network of buyers, sellers, as well as trades and service providers.</p>
+                    <p>Antonia has an unwavering commitment to understanding her client’s needs and a dedication to building long-lasting relationships. She is a great communicator and a knowledgeable resource.  In her advocacy for her clients, Antonia is assertive, effective, and a strong negotiator. At the same time, she is compassionate, friendly, and has a great sense of humor, making otherwise stressful situations both enjoyable and rewarding.</p> 
+                    <p>Born and raised in Barcelona (Spain), Antonia moved to San Diego 19 years ago. She has an intimate understanding of what makes each San Diego city and neighborhood so special and unique. Whether you are a high-profile corporate client, or just looking for your first real estate investment, working with Antonia Bokelman will assure you timely service and unsurpassed success. </p>
                 </section>
                 <Footer/>
             </div>
@@ -134,4 +133,4 @@ const VanBio = () => {
     )
 }
 
-export default VanBio
+export default AntoniaBio

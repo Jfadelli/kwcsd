@@ -19,7 +19,10 @@ import DevelopmentServices from './components/services/development-services'
 // Team Bio
 import MarkBio from './components/teamBio/mark-hughes'
 import LibbyBio from './components/teamBio/libby-brignon'
-import WillSchnieder from './components/teamBio/will-schnieder'
+import WillBio from './components/teamBio/will-schnieder'
+import VanBio from './components/teamBio/van-spears'
+import AntoniaBio from './components/teamBio/antonia-bokelman'
+import SueBio from './components/teamBio/sue-na'
 
 // Misc Links
 import YourPropertyInfo from './components/propertyValuation/YourPropertyInfo'
@@ -42,9 +45,13 @@ function App() {
           <Route path='/services/development-services' component={DevelopmentServices} />
 
           {/* team bio links */}
-          <Route path='/services/mark-hughes' component={MarkBio} />
-          <Route path='/services/libby-brignon' component={LibbyBio} />
-          <Route path='/services/will-schnieder' component={WillSchnieder} />
+          <Route path='/team-bio/mark-hughes' component={MarkBio} />
+          <Route path='/team-bio/libby-brignon' component={LibbyBio} />
+          <Route path='/team-bio/will-schnieder' component={WillBio} />
+          <Route path='/team-bio/van-spears' component={VanBio} />
+          <Route path='/team-bio/antonia-bokelman' component={AntoniaBio} />
+          <Route path='/team-bio/sue-na' component={SueBio} />
+
 
           {/* property valuation links */}
           <Route path='/property-valuation/your-property-info' component={YourPropertyInfo} />
