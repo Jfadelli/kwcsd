@@ -1,4 +1,4 @@
-# KWCSanDiego 
+# KWC San Diego 
 A commercial real estate website
 
 ## libraries
