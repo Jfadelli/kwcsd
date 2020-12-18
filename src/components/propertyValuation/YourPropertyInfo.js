@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import * as Yup from 'yup'
 
-import PropertyValuationSchema from '../validation/PropertyValuationSchema'
-import StyledVariables from '../../styles/StyledVariables'
 
+import PropertyValuationSchema from '../validation/PropertyValuationSchema'
+
+import StyledVariables from '../../styles/StyledVariables'
 const SV = StyledVariables
+
 //////////////// Initial Values ////////////////
 const initialValues = {
-    name: 'Jason',
-    email: 'jason@jason.test',
-    phone: '1231231234',
-    street_address: '123',
-    city: 'ocenside',
-    zip: '92057',
-    country: 'usa',
+    name: '',
+    email: '',
+    phone: '',
+    street_address: '',
+    city: '',
+    zip: '',
+    country: '',
     property_type: {
-        multifamily: true,
+        multifamily: false,
         office: false,
         industrial: false,
         retail: false,
@@ -25,8 +26,8 @@ const initialValues = {
         recreation: false,
         specialty: false
     },
-    building_sf: '100',
-    lot_size: '2000'
+    building_sf: '',
+    lot_size: ''
 }
 
 const initialFormErrors = {
@@ -46,7 +47,6 @@ export default function YourPropertyInfo(props) {
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [disabled, setDisabled] = useState(true);
-    const history = useHistory()
 
     //////////////// HELPERS ////////////////
     const postNewProperty = property => {
@@ -118,12 +118,10 @@ export default function YourPropertyInfo(props) {
     }, [formValues])
 
     return (
-        <div>
+        <SV.Div>
             {/* <Home /> */}
             <SV.CardContainer>
                 <SV.H2>Property Information</SV.H2>
-                <SV.LoginCard>
-
                     <SV.Form onSubmit={onSubmit} >
                         <SV.Label>Enter your name:&nbsp;
                             <SV.Input
@@ -245,11 +243,10 @@ export default function YourPropertyInfo(props) {
                         <SV.Error>{formErrors.lot_sf}</SV.Error>
                         <SV.Error>{formErrors.property_type}</SV.Error>
 
-                        <SV.Button disabled={disabled} onSubmit={onSubmit}>submit</SV  .Button >
+                        <SV.Button disabled={disabled} onSubmit={onSubmit}>submit</SV.Button >
                     </SV.Form>
-                </SV.LoginCard>
             </SV.CardContainer>
             {/* <Link to={`/SignInPage`}>Sign In</Link> */}
-        </div >
+        </SV.Div >
     )
 }

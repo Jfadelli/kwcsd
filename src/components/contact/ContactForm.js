@@ -13,22 +13,22 @@ import './style.css'
 
 const initialValues = {
     intent: {
-        buy: true,
+        buy: false,
         sell: false,
         lease: false,
         offerToLease: false,
         consult: false
     },
     timeframe: {
-        lessThan3: true,
+        lessThan3: false,
         lessThan6: false,
         lessThan12: false,
         nextYear: false,
     },
-    name: 'test',
-    email: 'test@test.test',
-    phone: '6546546545',
-    message: 'hi'
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
 }
 
 const initialFormErrors = {
@@ -100,9 +100,8 @@ export default function Contact() {
             phone: formValues.phone.trim(),
             message: formValues.message.trim()
         };
-        console.log('newMessage',newMessage)
         setMessage(newMessage);
-        postNewMessage(newMessage);
+        postNewMessage(message);
     }
 
     //////////////// SIDE EFFECTS //////////////// 

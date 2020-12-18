@@ -3,11 +3,11 @@ import styled from 'styled-components'
  //////////////// Style Variables ////////////////
 const cardSize = '50em'
 
-const primaryColor = '#821E1E' // falu red
-const secondaryColor = '#D1CFC7' //timberwolf
-const tertiaryColor = '#343434' //jet
-const quaternaryColor = '#FFEBF0' // lavendar blush
-const quinaryColor = 'rgb(180 30 30)' // kw red
+const faluRed = '#821E1E' // falu red
+const timberwolf = '#D1CFC7' //timberwolf
+const jet = '#343434' //jet
+const lavendarBlush = '#FFEBF0' // lavendar blush
+const kwRed = 'rgb(180 30 30)' // kw red
 
 const margin = '10px'
 const flex = `
@@ -21,11 +21,15 @@ const flex = `
 //////////////// Styled Components ////////////////
 
 // Navbar
+const Div = styled.div`
+    ${flex};
+`
+
 const NavBar = styled.div`
     display: flex;
     flex-wrap: none;
     flex-direction: row;
-    background-color: ${quinaryColor};
+    background-color: ${kwRed};
     height: 6rem;
     margin: 3.5rem 0;
     width: 100%;
@@ -36,21 +40,15 @@ const NavButton = styled.button`
     color: white;
     text-shadow: -1px 2px 0 #000;
     line-height: 1.5rem;
-    padding: 0 5rem 0 5rem
+    padding: 0 5rem 0 5rem;
 `
-
-    /* fontSize: "1.5rem",
-    color: "white",
-    textShadow: "-1px 2px 0 #000",
-    lineHeight: '1.5rem',
-    padding: '0 5rem 0 5rem' */
 
 const LoginCard = styled.div`
     ${flex};
     margin: 10px 0 10px 0;
     width: ${cardSize};
-    background-color: ${secondaryColor};
-    border: 1px solid ${quaternaryColor};
+    background-color: ${timberwolf};
+    border: 1px solid ${lavendarBlush};
     border-radius: 10px;
 `
 
@@ -58,42 +56,46 @@ const CardContainer = styled.div`
     ${flex};
     margin: 0 5% 0 5%;
     border-radius: 6px;
-    background-color: ${quinaryColor};
+    background-color: ${timberwolf};
+    width: 66%;
     `
+
 const Form = styled.form`
     ${flex};
     border-radius: 6px;
-    background-color: ${secondaryColor};
+    background-color: ${timberwolf};
     margin: 0 0 5vh 0;
     
 `
 
 const Input = styled.input`
     ${flex};
-    color: black;
+    color: ${jet};
     margin: ${margin};
-    font-variant: small-caps;
-    font-weight: 500;
-    font-size: 1rem;
+    /* font-variant: small-caps; */
+    font-weight: 600;
+    font-size: 1.25rem;
     height: 1.75rem;
     width: 350px;
-    text-align: center;
+    text-align: left;
     border: none;
     border-radius: 3px;
 `
 
 const Label = styled.label`
-    background-color: ${secondaryColor};
-    color: ${quaternaryColor};
-    color: ${tertiaryColor};
-    margin: ${margin};
+    ${flex}
+    background-color: ${timberwolf};
+    color: ${lavendarBlush};
+    color: black;
+    margin: 0 0 10px 0;
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    width: 100%;
 `
 
 const Select = styled.select`
     display: flex;
-    color: ${tertiaryColor};
+    color: ${jet};
     margin: ${margin};
     font-size: 1.25rem;
     width: 360px;
@@ -101,55 +103,56 @@ const Select = styled.select`
 
 `
 const H2 = styled.h2`
-    color: white;
+    color: ${faluRed};
     text-shadow: -1px 2px 0 #000;
-    background-color: ${quinaryColor};
+    background-color: ${timberwolf};
     margin: 10px 0 0 0;
-    font-size: 2em;
-    /* border-bottom: 2px solid ${quinaryColor} */
+    font-size: 3em;
+    /* border-bottom: 2px solid ${kwRed} */
 `
 
 const H3 = styled.h3`
-color: ${quinaryColor};
-background-color: ${primaryColor};
-margin: 10px 0 0 0;
-font-size: 4em;
-/* border-bottom: 2px solid ${quinaryColor} */
+    color: ${kwRed};
+    background-color: ${faluRed};
+    margin: 10px 0 0 0;
+    font-size: 4em;
+/* border-bottom: 2px solid ${kwRed} */
 `
 const P = styled.p`
-color: ${quinaryColor};
-background-color: ${primaryColor};
-margin: 10px 0 0 0;
-font-size: 4em;
-/* border-bottom: 2px solid ${quinaryColor} */
+    color: ${kwRed};
+    background-color: ${faluRed};
+    margin: 10px 0 0 0;
+    font-size: 4em;
+/* border-bottom: 2px solid ${kwRed} */
 `
 
 const Button = styled.button`
     margin: ${margin};
-    height: 2em;
+    width: auto;
+    height: auto;
     font-size: 3em;
-    color:${tertiaryColor};
     font-variant: small-caps;
-    
+    border: 3px solid;
+    border-radius: 4px;
 `
 
 const Error = styled.div`
-color: red;
-background-color: ${secondaryColor};
-font-size: 1.5rem;
+    color: red;
+    background-color: ${timberwolf};
+    font-size: 1.5rem;
 `
 const Break = styled.div`
-background-color: white;
-height: 1vh;
+    background-color: white;
+    height: 1vh;
 `
 
 const StyledVariables = {
     cardSize,
-    primaryColor,
-    secondaryColor,
-    tertiaryColor,
-    quaternaryColor,
-    quinaryColor,
+    faluRed,
+    timberwolf,
+    jet,
+    lavendarBlush,
+    kwRed,
     margin,
     flex,
     LoginCard,
@@ -166,6 +169,7 @@ const StyledVariables = {
     P,
     NavBar,
     NavButton,
+    Div
 }
 
 export default StyledVariables

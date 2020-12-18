@@ -1,5 +1,3 @@
-import { InsertLinkRounded } from "@material-ui/icons"
-
 const navButtonStyle = {
     width: '100%',
     fontSize: "1.5rem",

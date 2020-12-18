@@ -81,13 +81,10 @@ export default function ServicesOffered() {
                     <Link className={classes.link} style={{textDecoration: 'none'}}  to ='/services/mark-hughes' ><MenuItem onClick={handleClose} >Mark Hughes</MenuItem></Link>
                     <Link className={classes.link} style={{textDecoration: 'none'}}  to = '/services/libby-brignon'><MenuItem onClick={handleClose}className={classes.menuItem}>Libby Brignon</MenuItem></Link>
                     <Link className={classes.link} style={{textDecoration: 'none'}}  to = '/services/will-schnieder'><MenuItem onClick={handleClose}className={classes.menuItem}>Will Schneider</MenuItem></Link>
-                    <Link className={classes.link} style={{textDecoration: 'none'}}  to = '/services/development-services'><MenuItem onClick={handleClose}className={classes.menuItem}>Someone Else</MenuItem></Link>
+                    {/* <Link className={classes.link} style={{textDecoration: 'none'}}  to = '/home'><MenuItem onClick={handleClose}className={classes.menuItem}>Someone Else</MenuItem></Link> */}
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
-              
-              
-              
             </Grow>
           )}
         </Popper>
