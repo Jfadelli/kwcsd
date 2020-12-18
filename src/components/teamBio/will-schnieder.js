@@ -1,5 +1,5 @@
 import React from 'react'
-import Will from '../../static/images/willheadshot.png'
+import Headshot from '../../static/images/willheadshot.png'
 import Footer from '../footer'
 
 import { Card,
@@ -9,6 +9,18 @@ import { Card,
     Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 
+//Agent Information
+const agentName = "Will Schnieder"
+const agentPhone = "760.450.4100"
+const agentEmail = "will@kwcommercial.com"
+const loopnetLink = "https://www.loopnet.com/brokerdirectory/profile/will-schneider/wb7jxwl"
+const loopnetListingImage = "https://images1.loopnet.com/i2/hU3AOPYluQ3AhAPo1uUnk0NYB4DiVaZaRga8xQr43dM/112/image.jpg"
+
+// mailto util
+const mailTo = "mailto:"
+const mailtoLink = mailTo+agentEmail
+
+// Styles
 const useStyles = makeStyles(theme => ({
     root: {
         margin: theme.spacing(3),
@@ -71,24 +83,24 @@ const WillBio = () => {
             <div className={classes.flexRow}>
                 <Card className={classes.root}>
                     <CardActionArea>
-                        <a href="mailto:will@kwcommercial.com">
+                        <a href={mailtoLink}>
                             <CardMedia 
                             className={classes.headshot}
-                            image={Will}
-                            title="Will Schnieder Headshot"
+                            image={Headshot}
+                            title={agentName + "Headshot"}
                             />
                         </a>
                     </CardActionArea>
   
                     <CardContent>
                         <Typography gutterBottom varient="h5" component="h1" className={classes.title}>
-                            Will Schnieder
+                            {agentName}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            760.450.4100
+                            {agentPhone}
                         <Typography variant="body2" color="textSecondary" component="p">
-                            <a href="mailto:will@kwcommercial.com">
-                            will@kwcommercial.com
+                            <a href={mailtoLink}>
+                                {agentEmail}
                             </a>
                         </Typography>
                         </Typography>
@@ -96,10 +108,10 @@ const WillBio = () => {
                 </Card>
                 <Card className={classes.propertyCard}>
                     <CardActionArea>
-                        <a href="https://www.loopnet.com/brokerdirectory/profile/will-schneider/wb7jxwl"><CardMedia 
+                        <a href={loopnetLink}><CardMedia 
                         className={classes.propertyPhoto}
-                        image="https://images1.loopnet.com/i2/hU3AOPYluQ3AhAPo1uUnk0NYB4DiVaZaRga8xQr43dM/112/image.jpg"
-                        title="Will Schnieder Loopnet Listing"
+                        image={loopnetListingImage}
+                        title= {agentName + " Loopnet Listing"}
                         />
                         </a>
                     </CardActionArea>

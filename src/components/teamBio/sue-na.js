@@ -9,7 +9,6 @@ import { Card,
     Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 
-
 //Agent Information
 const agentName = "Sue Na"
 const agentPhone = "858.720.1900"
@@ -20,7 +19,6 @@ const loopnetListingImage = "https://images1.loopnet.com/i2/u37ityMv-NapjHy-R_Ez
 // mailto util
 const mailTo = "mailto:"
 const mailtoLink = mailTo+agentEmail
-
 
 // Styles 
 const useStyles = makeStyles(theme => ({
@@ -103,7 +101,7 @@ const SueBio = () => {
                             {agentPhone}
                         <Typography variant="body2" color="textSecondary" component="p">
                             <a href={mailtoLink}>
-                            {agentEmail}
+                                {agentEmail}
                             </a>
                         </Typography>
                         </Typography>

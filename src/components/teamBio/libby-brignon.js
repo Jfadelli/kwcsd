@@ -9,6 +9,18 @@ import { Card,
     Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 
+//Agent Information
+const agentName = "Libby Brignon"
+const agentPhone = "858.720.1900"
+const agentEmail = "ebrignon@kwcommercial.com"
+const loopnetLink = "https://www.loopnet.com/brokerdirectory/profile/elizabeth-brignon/3jgrjrd"
+const loopnetListingImage = "https://images1.loopnet.com/i2/vrr4DgyNhPKdBj2AOitNdXYg6ja8S0tMCtxbPo3jgkI/112/image.jpg"
+
+// mailto util
+const mailTo = "mailto:"
+const mailtoLink = mailTo+agentEmail
+
+// Styles 
 const useStyles = makeStyles(theme => ({
     root: {
         margin: theme.spacing(3),
@@ -83,13 +95,13 @@ const LibbyBio = () => {
   
                     <CardContent>
                         <Typography gutterBottom varient="h5" component="h1" className={classes.title}>
-                            Libby Brignon
+                            {agentName}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            619.540.4208
+                            {agentPhone}
                         <Typography variant="body2" color="textSecondary" component="p">
-                            <a href="mailto:ebrignon@kwcommercial.com">
-                            ebrignon@kwcommercial.com
+                            <a href={mailtoLink}>
+                            {agentEmail}
                             </a>
                         </Typography>
                         </Typography>
@@ -97,10 +109,10 @@ const LibbyBio = () => {
                 </Card>
                 <Card className={classes.propertyCard}>
                     <CardActionArea>
-                        <a href="https://www.loopnet.com/brokerdirectory/profile/elizabeth-brignon/3jgrjrd"><CardMedia 
+                    <a href={loopnetLink}><CardMedia 
                         className={classes.propertyPhoto}
-                        image="https://images1.loopnet.com/i2/vrr4DgyNhPKdBj2AOitNdXYg6ja8S0tMCtxbPo3jgkI/112/image.jpg"
-                        title="Libby Brignon Loopnet Listing"
+                        image= {loopnetListingImage}
+                        title= {agentName + " Loopnet Listing"}
                         />
                         </a>
                     </CardActionArea>
