@@ -55,14 +55,14 @@ const LoginCard = styled.div`
 const CardContainer = styled.div`
     ${flex};
     margin: 0 5% 0 5%;
-    border-radius: 6px;
+    border-radius: 2px;
     background-color: ${timberwolf};
     width: 66%;
     `
 
 const Form = styled.form`
     ${flex};
-    border-radius: 6px;
+    border-radius: 2px;
     background-color: ${timberwolf};
     margin: 0 0 5vh 0;
     
