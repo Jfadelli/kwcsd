@@ -10,6 +10,7 @@ A commercial real estate website
 - Yup
 
 ## Purpose
-A solution for a high level commercial real estate team working with KW Commercial in San Diego, CA. \n
-t \n
-t
+A custom react site for a high level commercial real estate team working with KW Commercial in San Diego, CA. 
+t 
+t 
+
