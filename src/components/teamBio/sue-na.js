@@ -1,6 +1,7 @@
 import React from 'react'
 import Headshot from '../../static/images/sue.png'
 import Footer from '../footer'
+import Bio from './bios/sueBio'
 
 import { Card,
     CardActionArea,
@@ -30,7 +31,8 @@ const useStyles = makeStyles(theme => ({
         height: 140,
     },
     title: {
-        color: theme.palette.primary.dark
+        color: theme.palette.primary.dark,
+        fontSize: '2rem'
     },
     flexRow: {
         display: "flex",
@@ -82,24 +84,24 @@ const SueBio = () => {
         <div>
             <div className={classes.flexRow}>
             
-                <Card className={classes.root}>
+            <Card className={classes.root}>
                     <CardActionArea>
                         <a href={mailtoLink}>
                             <CardMedia 
-                            className={classes.headshot}
-                            image={Headshot}
-                            title={agentName + "Headshot"}
-                            />
-                        </a>
+                                className={classes.headshot}
+                                image={Headshot}
+                                title={agentName + "Headshot"}
+                                />
+                       </a>
                     </CardActionArea>
-  
+                    
                     <CardContent>
                         <Typography gutterBottom varient="h5" component="h1" className={classes.title}>
                             {agentName}
                         </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
+                        <Typography variant="h4" color="textSecondary" component="p">
                             {agentPhone}
-                        <Typography variant="body2" color="textSecondary" component="p">
+                        <Typography variant="h5" color="textSecondary" component="p">
                             <a href={mailtoLink}>
                                 {agentEmail}
                             </a>
@@ -120,13 +122,7 @@ const SueBio = () => {
             </div>
             <div className={classes.flexCol}>  
                 <section className={classes.p}>
-                <p>Sue has always been in the world of sales and the entrepreneur, starting her first sales business at age 14. She has combined 37 years of sales experience and 20 years of real estate experience. Sue is a resident of San Diego for over 30 years and has a great knowledge of the overall San Diego market. </p>
-                <li>Strong Negotiation Skills</li>
-                <li>Great Sense of Urgency </li>
-                <li>Accomplish tasks with quality and effectiveness </li>
-                <li>Sought out by others for help and expertise </li>
-                <li>Gift clients with clarity, excellence, and movement </li>
-                <li>Fluent in Korean and English</li>
+                    <Bio/>
                 </section>
                 <Footer/>
             </div>
