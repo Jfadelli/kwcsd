@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+
+
 import * as Yup from 'yup'
-
-
 import PropertyValuationSchema from '../validation/PropertyValuationSchema'
 
+import PropertyPhoto from '../../static/images/mf-cre.jpg'
+import Footer from '../footer'
 import StyledVariables from '../../styles/StyledVariables'
 const SV = StyledVariables
 
@@ -89,6 +91,7 @@ export default function YourPropertyInfo(props) {
         })
     }
 
+
     const onSubmit = evt => {
         evt.preventDefault()
 
@@ -119,9 +122,15 @@ export default function YourPropertyInfo(props) {
 
     return (
         <SV.Div>
-            {/* <Home /> */}
             <SV.CardContainer>
+                <SV.P>Representing sellers of investment real estate may require many of the same services, in addition to a thorough understanding of electronic marketing media, a creative approach to packaging, expert sales and negotiating skills, and a strong broker network. In addition to investment brokerage, we offer consulting services in development, financial analysis and finance. Our Investment Services team has over 35 years experience, which covers all of the above criteria essential to providing our clients with the highest quality representation available.</SV.P>
                 <SV.H2>Property Information</SV.H2>
+            </SV.CardContainer>
+            <SV.TwoColDiv > 
+                <SV.CardContainer>
+                    <SV.Img src={PropertyPhoto} alt="mf cre blg"/>
+                </SV.CardContainer>        
+                <SV.CardContainer>
                     <SV.Form onSubmit={onSubmit} >
                         <SV.Label>Enter your name:&nbsp;
                             <SV.Input
@@ -145,6 +154,7 @@ export default function YourPropertyInfo(props) {
 
                         <SV.Label>Enter your phone:&nbsp;*
                             <SV.Input
+                                maxLength='10'
                                 value={formValues.phone}
                                 onChange={onInputChange}
                                 type='tel'
@@ -165,15 +175,18 @@ export default function YourPropertyInfo(props) {
                         </SV.Label>
 
                         <SV.Label>Enter your city:&nbsp;*
-                            <SV.Input
-                                value={formValues.city}
-                                onChange={onInputChange}
-                                type='text'
-                                placeholder='City'
-                                name='city'
-                            />
-                        </SV.Label>
-
+                                <SV.Input
+                                    value={formValues.city}
+                                    onChange={onInputChange}
+                                    type='text'
+                                    placeholder='City'
+                                    name='city'
+                                />
+                            </SV.Label>
+                    </SV.Form>
+                </SV.CardContainer>
+                <SV.CardContainer>
+                    <SV.Form onSubmit={onSubmit} >
                         <SV.Label>Enter your zip:&nbsp;*
                             <SV.Input
                                 value={formValues.zip}
@@ -232,21 +245,24 @@ export default function YourPropertyInfo(props) {
                             />
                         </SV.Label>
 
-                        <SV.Error>{formErrors.name}</SV.Error>
-                        <SV.Error>{formErrors.email}</SV.Error>
-                        <SV.Error>{formErrors.phone}</SV.Error>
-                        <SV.Error>{formErrors.street_address}</SV.Error>
-                        <SV.Error>{formErrors.city}</SV.Error>
-                        <SV.Error>{formErrors.zip}</SV.Error>
-                        <SV.Error>{formErrors.country}</SV.Error>
-                        <SV.Error>{formErrors.building_sf}</SV.Error>
-                        <SV.Error>{formErrors.lot_sf}</SV.Error>
-                        <SV.Error>{formErrors.property_type}</SV.Error>
-
-                        <SV.Button disabled={disabled} onSubmit={onSubmit}>submit</SV.Button >
                     </SV.Form>
-            </SV.CardContainer>
-            {/* <Link to={`/SignInPage`}>Sign In</Link> */}
+                </SV.CardContainer>
+            </SV.TwoColDiv>
+
+            {/* errors */}
+            <SV.Error>{formErrors.name}</SV.Error>
+            <SV.Error>{formErrors.email}</SV.Error>
+            <SV.Error>{formErrors.phone}</SV.Error>
+            <SV.Error>{formErrors.street_address}</SV.Error>
+            <SV.Error>{formErrors.city}</SV.Error>
+            <SV.Error>{formErrors.zip}</SV.Error>
+            <SV.Error>{formErrors.country}</SV.Error>
+            <SV.Error>{formErrors.building_sf}</SV.Error>
+            <SV.Error>{formErrors.lot_sf}</SV.Error>
+            <SV.Error>{formErrors.property_type}</SV.Error>
+            
+            <SV.Button disabled={disabled} onSubmit={onSubmit}>submit</SV.Button >
+        <Footer />
         </SV.Div >
     )
 }

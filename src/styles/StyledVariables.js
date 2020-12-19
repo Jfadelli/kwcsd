@@ -24,6 +24,14 @@ const flex = `
 const Div = styled.div`
     ${flex};
 `
+const TwoColDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto auto;
+    max-width: 80%;
+    min-width: 60%;
+`
 
 const NavBar = styled.div`
     display: flex;
@@ -56,36 +64,32 @@ const CardContainer = styled.div`
     ${flex};
     margin: 0 5% 0 5%;
     border-radius: 2px;
-    background-color: ${timberwolf};
     width: 66%;
-    `
+`
 
 const Form = styled.form`
     ${flex};
+    /* background-color:blue; */
     border-radius: 2px;
-    background-color: ${timberwolf};
     margin: 0 0 5vh 0;
-    
+    width:100%;
 `
 
 const Input = styled.input`
     ${flex};
     color: ${jet};
     margin: ${margin};
-    /* font-variant: small-caps; */
     font-weight: 600;
     font-size: 1.25rem;
     height: 1.75rem;
     width: 350px;
     text-align: left;
-    border: none;
+    border: 1px solid black;
     border-radius: 3px;
 `
 
 const Label = styled.label`
-    ${flex}
-    background-color: ${timberwolf};
-    color: ${lavendarBlush};
+    /* background-color: red; */
     color: black;
     margin: 0 0 10px 0;
     font-weight: 700;
@@ -99,17 +103,17 @@ const Select = styled.select`
     margin: ${margin};
     font-size: 1.25rem;
     width: 360px;
-    border: none;
+    border: 1px solid black;
 
 `
 const H2 = styled.h2`
-    color: ${faluRed};
+    color: ${kwRed};
     text-shadow: -1px 2px 0 #000;
-    background-color: ${timberwolf};
-    margin: 10px 0 0 0;
-    font-size: 3em;
-    /* border-bottom: 2px solid ${kwRed} */
-`
+    background-color: none;
+    margin: 10px 0 4vh 0;
+    font-size: 4em;
+    border-bottom: 2px solid black;
+    `
 
 const H3 = styled.h3`
     color: ${kwRed};
@@ -119,15 +123,16 @@ const H3 = styled.h3`
 /* border-bottom: 2px solid ${kwRed} */
 `
 const P = styled.p`
-    color: ${kwRed};
-    background-color: ${faluRed};
-    margin: 10px 0 0 0;
-    font-size: 4em;
+    color: black;
+    background-color: none;
+    margin: 4em 0 4em 0;
+    font-size: 1.5em;
+    line-height:2rem;
 /* border-bottom: 2px solid ${kwRed} */
 `
 
 const Button = styled.button`
-    margin: ${margin};
+    margin: 3vh;
     width: auto;
     height: auto;
     font-size: 3em;
@@ -138,12 +143,18 @@ const Button = styled.button`
 
 const Error = styled.div`
     color: red;
-    background-color: ${timberwolf};
+    background-color: none;
     font-size: 1.5rem;
 `
 const Break = styled.div`
     background-color: white;
     height: 1vh;
+`
+const Img = styled.img`
+    width: auto;
+    height: 60vh;
+    border: 2px solid ${jet};
+    box-shadow: 30px -10px ${faluRed};
 `
 
 const StyledVariables = {
@@ -169,7 +180,9 @@ const StyledVariables = {
     P,
     NavBar,
     NavButton,
-    Div
+    Div,
+    TwoColDiv,
+    Img
 }
 
 export default StyledVariables
