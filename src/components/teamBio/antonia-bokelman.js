@@ -13,8 +13,8 @@ import { makeStyles } from '@material-ui/styles'
 
 //Agent Information
 const agentName = "Antonia Bokelman"
-const agentPhone = "858.720.1900"
-const agentEmail = "antonia@kwcommercial.com"
+const agentPhone = "858.231.1513"
+const agentEmail = "antoniabokelman@gmail.com"
 const loopnetLink = "https://www.loopnet.com/brokerdirectory/profile/antonia-bokelman/b11wx38"
 const loopnetListingImage = "https://images1.loopnet.com/i2/vrr4DgyNhPKdBj2AOitNdXYg6ja8S0tMCtxbPo3jgkI/112/image.jpg"
 

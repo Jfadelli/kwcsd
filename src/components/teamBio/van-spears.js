@@ -13,8 +13,8 @@ import { makeStyles } from '@material-ui/styles'
 
 //Agent Information
 const agentName = "Van Spears"
-const agentPhone = "858.720.1900"
-const agentEmail = "van@kwcommercial.com"
+const agentPhone = "760.975.2001"
+const agentEmail = "vanspears@spearscommercial.com"
 const loopnetLink = "https://www.loopnet.com/brokerdirectory/profile/van-spears/y4b86cv"
 const loopnetListingImage = "https://images1.loopnet.com/i2/vrr4DgyNhPKdBj2AOitNdXYg6ja8S0tMCtxbPo3jgkI/112/image.jpg"
 
