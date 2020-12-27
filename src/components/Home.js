@@ -132,7 +132,7 @@ export default function Home() {
                   <Link className={classes.servicesLink} to='/services/development-services'>Development & Entitlement</Link>
                 </section>
                 <section className={classes.homeContent}>
-                  <a  className={classes.linkToLoopnet} href="http://www.loopnet.com/brokerdirectory/profile/Mark%20Hughes/6glpewv">View all of my commercial real estate listings for sale or lease</a>
+                  <a  className={classes.linkToLoopnet} href="http://www.loopnet.com/brokerdirectory/profile/Mark%20Hughes/6glpewv">View some of our commercial real estate listings for sale or lease</a>
                 </section>
                 <hr className={classes.horizLine} />
                 <section >
