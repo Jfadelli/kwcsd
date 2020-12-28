@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-
 import * as Yup from 'yup'
 import PropertyValuationSchema from '../validation/PropertyValuationSchema'
 
 import PropertyPhoto from '../../static/images/mf-cre.jpg'
 import Footer from '../footer'
+
 import StyledVariables from '../../styles/StyledVariables'
 const SV = StyledVariables
 
@@ -30,6 +30,7 @@ const initialValues = {
     },
     building_sf: '',
     lot_size: ''
+    
 }
 
 const initialFormErrors = {
@@ -52,7 +53,7 @@ export default function YourPropertyInfo(props) {
 
     //////////////// HELPERS ////////////////
     const postNewProperty = property => {
-      axios.post('http://localhost:3002/newProperty', property)
+      axios.post('https://kwcsd-mail-util.herokuapp.com/api/newProperty', property)
           .then(res => {
               if (res.data.status === 'success'){
                   alert('Message Sent.');
@@ -94,6 +95,7 @@ export default function YourPropertyInfo(props) {
 
     const onSubmit = evt => {
         evt.preventDefault()
+        console.log('hello')
 
         const newProperty = {
             name: formValues.name.trim(),
@@ -244,9 +246,11 @@ export default function YourPropertyInfo(props) {
                                 name='lot_size'
                             />
                         </SV.Label>
+                        <SV.Button disabled={disabled} onSubmit={onSubmit}>submit</SV.Button >
 
                     </SV.Form>
                 </SV.CardContainer>
+                
             </SV.TwoColDiv>
 
             {/* errors */}
@@ -261,7 +265,6 @@ export default function YourPropertyInfo(props) {
             <SV.Error>{formErrors.lot_sf}</SV.Error>
             <SV.Error>{formErrors.property_type}</SV.Error>
             
-            <SV.Button disabled={disabled} onSubmit={onSubmit}>submit</SV.Button >
         <Footer />
         </SV.Div >
     )

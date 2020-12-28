@@ -44,11 +44,15 @@ export default function Contact() {
     const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [disabled, setDisabled] = useState(true);
+<<<<<<< HEAD
     const [message, setMessage] = useState(initialValues)
+=======
+    // const [message, setMessage] = useState([]);
+>>>>>>> dd47af6c20955e89967800a1056fae9895b05205
 
     //////////////// HELPERS ////////////////
     const postNewMessage = message => {
-        axios.post('http://localhost:3002/send', message)
+        axios.post('https://kwcsd-mail-util.herokuapp.com/api/send', message)
             .then(res => {
                 if (res.data.status === 'success'){
                     alert('Message Sent.');
@@ -85,7 +89,6 @@ export default function Contact() {
             ...formValues,
             [name]: value
         })
-        console.log(formValues)
     }
 
     const onSubmitHandler = evt => {
@@ -98,10 +101,15 @@ export default function Contact() {
             phone: formValues.phone.trim(),
             message: formValues.message.trim()
         };
+<<<<<<< HEAD
         setMessage(newMessage);
         postNewMessage(newMessage);
         console.log(message);
         ;
+=======
+        // setMessage(newMessage);
+        postNewMessage(newMessage);
+>>>>>>> dd47af6c20955e89967800a1056fae9895b05205
     }
 
     //////////////// SIDE EFFECTS //////////////// 
@@ -162,6 +170,7 @@ export default function Contact() {
 
                     <label>Phone Number</label>
                     <input
+                        maxLength='10'
                         value={formValues.phone}
                         onChange={onInputChange}
                         type='tel' 
