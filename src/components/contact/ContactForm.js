@@ -9,15 +9,13 @@ import contactUsSchema from '../validation/contactUsSchema'
 
 import './style.css'
 
-
-
 const initialValues = {
     intent: {
         buy: false,
         sell: false,
         lease: false,
         offerToLease: false,
-        consult: false
+        consult: false,
     },
     timeframe: {
         lessThan3: false,
@@ -46,7 +44,7 @@ export default function Contact() {
     const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [disabled, setDisabled] = useState(true);
-    const [message, setMessage] = useState([]);
+    const [message, setMessage] = useState(initialValues)
 
     //////////////// HELPERS ////////////////
     const postNewMessage = message => {
@@ -101,7 +99,9 @@ export default function Contact() {
             message: formValues.message.trim()
         };
         setMessage(newMessage);
-        postNewMessage(message);
+        postNewMessage(newMessage);
+        console.log(message);
+        ;
     }
 
     //////////////// SIDE EFFECTS //////////////// 
@@ -131,13 +131,11 @@ export default function Contact() {
 
                     <label >My Timeframe is:</label>
                     <select 
-                        id="timeframe" 
-                        type='select'
                         value={formValues.timeframe}
                         onChange={onInputChange}
-                        name='timeframe'
+                        name="timeframe"
                         >
-                        <option value="Please Select">Please select an option</option>
+                        <option value=''>Please select an option</option>
                         <option value="lessThan3">Less than 3 months</option>
                         <option value="lessThan6">Less than 6 months</option>
                         <option value="lessThan12">Less than 12 months</option>

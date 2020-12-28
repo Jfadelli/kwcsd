@@ -56,7 +56,7 @@ const PropertyGallery = () => {
     const classes = useStyles()
     const [listings, setListings] = useState([])
     useEffect(() => {
-        axios.get('http://127.0.0.1:5000/api/listings')
+        axios.get('https://web-scraper-v1.herokuapp.com/api/listings')
             .then(resp => setListings(resp.data))
     }, [])
 
