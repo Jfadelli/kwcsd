@@ -67,6 +67,14 @@ const CardContainer = styled.div`
     width: 66%;
 `
 
+const FormCols = styled.div`
+${flex};
+/* background-color:blue; */
+border-radius: 2px;
+margin: 0 0 5vh 0;
+width:100%;
+`
+
 const Form = styled.form`
     ${flex};
     /* background-color:blue; */
@@ -182,7 +190,8 @@ const StyledVariables = {
     NavButton,
     Div,
     TwoColDiv,
-    Img
+    Img,
+    FormCols
 }
 
 export default StyledVariables

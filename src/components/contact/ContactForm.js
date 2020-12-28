@@ -46,11 +46,11 @@ export default function Contact() {
     const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [disabled, setDisabled] = useState(true);
-    const [message, setMessage] = useState([]);
+    // const [message, setMessage] = useState([]);
 
     //////////////// HELPERS ////////////////
     const postNewMessage = message => {
-        axios.post('http://localhost:3002/send', message)
+        axios.post('https://kwcsd-mail-util.herokuapp.com/api/send', message)
             .then(res => {
                 if (res.data.status === 'success'){
                     alert('Message Sent.');
@@ -87,7 +87,6 @@ export default function Contact() {
             ...formValues,
             [name]: value
         })
-        console.log(formValues)
     }
 
     const onSubmitHandler = evt => {
@@ -100,8 +99,8 @@ export default function Contact() {
             phone: formValues.phone.trim(),
             message: formValues.message.trim()
         };
-        setMessage(newMessage);
-        postNewMessage(message);
+        // setMessage(newMessage);
+        postNewMessage(newMessage);
     }
 
     //////////////// SIDE EFFECTS //////////////// 
@@ -131,8 +130,6 @@ export default function Contact() {
 
                     <label >My Timeframe is:</label>
                     <select 
-                        id="timeframe" 
-                        type='select'
                         value={formValues.timeframe}
                         onChange={onInputChange}
                         name='timeframe'
@@ -164,6 +161,7 @@ export default function Contact() {
 
                     <label>Phone Number</label>
                     <input
+                        maxLength='10'
                         value={formValues.phone}
                         onChange={onInputChange}
                         type='tel' 
