@@ -48,24 +48,26 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1rem',
   },
   horizLine:{
+    margin: '5vh 0 2vh 0',
     border: '1px solid #666666',
     width: '90%',
   },
   title:{
-    font: '60px black',
+    font: '4rem black',
     fontFamily: 'Arial, Helvetica, sans-serif',
     padding: 0,
     margin: '5px 0',
     textAlign: 'center',
   },
   motto:{
-    font: '30px darkgray',
+    font: '2rem darkgray',
     fontFamily: 'Arial, Helvetica, sans-serif',
     padding: 0,
     margin: '5px 0',
     textAlign: 'center',
   },
   services:{
+    fontSize: '1rem',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -86,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
       }
     },
     h2:{
-      fontSize:'2rem',
+      fontSize:'3rem',
       fontWeight:'400',
       textAlign: 'center',
       margin: '2vh 0 0 0',
@@ -132,6 +134,7 @@ export default function Home() {
                   <h2 className={classes.h2}>Our Services</h2>
                 </section>
                 <section className={classes.services}>
+                  <p> If you are interested in any of the services that we provide, specific information can be found within the links below.</p>
                   <Link className={classes.servicesLink} to='/services/tenant-rep'>Tenant Representation</Link>
                   <Link className={classes.servicesLink} to='/services/landlord-rep'>Landlord Representation</Link>
                   <Link className={classes.servicesLink} to='/services/Investment-Acq'>Investment Acquisition & Sales</Link>
