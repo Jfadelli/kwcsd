@@ -44,11 +44,7 @@ export default function Contact() {
     const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [disabled, setDisabled] = useState(true);
-<<<<<<< HEAD
-    const [message, setMessage] = useState(initialValues)
-=======
     // const [message, setMessage] = useState([]);
->>>>>>> dd47af6c20955e89967800a1056fae9895b05205
 
     //////////////// HELPERS ////////////////
     const postNewMessage = message => {
@@ -101,15 +97,7 @@ export default function Contact() {
             phone: formValues.phone.trim(),
             message: formValues.message.trim()
         };
-<<<<<<< HEAD
-        setMessage(newMessage);
         postNewMessage(newMessage);
-        console.log(message);
-        ;
-=======
-        // setMessage(newMessage);
-        postNewMessage(newMessage);
->>>>>>> dd47af6c20955e89967800a1056fae9895b05205
     }
 
     //////////////// SIDE EFFECTS //////////////// 

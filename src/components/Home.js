@@ -9,9 +9,6 @@ import Hero from '../static/images/sdskyline.png';
 import PropertyGallery from './PropertyGallery'
 import Footer from './footer'
 
-import '../App.css'
-import '../styles/body.css'
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -48,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignContent: 'center',
     justifyCntent: 'space-evenly',
+    fontSize: '1rem',
   },
   horizLine:{
     border: '1px solid #666666',
@@ -71,13 +69,14 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: '0 0 5vh 0',
+    margin: '0 0 2vh 0',
   },
   servicesLink:{
     textDecoration: 'none',
     color: 'rgb(200 1 1)',
     fontWeight: '500',
-    fontSize: '1.75rem',
+    fontSize: '1.5rem',
+    textAlign:'center',
     borderBottom: 'dotted black 1px',
     lineHeight: '3rem',
     width: '50%',
@@ -87,16 +86,22 @@ const useStyles = makeStyles((theme) => ({
       }
     },
     h2:{
-      fontSize:'4rem',
+      fontSize:'2rem',
       fontWeight:'400',
       textAlign: 'center',
+      margin: '2vh 0 0 0',
+      padding: '0'
   },
   linkToLoopnet:{
     textDecoration: 'none',
-    color: 'rgb(180 1 1)',
+    color: 'rgb(200 1 1)',
     fontWeight: '400',
     fontSize: '2rem', 
+    margin: '0 0 2vh 0',
     textAlign:'center',
+    '&:hover':{
+      color: 'rgb(230 70 1)',
+      }
   },
 
 }));
@@ -112,7 +117,7 @@ export default function Home() {
           <div className={classes.content}>
             <div className={classes.home}>
               <h1 className={classes.title}>Pacific Commercial Partners</h1>
-              <h4 className={classes.motto}>The KW Commercial Team is ready to serve you</h4>
+              <h4 className={classes.motto}>~ The KW Commercial team that is ready to serve you ~</h4>
             </div>
           </div>
         </Grid>
@@ -120,9 +125,10 @@ export default function Home() {
           <div className={classes.content}>
             <div className={classes.home}>
                 <section className={classes.homeContent}>
-                  <hr className={classes.horizLine} />
+                  {/* <hr className={classes.horizLine} /> */}
                   <p> With over 100 years of combined experience covering all aspects of commercial real estate brokerage, development, marketing, finance, and management, our team is ready to serve you.</p>
                   <p>Whether you are leasing, purchasing or selling, let us leverage our extensive experience and network of personal contacts to achieve your goals by providing the most creative and cost effective deal structures available in today's marketplace.</p>
+                  <hr className={classes.horizLine} />
                   <h2 className={classes.h2}>Our Services</h2>
                 </section>
                 <section className={classes.services}>
@@ -131,10 +137,11 @@ export default function Home() {
                   <Link className={classes.servicesLink} to='/services/Investment-Acq'>Investment Acquisition & Sales</Link>
                   <Link className={classes.servicesLink} to='/services/development-services'>Development & Entitlement</Link>
                 </section>
+                <hr className={classes.horizLine} />
                 <section className={classes.homeContent}>
                   <a  className={classes.linkToLoopnet} href="http://www.loopnet.com/brokerdirectory/profile/Mark%20Hughes/6glpewv">View some of our commercial real estate listings for sale or lease</a>
                 </section>
-                <hr className={classes.horizLine} />
+
                 <section >
                 <PropertyGallery/>
                 </section>

@@ -20,10 +20,17 @@ const flex = `
     `
 //////////////// Styled Components ////////////////
 
-// Navbar
 const Div = styled.div`
     ${flex};
 `
+
+const SpacedDiv = styled.div`
+    ${flex};
+    margin: 0 0 .5rem;
+
+`
+
+// Navbar
 const TwoColDiv = styled.div`
     display: flex;
     flex-direction: row;
@@ -37,9 +44,10 @@ const NavBar = styled.div`
     display: flex;
     flex-wrap: none;
     flex-direction: row;
+    justify-content: center;
     background-color: ${kwRed};
-    height: 6rem;
-    margin: 3.5rem 0;
+    height: 3.5rem;
+    margin: 1rem 0;
     width: 100%;
 `
 
@@ -50,6 +58,8 @@ const NavButton = styled.button`
     line-height: 1.5rem;
     padding: 0 5rem 0 5rem;
 `
+
+// cards
 
 const LoginCard = styled.div`
     ${flex};
@@ -114,6 +124,8 @@ const Select = styled.select`
     border: 1px solid black;
 
 `
+
+// fonts & headings
 const H2 = styled.h2`
     color: ${kwRed};
     text-shadow: -1px 2px 0 #000;
@@ -191,7 +203,8 @@ const StyledVariables = {
     Div,
     TwoColDiv,
     Img,
-    FormCols
+    FormCols,
+    SpacedDiv
 }
 
 export default StyledVariables
