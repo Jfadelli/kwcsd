@@ -1,27 +1,5 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/styles'
-
-const useStyles = makeStyles(theme => ({
-    root: {
-        margin: theme.spacing(3),
-        width: 345,
-    },
-    p:{
-        fontSize: "1.25rem",
-        padding: "1rem",
-        margin: "0 8rem",
-    },
-    list:{
-        fontSize: "2rem",
-        margin: " 0 8rem",
-        padding: "0 0 0 4rem",
-    },
-    heading:{
-        fontSize: "3rem",
-        margin: "0 8rem",
-        padding: "0rem",
-    }
-}))
+import { useStyles } from '../style/teamBioStyles'
 
 const Bio = () => {
     const classes = useStyles()

@@ -54,8 +54,7 @@ export const useStyles = makeStyles(theme => ({
     },
     p:{
         fontSize: "1.25rem",
-        padding: "1rem",
-        margin: "0 8rem",
+        margin: "0 5%",
     },
     list:{
         fontSize: "2rem",
