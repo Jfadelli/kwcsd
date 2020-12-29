@@ -13,13 +13,23 @@ import StyledVariables from '../styles/StyledVariables.js'
 
 const SV = StyledVariables
 
+
 const toolBarStyle = {
-  margin: "0 5%", 
+  display: 'flex',
+  justifyContent: 'space-evenly',
 }
 
 const logoStyle = {
-  height:'75px',
-  width:'125px',
+  display: 'flex',
+  height:'88px',
+  width:'150px',
+  margin: "0 100px 0 auto "
+}
+
+const links = {
+  display: 'flex',
+  justifyContent: 'flex-end',
+  alignItems: 'center'
 }
 
 
@@ -28,15 +38,20 @@ export default function Nav() {
   <SV.SpacedDiv>
     <SV.NavBar>
       <Toolbar  style={toolBarStyle} >
+        <div>
+        <a href='/'> <img style={logoStyle}src={Logo} alt='keller williams commercial' /></a>
+        </div>
+        <div style={links}>
         <Home />
         <ServicesOffered />
         <TeamBio />
         <PropertyValuation />
         <Contact />
         <Referrals />
+        </div>
       </Toolbar>
     </SV.NavBar>
-    <a href='/'> <img style={logoStyle}src={Logo} alt='keller williams commercial' /></a>
+
   </SV.SpacedDiv>
   );
 }
