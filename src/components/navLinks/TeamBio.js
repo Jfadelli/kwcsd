@@ -22,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
   navButton: NBS
   ,
   link:{
-    color: "black"
+    color: "black",
+    textDecoration:'none'
   }
 }));
 
@@ -78,21 +79,19 @@ export default function ServicesOffered() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link className={classes.link} style={{textDecoration: 'none'}}  to ='/team-bio/mark-hughes' ><MenuItem onClick={handleClose} >Mark Hughes</MenuItem></Link>
-                    <Link className={classes.link} style={{textDecoration: 'none'}}  to = '/team-bio/libby-brignon'><MenuItem onClick={handleClose}className={classes.menuItem}>Libby Brignon</MenuItem></Link>
-                    <Link className={classes.link} style={{textDecoration: 'none'}}  to = '/team-bio/will-schnieder'><MenuItem onClick={handleClose}className={classes.menuItem}>Will Schneider</MenuItem></Link>
-                    <Link className={classes.link} style={{textDecoration: 'none'}}  to = '/team-bio/van-spears'><MenuItem onClick={handleClose}className={classes.menuItem}>Van Spears</MenuItem></Link>
-                    <Link className={classes.link} style={{textDecoration: 'none'}}  to = '/team-bio/antonia-bokelman'><MenuItem onClick={handleClose}className={classes.menuItem}>Antonia Bokelman</MenuItem></Link>
-                    <Link className={classes.link} style={{textDecoration: 'none'}}  to = '/team-bio/sue-na'><MenuItem onClick={handleClose}className={classes.menuItem}>Sue Na</MenuItem></Link>
-
-                    {/* <Link className={classes.link} style={{textDecoration: 'none'}}  to = '/home'><MenuItem onClick={handleClose}className={classes.menuItem}>Someone Else</MenuItem></Link> */}
+                    <Link className={classes.link} to = '/team-bio/antonia-bokelman'><MenuItem onClick={handleClose}>Antonia Bokelman</MenuItem></Link>
+                    <Link className={classes.link} to = '/team-bio/libby-brignon'><MenuItem onClick={handleClose}>Libby Brignon</MenuItem></Link>
+                    <Link className={classes.link} to = '/team-bio/mark-hughes' ><MenuItem onClick={handleClose} >Mark Hughes</MenuItem></Link>
+                    <Link className={classes.link} to = '/team-bio/sue-na'><MenuItem onClick={handleClose}>Sue Na</MenuItem></Link>
+                    <Link className={classes.link} to = '/team-bio/van-spears'><MenuItem onClick={handleClose}>Van Spears</MenuItem></Link>
+                    <Link className={classes.link} to = '/team-bio/will-schnieder'><MenuItem onClick={handleClose}>Will Schneider</MenuItem></Link>
+                    {/* <Link className={classes.link} to = '/team-bio/someone-else'><MenuItem onClick={handleClose}>Someone Else</MenuItem></Link> */}
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
             </Grow>
           )}
         </Popper>
-        
       </div>
     </div>
   );

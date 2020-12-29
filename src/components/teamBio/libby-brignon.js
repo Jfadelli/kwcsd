@@ -2,80 +2,18 @@ import React from 'react'
 import Headshot from '../../static/images/libbyheadshot.jpg'
 import Footer from '../footer'
 import Bio from './bios/libbyBio'
+import { Agent } from './agentInfo/agentInfoList'
+import { useStyles } from './style/teamBioStyles'
 
 import { Card,
     CardActionArea,
     CardMedia,
     CardContent,
     Typography } from '@material-ui/core'
-import { makeStyles } from '@material-ui/styles'
-
-//Agent Information
-const agentName = "Libby Brignon"
-const agentPhone = "858.720.1900"
-const agentEmail = "ebrignon@kwcommercial.com"
-const loopnetLink = "https://www.loopnet.com/brokerdirectory/profile/elizabeth-brignon/3jgrjrd"
-const loopnetListingImage = "https://images1.loopnet.com/i2/vrr4DgyNhPKdBj2AOitNdXYg6ja8S0tMCtxbPo3jgkI/112/image.jpg"
 
 // mailto util
 const mailTo = "mailto:"
-const mailtoLink = mailTo+agentEmail
-
-// Styles 
-const useStyles = makeStyles(theme => ({
-    root: {
-        margin: theme.spacing(3),
-        width: 345,
-    },
-    media: {
-        height: 140,
-    },
-    title: {
-        color: theme.palette.primary.dark,
-        fontSize: "2rem"
-    },
-    flexRow: {
-        display: "flex",
-        justifyContent: "center",
-    },
-    flexCol: { 
-        display: "flex",
-        flexDirection: "column",    
-        justifyContent: "center",
-        textAlign: "left",
-        margin: "0 5%",
-    },
-    headshot: {
-        height: "45vh"
-    },
-    propertyCard:{
-        margin: 10,
-        height: "70vh",
-        width: "50%",
-    },
-    propertyPhoto:{
-        height: "70vh",
-    },
-    markdown: {
-        ...theme.typography.body2,
-        padding: theme.spacing(3, 0),
-    },
-    p:{
-        fontSize: "1.25rem",
-        padding: "1rem",
-        margin: "0 8rem",
-    },
-    list:{
-        fontSize: "2rem",
-        margin: " 0 8rem",
-        padding: "0 0 0 4rem",
-    },
-    heading:{
-        fontSize: "3rem",
-        margin: "0 8rem",
-        padding: "0rem",
-    }
-}))
+const mailtoLink = mailTo+Agent.Libby.email
 
 const LibbyBio = () => {
     const classes = useStyles()
@@ -83,44 +21,43 @@ const LibbyBio = () => {
     return (
         <div>
             <div className={classes.flexRow}>
-            
-            <Card className={classes.root}>
+                <Card className={classes.agentCard}>
                     <CardActionArea>
                         <a href={mailtoLink}>
                             <CardMedia 
                                 className={classes.headshot}
                                 image={Headshot}
-                                title={agentName + "Headshot"}
+                                title={Agent.Libby.name + " Headshot"}
                                 />
                        </a>
                     </CardActionArea>
-                    
+               
                     <CardContent>
                         <Typography gutterBottom varient="h5" component="h1" className={classes.title}>
-                            {agentName}
+                            {Agent.Libby.name}
                         </Typography>
-                        <Typography variant="h4" color="textSecondary" component="p">
-                            {agentPhone}
                         <Typography variant="h5" color="textSecondary" component="p">
-                            <a href={mailtoLink}>
-                                {agentEmail}
+                            {Agent.Libby.phone}
+                            </Typography>
+                        <Typography variant="h6">
+                            <a className={classes.email} href={mailtoLink}>
+                                {Agent.Libby.email}
                             </a>
-                        </Typography>
                         </Typography>
                     </CardContent>
                 </Card>
                 <Card className={classes.propertyCard}>
                     <CardActionArea>
-                    <a href={loopnetLink}><CardMedia 
+                        <a href={Agent.Libby.loopnetLink}><CardMedia 
                         className={classes.propertyPhoto}
-                        image= {loopnetListingImage}
-                        title= {agentName + " Loopnet Listing"}
+                        image={Agent.Libby.loopnetListingImage}
+                        title= {Agent.Libby.name + " Loopnet Listing"}
                         />
                         </a>
                     </CardActionArea>
                 </Card>
             </div>
-            <div className={classes.flexCol}>  
+            <div className={classes.flexCol}> 
                 <section className={classes.p}>
                     <Bio />
                 </section>

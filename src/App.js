@@ -45,13 +45,12 @@ function App() {
           <Route path='/services/development-services' component={DevelopmentServices} />
 
           {/* team bio links */}
-          <Route path='/team-bio/mark-hughes' component={MarkBio} />
-          <Route path='/team-bio/libby-brignon' component={LibbyBio} />
-          <Route path='/team-bio/will-schnieder' component={WillBio} />
-          <Route path='/team-bio/van-spears' component={VanBio} />
           <Route path='/team-bio/antonia-bokelman' component={AntoniaBio} />
+          <Route path='/team-bio/libby-brignon' component={LibbyBio} />
+          <Route path='/team-bio/mark-hughes' component={MarkBio} />
           <Route path='/team-bio/sue-na' component={SueBio} />
-
+          <Route path='/team-bio/van-spears' component={VanBio} />
+          <Route path='/team-bio/will-schnieder' component={WillBio} />
 
           {/* property valuation links */}
           <Route path='/property-valuation/your-property-info' component={YourPropertyInfo} />
