@@ -26,29 +26,18 @@ const logoStyle = {
   margin: "0 100px 0 auto "
 }
 
-const links = {
-  display: 'flex',
-  justifyContent: 'flex-end',
-  alignItems: 'center'
-}
-
-
 export default function Nav() {
   return (
   <SV.SpacedDiv>
     <SV.NavBar>
       <Toolbar  style={toolBarStyle} >
-        <div>
         <a href='/'> <img style={logoStyle}src={Logo} alt='keller williams commercial' /></a>
-        </div>
-        <div style={links}>
         <Home />
         <ServicesOffered />
         <TeamBio />
         <PropertyValuation />
         <Contact />
         <Referrals />
-        </div>
       </Toolbar>
     </SV.NavBar>
 
