@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Hero from '../static/images/sdskyline.png';
 import PropertyGallery from './PropertyGallery'
 import Footer from './footer'
-import { useStyles } from '../styles/homeStyle'
+import { useStyles } from '../styles/style'
 import { useMediaQuery } from './hooks/mediaQuery'
 
 export default function Home() {

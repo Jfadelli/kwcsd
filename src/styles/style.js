@@ -34,16 +34,17 @@ export const useStyles = makeStyles((theme) => ({
         font: '4rem black',
         fontFamily: 'Arial, Helvetica, sans-serif',
         padding: 0,
-        margin: '5px 0',
+        margin: '5px 0 2vh 0',
         textAlign: 'center',
 
     },
     motto:{
         font: '2rem darkgray',
         fontFamily: 'Arial, Helvetica, sans-serif',
-        padding: 0,
-        margin: '5px 0',
+        padding: '0',
+        margin: '-2vh 0 1.5vh',
         textAlign: 'center',
+
     },
 
     // content 
@@ -89,9 +90,9 @@ export const useStyles = makeStyles((theme) => ({
             color: 'rgb(230 70 1)',
             borderBottom: 'dotted rgb(230 70 1) 1px'
         }
-      },
+    },
 
-      linkToLoopnet:{
+    linkToLoopnet:{
         textDecoration: 'none',
         color: 'rgb(200 1 1)',
         fontWeight: '400',
@@ -103,11 +104,56 @@ export const useStyles = makeStyles((theme) => ({
         }
     },
 
-// decorations
+    // decorations
     horizLine:{
         margin: '5vh auto 2vh auto',
         border: '1px solid #666666',
         maxWidth: '1024px',
         width: '100%'
     },
-  }));
+
+    // flex
+    flexRow: {
+        alignSelf:'center',
+        display: "flex",
+        justifyContent: "space-evenly",
+        maxWidth: '1024px',
+        minWidth: '1023px',
+        width: '100%',
+    },
+    flexCol: { 
+        display: "flex",
+        flexDirection: "column",    
+        justifyContent: "center",
+        textAlign: "left",
+        margin: "2vh 5%",
+    },
+
+    // font styles
+    p:{
+        fontSize: "1rem",
+    },
+    list:{
+        fontSize: "1.15rem",
+        margin: " .5rem 0",
+        padding: "0 0 0 .5rem",
+        '& li':{
+            padding: "0 0 .5rem 1rem",
+        }
+    },
+    heading:{
+        display: 'flex',
+        alignSelf: 'center',
+        textAlign:'center',
+        fontSize: "1.5rem",
+        margin: "0 8rem",
+        padding: "0rem",
+    },
+    subHeading:{
+        font: '2rem darkgray',
+        fontFamily: 'Arial, Helvetica, sans-serif',
+        padding: 0,
+        margin: '2rem 0',
+        textAlign: 'center',
+    },
+}));
