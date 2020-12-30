@@ -15,11 +15,6 @@ import { useMediaQuery } from './hooks/mediaQuery'
 
 const SV = StyledVariables
 
-const toolBarStyle = {
-  display: 'flex',
-  justifyContent: 'space-evenly',
-  
-}
 
 export default function Nav() {
   const isRow = useMediaQuery('(min-width: 768px)');
@@ -48,6 +43,7 @@ const styles = {
     flexDirection: isRow ? 'row' : 'column',
     height: isRow ? '' : 'auto',
     alignContent: isRow ? '' : 'center'
+    
   }),
 };
 

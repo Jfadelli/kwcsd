@@ -70,7 +70,9 @@ const PropertyGallery = () => {
                 {listings.map(listing => (
                     <div className={classes.root}>
                         <div className={classes.propCard} key={listing.id}>
-                            <a href={listing.link}><img src={listing.img} className={classes.propPhoto} alt='Subject Property' /></a>
+                            <a href={listing.link}>
+                                <img src={listing.img} className={classes.propPhoto} alt='Subject Property' />
+                            </a>
                             <h5 style={cardDetailStyle} className={classes.propInfo}>{listing.address} - ${listing.price}</h5>
                             <TextTruncate line={2} className={classes.propDetail} text={listing.description} />
                         </div>
