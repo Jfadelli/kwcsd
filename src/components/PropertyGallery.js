@@ -17,21 +17,23 @@ const useStyles = makeStyles(theme => ({
     propCard:{
         display: 'flex',
         flexDirection: 'column',
+        alignItems: 'center',
         width: '450px',
         height: '360px',
         boxShadow: '.25rem .25rem .25rem .25rem rgba(0,0,0,0.2)',
         transition: '0.3s',
         borderRadius:'6px',
-        margin: '.75rem',
+        margin: '.5rem',
         '&:hover':{
             boxShadow: '.25rem .25rem .25rem .35rem rgba(0,0,0,0.2)',
             transition: '0.3s',
         }
     },
     propPhoto:{
-        maxWidth: '375px',
+        alignSelf:'center',
+        maxWidth: '400px',
         minWidth: '350px',
-        minHeight: '250px',
+        minHeight: '225px',
         maxHeight: '300px',
         margin: '30px 30px 5px 30px', 
     },
@@ -43,7 +45,9 @@ const useStyles = makeStyles(theme => ({
         }
     },
     propDetail:{
-        fontSize:'1rem'
+        fontSize:'.90rem',
+        width: '100%',
+        minWidth:'400px',
     },
 }));
 
@@ -67,8 +71,8 @@ const PropertyGallery = () => {
                     <div className={classes.root}>
                         <div className={classes.propCard} key={listing.id}>
                             <a href={listing.link}><img src={listing.img} className={classes.propPhoto} alt='Subject Property' /></a>
-                            <h5 style={cardDetailStyle}className={classes.propInfo}>{listing.address} - ${listing.price}</h5>
-                            <TextTruncate line={1} className={classes.propDetail} text={listing.description} />
+                            <h5 style={cardDetailStyle} className={classes.propInfo}>{listing.address} - ${listing.price}</h5>
+                            <TextTruncate line={2} className={classes.propDetail} text={listing.description} />
                         </div>
                     </div>
                 ))}
