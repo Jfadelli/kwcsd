@@ -33,7 +33,6 @@ export default function Nav() {
         <Referrals />
       </Toolbar>
     </SV.NavBar>
-
   </SV.SpacedDiv>
   );
 }
@@ -42,8 +41,8 @@ const styles = {
   container: isRow => ({
     flexDirection: isRow ? 'row' : 'column',
     height: isRow ? '' : 'auto',
-    alignContent: isRow ? '' : 'center'
-    
+    alignContent: isRow ? '' : 'center',
+    zIndex:'0'
   }),
 };
 

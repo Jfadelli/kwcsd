@@ -52,7 +52,7 @@ export default function ServicesOffered() {
         >
           Team Bio
         </Button>
-        <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+        <Popper className={classes.popper} open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
             <Grow
               {...TransitionProps}
@@ -60,7 +60,7 @@ export default function ServicesOffered() {
             >
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
-                  <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                  <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                     <Link className={classes.link} to = '/team-bio/antonia-bokelman'><MenuItem onClick={handleClose}>Antonia Bokelman</MenuItem></Link>
                     <Link className={classes.link} to = '/team-bio/libby-brignon'><MenuItem onClick={handleClose}>Libby Brignon</MenuItem></Link>
                     <Link className={classes.link} to = '/team-bio/mark-hughes' ><MenuItem onClick={handleClose} >Mark Hughes</MenuItem></Link>

@@ -52,7 +52,7 @@ export default function ServicesOffered() {
         >
           Property Valuation
         </Button>
-        <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+        <Popper className={classes.popper} open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
             <Grow
               {...TransitionProps}
@@ -60,8 +60,8 @@ export default function ServicesOffered() {
             >
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
-                  <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link className={classes.link} style={{textDecoration: 'none'}}  to ='/property-valuation/your-property-info' ><MenuItem onClick={handleClose} >Your Property Info</MenuItem></Link>
+                  <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                    <Link className={classes.link} to ='/property-valuation/your-property-info' ><MenuItem onClick={handleClose} >Your Property Info</MenuItem></Link>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

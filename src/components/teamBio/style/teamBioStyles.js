@@ -1,18 +1,65 @@
 import { makeStyles } from '@material-ui/styles'
 
 export const useStyles = makeStyles(theme => ({
-    root: {
-        margin: theme.spacing(3),
-        width: 345,
+    //baseline styles
+    wrapper:{
+        display: 'flex',
+        flexGrow: 1,
+        margin: 'auto',
+        alignItems:'center',
+        alignContent:'center',
+        justifyContent:'center',
+        flexDirection: 'column',
     },
-    //card
+    flexRow: {
+        alignSelf:'center',
+        display: "flex",
+        justifyContent: "space-evenly",
+        maxWidth: '1024px',
+        minWidth: '1023px',
+        width: '100%',
+    },
+    flexCol: { 
+        display: "flex",
+        flexDirection: "column",    
+        justifyContent: "center",
+        textAlign: "left",
+        margin: "2vh 5%",
+    },
+    content:{
+        alignSelf: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignContent: 'center',
+        justifyCntent: 'center',
+        alignItems:'center',
+        fontSize: '1rem', 
+        maxWidth: '1024px',
+        '& p':{ 
+            margin: 'auto .5rem'
+        }
+    },
+
+    //card styles
     agentCard:{
-        margin: theme.spacing(2),
+        margin: 'auto',
         width: 250,
-        height: 400,  
+        height: 400, 
+        position: 'relative',
+        zIndex: '-1'
     },
-    media: {
-        height: 100,
+    headshot: {
+        height: 240, 
+    },
+    propertyCard:{
+        margin: 10,
+        height: "45vh",
+        width: "60%",
+        position:'relative',
+        zIndex:'-1'
+    },
+    propertyPhoto:{
+        height: "50vh",
     },
     title: {
         color: theme.palette.primary.dark,
@@ -24,44 +71,33 @@ export const useStyles = makeStyles(theme => ({
         color:'rgb(180 1 1)',
 
     },
-    flexRow: {
-        display: "flex",
-        justifyContent: "center",
-    },
-    flexCol: { 
-        display: "flex",
-        flexDirection: "column",    
-        justifyContent: "center",
-        textAlign: "left",
-        margin: "0 5%",
-    },
-    headshot: {
-        height: 240, 
-    },
-    propertyCard:{
-        margin: 10,
-        height: "45vh",
-        width: "40%",
-    },
-    propertyPhoto:{
-        height: "70vh",
-    },
-    markdown: {
-        ...theme.typography.body2,
-        padding: theme.spacing(3, 0),
-    },
+
+    // font styles
     p:{
-        fontSize: "1.25rem",
-        margin: "0 5%",
+        fontSize: "1rem",
     },
     list:{
-        fontSize: "2rem",
-        margin: " 0 8rem",
-        padding: "0 0 0 4rem",
+        fontSize: "1.15rem",
+        margin: " .5rem 0",
+        padding: "0 0 0 .5rem",
+        '& li':{
+            padding: "0 0 .5rem 1rem",
+        }
     },
     heading:{
-        fontSize: "3rem",
+        display: 'flex',
+        alignSelf: 'center',
+        textAlign:'center',
+        fontSize: "1.5rem",
         margin: "0 8rem",
         padding: "0rem",
-    }
+    },
+
+    //decorations
+    horizLine:{
+        margin: '2vh auto 2vh auto',
+        border: '1px solid #666666',
+        maxWidth: '1024px',
+        width: '100%'
+    },
 }))

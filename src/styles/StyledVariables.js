@@ -49,14 +49,8 @@ const NavBar = styled.div`
     height: 3.5rem;
     margin: 1rem 0;
     width: 100%;
-`
-
-const NavButton = styled.button`
-    font-size: 1.5rem;
-    color: white;
-    text-shadow: -1px 2px 0 #000;
-    line-height: 1.5rem;
-    padding: 0 5rem 0 5rem;
+    position: relative;
+    z-index: 100;
 `
 
 // cards
@@ -199,7 +193,7 @@ const StyledVariables = {
     H3,
     P,
     NavBar,
-    NavButton,
+
     Div,
     TwoColDiv,
     Img,

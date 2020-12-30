@@ -53,7 +53,7 @@ export default function ServicesOffered() {
         >
           Contact
         </Button>
-        <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+        <Popper className={classes.popper} open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
             <Grow
               {...TransitionProps}
@@ -61,8 +61,8 @@ export default function ServicesOffered() {
             >
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
-                  <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link className={classes.link} style={{textDecoration: 'none'}}  to ='/contact/contact-form' ><MenuItem onClick={handleClose} >Contact Us</MenuItem></Link>
+                  <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                    <Link className={classes.link} to ='/contact/contact-form' ><MenuItem onClick={handleClose} >Contact Us</MenuItem></Link>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

@@ -60,8 +60,8 @@ export default function ServicesOffered() {
             >
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
-                  <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link className={classes.link} style={{textDecoration: 'none'}} to ='/referrals/referrals4you' ><MenuItem onClick={handleClose} >Referrals 4 You</MenuItem></Link>
+                  <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                    <Link className={classes.link} to ='/referrals/referrals4you' ><MenuItem onClick={handleClose} >Referrals 4 You</MenuItem></Link>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
