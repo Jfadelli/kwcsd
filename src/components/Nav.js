@@ -11,27 +11,25 @@ import Home from './navLinks/HomeLink.js'
 import Logo from '../static/images/logo.jpg'
 import StyledVariables from '../styles/StyledVariables.js'
 
-const SV = StyledVariables
+import { useMediaQuery } from './hooks/mediaQuery'
 
+const SV = StyledVariables
 
 const toolBarStyle = {
   display: 'flex',
   justifyContent: 'space-evenly',
-}
-
-const logoStyle = {
-  display: 'flex',
-  height:'88px',
-  width:'150px',
-  margin: "0 100px 0 auto "
+  
 }
 
 export default function Nav() {
+  const isRow = useMediaQuery('(min-width: 768px)');
+  const isSmall = useMediaQuery('(min-width: 768px)');
+
   return (
   <SV.SpacedDiv>
-    <SV.NavBar>
-      <Toolbar  style={toolBarStyle} >
-        <a href='/'> <img style={logoStyle}src={Logo} alt='keller williams commercial' /></a>
+    <SV.NavBar style={styles.container(isRow)}>
+      <Toolbar style={styles.container(isRow)}>
+        <a href='/'> <img style={logoStyle.container(isSmall)} src={Logo} alt='keller williams commercial' /></a>
         <Home />
         <ServicesOffered />
         <TeamBio />
@@ -43,4 +41,21 @@ export default function Nav() {
 
   </SV.SpacedDiv>
   );
+}
+
+const styles = {
+  container: isRow => ({
+    flexDirection: isRow ? 'row' : 'column',
+    height: isRow ? '' : 'auto',
+    alignContent: isRow ? '' : 'center'
+  }),
+};
+
+const logoStyle = {
+  container: isSmall => ({
+    display: isSmall ? 'flex' : 'none',
+    height: isSmall ? '88px': '0',
+    width: isSmall ? '150px' : '0',
+    margin: isSmall ?  '0 100px 0 auto' : 'auto'
+  })
 }
