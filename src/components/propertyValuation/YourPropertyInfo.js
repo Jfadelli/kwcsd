@@ -8,41 +8,24 @@ import PropertyPhoto from '../../static/images/mf-cre.jpg'
 import Footer from '../footer'
 
 import StyledVariables from '../../styles/StyledVariables'
+
+import { useStyles } from '../../styles/style'
+
+import { initialValues, initialFormErrors } from './initialValues'
+
+import { useMediaQuery } from '../hooks/mediaQuery'
+
 const SV = StyledVariables
 
-//////////////// Initial Values ////////////////
-const initialValues = {
-    name: '',
-    email: '',
-    phone: '',
-    street_address: '',
-    city: '',
-    zip: '',
-    country: '',
-    property_type: {
-        multifamily: false,
-        office: false,
-        industrial: false,
-        retail: false,
-        hospitality: false,
-        recreation: false,
-        specialty: false
-    },
-    building_sf: '',
-    lot_size: ''
-    
-}
-
-const initialFormErrors = {
-    name: '',
-    email: '',
-    phone: '',
-    street_address: '',
-    city: '',
-    zip: '',
-    country: '',
-    building_sf: '',
-    lot_size: ''
+const Form ={
+    display:'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
+    borderRadius: '2px',
+    margin: '0 0 5vh 0',
+    width:'100%',
 }
 
 export default function YourPropertyInfo(props) {
@@ -50,6 +33,9 @@ export default function YourPropertyInfo(props) {
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [disabled, setDisabled] = useState(true);
+    const isSmall = useMediaQuery('(min-width: 768px)');
+    const isRow = useMediaQuery('(min-width: 768px)');
+    // const isWide = useMediaQuery('(min-width: 768px)');
 
     //////////////// HELPERS ////////////////
     const postNewProperty = property => {
@@ -92,11 +78,8 @@ export default function YourPropertyInfo(props) {
         })
     }
 
-
     const onSubmit = evt => {
         evt.preventDefault()
-        console.log('hello')
-
         const newProperty = {
             name: formValues.name.trim(),
             email: formValues.email.trim(),
@@ -109,10 +92,8 @@ export default function YourPropertyInfo(props) {
             building_sf: formValues.building_sf.trim(),
             lot_size: formValues.lot_size.trim()
         }
-        console.log('newProperty', newProperty)
         setProperty(newProperty)
         postNewProperty(property)
-        // history.push('/thank-you')
     }
 
     //////////////// SIDE EFFECTS //////////////// 
@@ -122,20 +103,28 @@ export default function YourPropertyInfo(props) {
         })
     }, [formValues])
 
+    const classes = useStyles()
+
     return (
-        <SV.Div>
-            <SV.CardContainer>
-                <SV.P>Representing sellers of investment real estate may require many of the same services, in addition to a thorough understanding of electronic marketing media, a creative approach to packaging, expert sales and negotiating skills, and a strong broker network. In addition to investment brokerage, we offer consulting services in development, financial analysis and finance. Our Investment Services team has over 35 years experience, which covers all of the above criteria essential to providing our clients with the highest quality representation available.</SV.P>
-                <SV.H2>Property Information</SV.H2>
-            </SV.CardContainer>
-            <SV.TwoColDiv > 
-                <SV.CardContainer>
-                    <SV.Img src={PropertyPhoto} alt="mf cre blg"/>
-                </SV.CardContainer>        
-                <SV.CardContainer>
-                    <SV.Form onSubmit={onSubmit} >
-                        <SV.Label>Enter your name:&nbsp;
-                            <SV.Input
+        <div className={classes.wrapper}>
+            <div className={classes.flexCol}>
+                <h2 className={classes.title}>Property Valuation</h2>
+                <div className={classes.content}>
+                    <section className={classes.p}>
+                        <p>Representing sellers of investment real estate may require many of the same services, in addition to a thorough understanding of electronic marketing media, a creative approach to packaging, expert sales and negotiating skills, and a strong broker network. In addition to investment brokerage, we offer consulting services in development, financial analysis and finance. Our Investment Services team has over 35 years experience, which covers all of the above criteria essential to providing our clients with the highest quality representation available.</p>
+                    </section>
+                    <SV.H2>Property Information</SV.H2>
+            <section className={classes.flexRow} style={isRowStyle.container(isRow)}>
+
+                <div className={classes.flexCol}>
+                    <SV.Img style={picStyle.container(isSmall)} src={PropertyPhoto} alt="mf cre blg"/>
+                </div> 
+                <div className={classes.flexRow} style={isRowStyle.container(isRow)}>    
+                <div className={classes.flexCol} >
+
+                    <SV.Form style={Form} onSubmit={onSubmit} >
+                        <SV.Label style={isRowStyle.container(isRow)}>Enter your name:&nbsp;
+                            <SV.Input 
                                 value={formValues.name}
                                 onChange={onInputChange}
                                 type='text'
@@ -144,7 +133,7 @@ export default function YourPropertyInfo(props) {
                             />
                         </SV.Label>
 
-                        <SV.Label>Enter your E-mail:&nbsp;*
+                        <SV.Label style={isRowStyle.container(isRow)}>Enter your E-mail:&nbsp;*
                             <SV.Input
                                 value={formValues.email}
                                 onChange={onInputChange}
@@ -154,7 +143,7 @@ export default function YourPropertyInfo(props) {
                             />
                         </SV.Label>
 
-                        <SV.Label>Enter your phone:&nbsp;*
+                        <SV.Label style={isRowStyle.container(isRow)}>Enter your phone:&nbsp;*
                             <SV.Input
                                 maxLength='10'
                                 value={formValues.phone}
@@ -166,7 +155,7 @@ export default function YourPropertyInfo(props) {
                             />
                         </SV.Label>
 
-                        <SV.Label>Enter your street address:&nbsp;*
+                        <SV.Label style={isRowStyle.container(isRow)}>Enter your street address:&nbsp;*
                             <SV.Input
                                 value={formValues.street_address}
                                 onChange={onInputChange}
@@ -176,7 +165,7 @@ export default function YourPropertyInfo(props) {
                             />
                         </SV.Label>
 
-                        <SV.Label>Enter your city:&nbsp;*
+                        <SV.Label style={isRowStyle.container(isRow)}>Enter your city:&nbsp;*
                                 <SV.Input
                                     value={formValues.city}
                                     onChange={onInputChange}
@@ -186,10 +175,21 @@ export default function YourPropertyInfo(props) {
                                 />
                             </SV.Label>
                     </SV.Form>
-                </SV.CardContainer>
-                <SV.CardContainer>
+                    <SV.Error>{formErrors.name}</SV.Error>
+                    <SV.Error>{formErrors.email}</SV.Error>
+                    <SV.Error>{formErrors.phone}</SV.Error>
+                    <SV.Error>{formErrors.street_address}</SV.Error>
+                    <SV.Error>{formErrors.city}</SV.Error>
+                    <SV.Error>{formErrors.zip}</SV.Error>
+                    <SV.Error>{formErrors.country}</SV.Error>
+                    <SV.Error>{formErrors.building_sf}</SV.Error>
+                    <SV.Error>{formErrors.lot_sf}</SV.Error>
+                    <SV.Error>{formErrors.property_type}</SV.Error>
+                </div>
+                
+                <div className={classes.flexCol} >
                     <SV.Form onSubmit={onSubmit} >
-                        <SV.Label>Enter your zip:&nbsp;*
+                        <SV.Label style={isRowStyle.container(isRow)}>Enter your zip:&nbsp;*
                             <SV.Input
                                 value={formValues.zip}
                                 onChange={onInputChange}
@@ -200,7 +200,7 @@ export default function YourPropertyInfo(props) {
                             />
                         </SV.Label>
 
-                        <SV.Label>Enter your country:&nbsp;*
+                        <SV.Label style={isRowStyle.container(isRow)}>Enter your country:&nbsp;*
                             <SV.Input
                                 value={formValues.country}
                                 onChange={onInputChange}
@@ -210,7 +210,7 @@ export default function YourPropertyInfo(props) {
                             />
                         </SV.Label>
 
-                        <SV.Label>Property Type:
+                        <SV.Label style={isRowStyle.container(isRow)}>Property Type:
                             <SV.Select
                                 onChange={onInputChange}
                                 value={formValues.property_type}
@@ -227,7 +227,7 @@ export default function YourPropertyInfo(props) {
                             </SV.Select>
                         </SV.Label>
 
-                        <SV.Label>Enter your building square footage:&nbsp;*
+                        <SV.Label style={isRowStyle.container(isRow)}>Enter your building square footage:&nbsp;*
                             <SV.Input
                                 value={formValues.building_sf}
                                 onChange={onInputChange}
@@ -237,7 +237,7 @@ export default function YourPropertyInfo(props) {
                             />
                         </SV.Label>
 
-                        <SV.Label>Enter your lot square footage:&nbsp;*
+                        <SV.Label style={isRowStyle.container(isRow)}>Enter your lot square footage:&nbsp;*
                             <SV.Input
                                 value={formValues.lot_size}
                                 onChange={onInputChange}
@@ -247,25 +247,27 @@ export default function YourPropertyInfo(props) {
                             />
                         </SV.Label>
                         <SV.Button disabled={disabled} onSubmit={onSubmit}>submit</SV.Button >
-
                     </SV.Form>
-                </SV.CardContainer>
-                
-            </SV.TwoColDiv>
-
-            {/* errors */}
-            <SV.Error>{formErrors.name}</SV.Error>
-            <SV.Error>{formErrors.email}</SV.Error>
-            <SV.Error>{formErrors.phone}</SV.Error>
-            <SV.Error>{formErrors.street_address}</SV.Error>
-            <SV.Error>{formErrors.city}</SV.Error>
-            <SV.Error>{formErrors.zip}</SV.Error>
-            <SV.Error>{formErrors.country}</SV.Error>
-            <SV.Error>{formErrors.building_sf}</SV.Error>
-            <SV.Error>{formErrors.lot_sf}</SV.Error>
-            <SV.Error>{formErrors.property_type}</SV.Error>
-            
+                </div>
+                </div>
+                </section>
+            </div>
+        </div>     
         <Footer />
-        </SV.Div >
+        </div>
     )
 }
+
+const picStyle = {
+    container: isSmall => ({
+      display: isSmall ? 'flex' : 'none',
+    }),
+  }
+
+  const isRowStyle = {
+    container: isRow => ({
+        flexDirection: isRow ? 'row' : 'column',
+        alignItems: isRow ? 'flex-start' : 'center' ,
+        display: isRow ? '' : 'flex'
+    })
+  }

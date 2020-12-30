@@ -23,11 +23,9 @@ const flex = `
 const Div = styled.div`
     ${flex};
 `
-
 const SpacedDiv = styled.div`
     ${flex};
     margin: 0 0 .5rem;
-
 `
 
 // Navbar
@@ -55,68 +53,46 @@ const NavBar = styled.div`
 
 // cards
 
-const LoginCard = styled.div`
-    ${flex};
-    margin: 10px 0 10px 0;
-    width: ${cardSize};
-    background-color: ${timberwolf};
-    border: 1px solid ${lavendarBlush};
-    border-radius: 10px;
-`
-
-const CardContainer = styled.div`
-    ${flex};
-    margin: 0 5% 0 5%;
-    border-radius: 2px;
-    width: 66%;
-`
-
-const FormCols = styled.div`
-${flex};
-/* background-color:blue; */
-border-radius: 2px;
-margin: 0 0 5vh 0;
-width:100%;
-`
-
 const Form = styled.form`
     ${flex};
     /* background-color:blue; */
     border-radius: 2px;
     margin: 0 0 5vh 0;
     width:100%;
+    justify-content: flex-start;
+    align-items: center;
 `
 
 const Input = styled.input`
-    ${flex};
     color: ${jet};
-    margin: ${margin};
-    font-weight: 600;
-    font-size: 1.25rem;
+    margin: 10px 0 20px 0;
+    font-size: 1rem;
     height: 1.75rem;
     width: 350px;
     text-align: left;
     border: 1px solid black;
     border-radius: 3px;
+
 `
 
 const Label = styled.label`
     /* background-color: red; */
     color: black;
-    margin: 0 0 10px 0;
+    margin: 0 0 10px;
     font-weight: 700;
-    font-size: 1.5rem;
-    width: 100%;
+    font-size: 1rem;
+    width: auto;
+    height: auto;
 `
 
 const Select = styled.select`
-    display: flex;
-    color: ${jet};
-    margin: ${margin};
-    font-size: 1.25rem;
-    width: 360px;
+    margin: 10px 0 20px 0;
+    font-size: 1rem;
+    height: 1.75rem;
+    width: 350px;
+    text-align: left;
     border: 1px solid black;
-
+    border-radius: 3px;
 `
 
 // fonts & headings
@@ -125,7 +101,7 @@ const H2 = styled.h2`
     text-shadow: -1px 2px 0 #000;
     background-color: none;
     margin: 10px 0 4vh 0;
-    font-size: 4em;
+    font-size: 2em;
     border-bottom: 2px solid black;
     `
 
@@ -146,13 +122,13 @@ const P = styled.p`
 `
 
 const Button = styled.button`
-    margin: 3vh;
-    width: auto;
-    height: auto;
-    font-size: 3em;
+    margin: 3vh 0;
+    width: 125px;
+    height: 50px;
+    font-size: 1.5em;
     font-variant: small-caps;
     border: 3px solid;
-    border-radius: 4px;
+    border-radius: 3px;
 `
 
 const Error = styled.div`
@@ -180,8 +156,6 @@ const StyledVariables = {
     kwRed,
     margin,
     flex,
-    LoginCard,
-    CardContainer,
     Form,
     Label,
     Select,
@@ -197,7 +171,6 @@ const StyledVariables = {
     Div,
     TwoColDiv,
     Img,
-    FormCols,
     SpacedDiv
 }
 

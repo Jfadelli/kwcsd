@@ -24,14 +24,11 @@
     input {
         min-width: 200px;
         max-width: 100%;
-
     } 
     textarea{
-
         min-width: 200px;
         max-width: 100%;
         width: 400px;
-
     }
 }
 
@@ -72,7 +69,7 @@ textarea[contenteditable]:empty::before {
   }
 
 #teamworkimg{
-    max-width: 400px;
+    max-width: 500px;
     max-height: 500px;
     box-shadow: 0 10px 10px 2px rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -98,7 +95,7 @@ select{
     font-size: 1.25rem;
     height: 1.75rem;    
     width: 33%; 
-    min-width: 400px;
+    min-width: 300px;
     border: 2px solid rgb(185, 185, 185);
     border-radius: 4px;
 }
