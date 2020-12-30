@@ -1,27 +1,53 @@
-.content{
+.wrapper{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-self: center;
+
+    width: 100%
+}
+.flexColumn{
+    display: flex;
+    max-width: 100%;
+    min-width: 1024px;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+
+} 
+
+@media screen and (max-width: 1024px) {
+    .flexColumn{
+        min-width: 200px;
+        max-width: 100%;
+    }
+    input {
+        min-width: 200px;
+        max-width: 100%;
+
+    } 
+    textarea{
+
+        min-width: 200px;
+        max-width: 100%;
+        width: 400px;
+
+    }
 }
 
 .contact-us{
     align-self: center;
-    width: 50%;
+    width: 100%;
     display:flex;
     flex-direction: column;
     text-align: left;
 }
 
-select{
-    font-weight: 500;
-    outline: none;
-    height: 25px;
-    padding: 0px;
-    border: 2px solid rgb(185, 185, 185);
-    border-radius: 4px;
-}
-
 input{
     outline: none;
+    width: 100%;
+    min-width: 200px;
+    max-width: 400px;
     height: 2.0rem;
     padding: 3px;
     border: 2px solid rgb(185, 185, 185);
@@ -31,7 +57,9 @@ input{
 
 textarea{
     display: block;
-    width: 100%;
+    width: 90%;
+    min-width:200px;
+    max-width: 400px;
     overflow: hidden;
     resize: both;
     min-height: 40px;
@@ -51,9 +79,13 @@ textarea[contenteditable]:empty::before {
 }
 
 .content-row{
+    width: 100%;
     display:flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-content: space-between;
+    margin: 10px;
+    padding: 10px;
 }
 
 label{
@@ -62,9 +94,11 @@ label{
 }
 
 select{
+    outline: none;
     font-size: 1.25rem;
     height: 1.75rem;    
     width: 33%; 
+    min-width: 400px;
     border: 2px solid rgb(185, 185, 185);
     border-radius: 4px;
 }
