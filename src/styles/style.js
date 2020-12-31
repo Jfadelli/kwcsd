@@ -165,4 +165,11 @@ export const useStyles = makeStyles((theme) => ({
         margin: '2rem 0',
         textAlign: 'center',
     },
+
+    // referrals page
+    iFrame:{
+        margin: '4vh 0 0 0',
+        maxWidth: '90%',
+        maxHeight: '50vh'
+    },
 }));
