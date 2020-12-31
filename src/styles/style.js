@@ -1,9 +1,14 @@
 import { makeStyles } from '@material-ui/styles'
 
 export const useStyles = makeStyles((theme) => ({
+    app:{
+        width: '100vw',
+        overflow: 'hidden',
+    },
     root: {
         display: 'flex',
         flexDirection: 'column',
+        width: '100vw',
         flexGrow: 1,
         margin: 'auto',
         alignItems:'center',
@@ -31,11 +36,12 @@ export const useStyles = makeStyles((theme) => ({
     },
 
     title:{
-        font: '4rem black',
+        font: '3rem black',
         fontFamily: 'Arial, Helvetica, sans-serif',
         padding: 0,
         margin: '5px 0 2vh 0',
         textAlign: 'center',
+        width: 'auto'
 
     },
     motto:{
@@ -44,11 +50,13 @@ export const useStyles = makeStyles((theme) => ({
         padding: '0',
         margin: '-2vh 0 1.5vh',
         textAlign: 'center',
+        width: 'auto'
 
     },
 
     // content 
     contentWrapper:{
+        width:'100vw',
         display: 'flex',
         flexDirection:'column',
         justifyContent: 'center',
@@ -63,6 +71,7 @@ export const useStyles = makeStyles((theme) => ({
         justifyCntent: 'center',
         alignItems:'center',
         fontSize: '1rem', 
+        width:'100vw',
         maxWidth: '1024px',
         '& p':{ 
             margin: 'auto .5rem'

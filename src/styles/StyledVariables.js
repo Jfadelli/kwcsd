@@ -24,8 +24,7 @@ const Div = styled.div`
     ${flex};
 `
 const SpacedDiv = styled.div`
-    ${flex};
-    margin: 0 0 .5rem;
+    margin: 0 0 2rem;
 `
 
 // Navbar
@@ -46,7 +45,7 @@ const NavBar = styled.div`
     background-color: ${kwRed};
     height: 3.5rem;
     margin: 1rem 0;
-    width: 100%;
+    width: 100vw;
     position: relative;
     z-index: 100;
 `

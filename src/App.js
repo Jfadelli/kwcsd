@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import theme from './styles/theme'
+import { useStyles} from './styles/style'
 
 // Components
 import Nav from './components/Nav'
@@ -29,9 +30,11 @@ import YourPropertyInfo from './components/propertyValuation/YourPropertyInfo'
 import Contact from './components/contact/ContactForm'
 import Referrals4You from './components/referrals/referrals'
 
+
 function App() {
+  const classes = useStyles();
   return (
-    <div>
+    <div className={classes.app}>
       <ThemeProvider theme={theme}>
       <CssBaseline />
         <Nav />
