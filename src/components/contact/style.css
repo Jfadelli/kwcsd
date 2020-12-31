@@ -55,7 +55,7 @@ input{
 textarea{
     display: block;
     width: 90%;
-    min-width:200px;
+    min-width:400px;
     max-width: 400px;
     overflow: hidden;
     resize: both;
@@ -94,7 +94,7 @@ select{
     outline: none;
     font-size: 1.25rem;
     height: 1.75rem;    
-    width: 33%; 
+    width: 400px; 
     min-width: 300px;
     border: 2px solid rgb(185, 185, 185);
     border-radius: 4px;
