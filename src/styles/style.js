@@ -170,6 +170,11 @@ export const useStyles = makeStyles((theme) => ({
     iFrame:{
         margin: '4vh 0 0 0',
         maxWidth: '90%',
-        maxHeight: '50vh'
+        maxHeight: '50vh',
     },
+
+    // nav
+    vwHelper:{
+        width: '100%'
+    }
 }));

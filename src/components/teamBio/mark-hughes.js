@@ -78,7 +78,7 @@ const rowStyle = {
       flexDirection: isRow ? 'row' : 'column',
       justifyContent: isRow ? 'space-evenly': 'center',
       alignItems: isRow ? 'center' : 'center',
-      maxWidth: isRow ? '1024px' : '500px',
+      maxWidth: isRow ? '1024px' : '500px', 
     })
   };
 

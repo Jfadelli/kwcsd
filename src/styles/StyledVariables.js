@@ -28,15 +28,6 @@ const SpacedDiv = styled.div`
 `
 
 // Navbar
-const TwoColDiv = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: auto auto;
-    max-width: 80%;
-    min-width: 60%;
-`
-
 const NavBar = styled.div`
     display: flex;
     flex-wrap: none;
@@ -45,9 +36,17 @@ const NavBar = styled.div`
     background-color: ${kwRed};
     height: 3.5rem;
     margin: 1rem 0;
-    width: 100vw;
     position: relative;
     z-index: 100;
+    width: 100%;
+`
+const TwoColDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto auto;
+    max-width: 80%;
+    min-width: 60%;
 `
 
 // cards
