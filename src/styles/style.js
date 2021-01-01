@@ -1,41 +1,42 @@
 import { makeStyles } from '@material-ui/styles'
+import { colors } from './colors'
 
 export const useStyles = makeStyles((theme) => ({
-    app:{
-        width: '100vw',
+    app: {
         overflow: 'hidden',
+        height: '100%',
+        minHeight: '100vh'
     },
     root: {
         display: 'flex',
         flexDirection: 'column',
         width: '100vw',
         flexGrow: 1,
-        margin: 'auto',
-        alignItems:'center',
-        alignContent:'center',
-        justifyContent:'center',
-        '& h2':{
-            fontSize:'3rem',
-            fontWeight:'400',
+        alignItems: 'center',
+        alignContent: 'center',
+        justifyContent: 'center',
+        '& h2': {
+            fontSize: '3rem',
+            fontWeight: '400',
             textAlign: 'center',
             margin: '1vh 0 2vh 0',
-            padding: '0'  
+            padding: '0'
         }
     },
 
-    hero:{
+    hero: {
         maxWidth: '1024px',
         margin: '20px auto',
-        '& @media (max-width 1024px)':{ display: 'none'}
-    } ,
-    header:{
+        '& @media (max-width 1024px)': { display: 'none' }
+    },
+    header: {
         display: 'flex',
-        flexDirection:'column',
+        flexDirection: 'column',
         justifyContent: 'center',
         fontSize: '2rem',
     },
 
-    title:{
+    title: {
         font: '3rem black',
         fontFamily: 'Arial, Helvetica, sans-serif',
         padding: 0,
@@ -44,7 +45,7 @@ export const useStyles = makeStyles((theme) => ({
         width: 'auto'
 
     },
-    motto:{
+    motto: {
         font: '2rem darkgray',
         fontFamily: 'Arial, Helvetica, sans-serif',
         padding: '0',
@@ -55,66 +56,65 @@ export const useStyles = makeStyles((theme) => ({
     },
 
     // content 
-    contentWrapper:{
-        width:'100vw',
+    contentWrapper: {
         display: 'flex',
-        flexDirection:'column',
+        flexDirection: 'column',
         justifyContent: 'center',
-        fontSize: '2rem',
+        fontSize: '1rem',
     },
 
-    content:{
+    content: {
         alignSelf: 'center',
         display: 'flex',
         flexDirection: 'column',
         alignContent: 'center',
         justifyCntent: 'center',
-        alignItems:'center',
-        fontSize: '1rem', 
-        width:'100vw',
+        alignItems: 'center',
+        fontSize: '1rem',
+        width: '100vw',
         maxWidth: '1024px',
-        '& p':{ 
+        '& p': {
             margin: 'auto .5rem'
         }
     },
 
-    gallery:{
-        alignSelf:'center',
+    gallery: {
+        alignSelf: 'center',
         display: 'flex',
         flexDirection: 'column',
         flexBasis: '375px',
         maxWidth: '1024px',
     },
 
-    link:{
+    link: {
         textDecoration: 'none',
         color: 'rgb(200 1 1)',
         fontWeight: '500',
         fontSize: '1.5rem',
-        textAlign:'center',
-        borderBottom: 'dotted black 1px',
+        textAlign: 'center',
+        borderBottom: '1px dotted black',
         lineHeight: '3rem',
         width: '50%',
-        '&:hover':{
-            color: 'rgb(230 70 1)',
-            borderBottom: 'dotted rgb(230 70 1) 1px'
+        '&:hover': {
+            color: colors.alt,
+            borderBottom: 'dotted '+ colors.alt
         }
     },
 
-    linkToLoopnet:{
+    linkToLoopnet: {
         textDecoration: 'none',
-        color: 'rgb(200 1 1)',
+        color: colors.main,
         fontWeight: '400',
-        fontSize: '2rem', 
+        fontSize: '2rem',
         margin: '0 0 2vh 0',
-        textAlign:'center',
-        '&:hover':{
-            color: 'rgb(230 70 1)',
+        textAlign: 'center',
+        '&:hover': {
+            color: colors.alt,
         }
     },
 
     // decorations
-    horizLine:{
+    horizLine: {
         margin: '5vh auto 2vh auto',
         border: '1px solid #666666',
         maxWidth: '1024px',
@@ -123,42 +123,42 @@ export const useStyles = makeStyles((theme) => ({
 
     // flex
     flexRow: {
-        alignSelf:'center',
+        alignSelf: 'center',
         display: "flex",
         justifyContent: "space-evenly",
         maxWidth: '1024px',
         minWidth: '1023px',
         width: '100%',
     },
-    flexCol: { 
+    flexCol: {
         display: "flex",
-        flexDirection: "column",    
+        flexDirection: "column",
         justifyContent: "center",
         textAlign: "left",
         margin: "2vh 5%",
     },
 
     // font styles
-    p:{
+    p: {
         fontSize: "1rem",
     },
-    list:{
+    list: {
         fontSize: "1.15rem",
         margin: " .5rem 0",
         padding: "0 0 0 .5rem",
-        '& li':{
+        '& li': {
             padding: "0 0 .5rem 1rem",
         }
     },
-    heading:{
+    heading: {
         display: 'flex',
         alignSelf: 'center',
-        textAlign:'center',
+        textAlign: 'center',
         fontSize: "1.5rem",
         margin: "0 8rem",
         padding: "0rem",
     },
-    subHeading:{
+    subHeading: {
         font: '2rem darkgray',
         fontFamily: 'Arial, Helvetica, sans-serif',
         padding: 0,
@@ -167,14 +167,114 @@ export const useStyles = makeStyles((theme) => ({
     },
 
     // referrals page
-    iFrame:{
+    iFrame: {
         margin: '4vh 0 0 0',
         maxWidth: '90%',
         maxHeight: '50vh',
     },
 
     // nav
-    vwHelper:{
-        width: '100%'
-    }
+    topSpace: {
+        padding: '.25vh'
+    },
+
+    navBar: {
+        // overflow:'hidden',
+        display: 'flex',
+        flexWrap: 'none',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        backgroundColor: colors.main,
+        height: '3.5rem',
+        margin: '1rem 0 2rem',
+        zIndex: ' 500',
+        width: '100vw',
+        boxShadow: 'rgba(0, 0, 0, 0.35) 0px 10px 5px',
+
+    },
+    navToolbar: {
+        display: 'flex'
+    },
+
+    // property evaluation form
+    form: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignContent: 'center',
+        borderRadius: '2px',
+        margin: '0 0 5vh 0',
+        width: '100%',
+        '& input': {
+            color: colors.jet,
+            margin: '10px 0 20px 0',
+            fontSize: '1rem',
+            height: '1.75rem',
+            width: '350px',
+            textAlign: 'left',
+            border: '1px solid black',
+            borderRadius: '3px',
+        },
+        '& label': {
+            color: 'black',
+            margin: '0 0 10px',
+            fontWeight: '700',
+            fontSize: '1rem',
+            width: 'auto',
+            height: 'auto',
+        },
+        '& select': {
+            margin: '10px 0 20px 0',
+            fontSize: '1rem',
+            height: '1.75rem',
+            width: '350px',
+            textAlign: 'left',
+            border: '1px solid black',
+            borderRadius: '3px',
+        },
+    },
+
+    h2: {
+        color: colors.main,
+        textShadow: '-1px 2px 0 #000',
+        backgroundColor: 'none',
+        margin: '10px 0 4vh 0',
+        fontSize: '2em',
+        borderBottom: '2px solid black',
+    },
+
+    button: {
+        margin: '3vh 0',
+        width: '125px',
+        height: '50px',
+        fontSize: '1.5em',
+        fontVariant: 'small-caps',
+        color: colors.main,
+        backgroundColor: colors.alt,
+        border: '2px dotted '+ colors.main,
+        borderRadius: '4px',
+        '&:hover':{
+            color: colors.alt,
+            backgroundColor: colors.main,
+            border: '2px dotted '+ colors.dark,
+            cursor: 'pointer'
+        }
+    },
+
+    errors: {
+        '& e': {
+            color: colors.main,
+            backgroundColor: 'none',
+            fontSize: '1.5rem',
+        }
+    },
+
+    img: {
+        width: 'auto',
+        height: '60vh',
+        border: '2px solid ' + colors.jet,
+        boxShadow: '30px -10px ' + colors.main,
+    },
+
 }));

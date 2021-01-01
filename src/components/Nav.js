@@ -9,20 +9,18 @@ import Referrals from './navLinks/Referrals.js'
 import Home from './navLinks/HomeLink.js'
 
 import Logo from '../static/images/logo.jpg'
-import StyledVariables from '../styles/StyledVariables.js'
+import { useStyles } from './../styles/style'
 import { useMediaQuery } from './hooks/mediaQuery'
-
-const SV = StyledVariables
-
 
 export default function Nav() {
   const isRow = useMediaQuery('(min-width: 769px)');
   const isSmall = useMediaQuery('(min-width: 769px)');
+  const classes = useStyles();
 
   return (
-  <SV.SpacedDiv>
-    <SV.NavBar style={styles.container(isRow)}>
-      <Toolbar style={styles.container(isRow)}>
+    <div className={classes.spacedDiv}>
+    <div className={classes.navBar} style={styles.container(isRow)}>
+      <Toolbar className={classes.navToolbar} style={styles.container(isRow)}>
         <a href='/'> <img style={logoStyle.container(isSmall)} src={Logo} alt='keller williams commercial' /></a>
         <Home />
         <ServicesOffered />
@@ -31,8 +29,8 @@ export default function Nav() {
         <Contact />
         <Referrals />
       </Toolbar>
-    </SV.NavBar>
-  </SV.SpacedDiv>
+    </div>
+  </div>
   );
 }
 

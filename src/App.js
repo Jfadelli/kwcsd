@@ -3,13 +3,12 @@ import { Route } from 'react-router-dom'
 import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import theme from './styles/theme'
-import { useStyles} from './styles/style'
+import { useStyles } from './styles/style'
 
 // Components
 import Nav from './components/Nav'
 import Home from './components/Home'
 import ThankYou from './components/thankYou'
-
 
 // Services
 import TenantRep from './components/services/tenant-rep'
@@ -35,34 +34,35 @@ function App() {
   const classes = useStyles();
   return (
     <div className={classes.app}>
+      <div className={classes.topSpace} />
       <ThemeProvider theme={theme}>
       <CssBaseline />
-        <Nav />
-          <Route exact path='/' component={Home}/>
-          <Route path='/thank-you' component={ThankYou} />
+      <Nav />
+      <Route exact path='/' component={Home} />
+      <Route path='/thank-you' component={ThankYou} />
 
-          {/* services offered links */}
-          <Route path='/services/tenant-rep' component={TenantRep} />
-          <Route path='/services/landlord-rep' component={LandlordRep} />
-          <Route path='/services/Investment-Acq' component={InvestmentAcquisitionAndSales} />
-          <Route path='/services/development-services' component={DevelopmentServices} />
+      {/* services offered links */}
+      <Route path='/services/tenant-rep' component={TenantRep} />
+      <Route path='/services/landlord-rep' component={LandlordRep} />
+      <Route path='/services/Investment-Acq' component={InvestmentAcquisitionAndSales} />
+      <Route path='/services/development-services' component={DevelopmentServices} />
 
-          {/* team bio links */}
-          <Route path='/team-bio/antonia-bokelman' component={AntoniaBio} />
-          <Route path='/team-bio/libby-brignon' component={LibbyBio} />
-          <Route path='/team-bio/mark-hughes' component={MarkBio} />
-          <Route path='/team-bio/sue-na' component={SueBio} />
-          <Route path='/team-bio/van-spears' component={VanBio} />
-          <Route path='/team-bio/will-schnieder' component={WillBio} />
+      {/* team bio links */}
+      <Route path='/team-bio/antonia-bokelman' component={AntoniaBio} />
+      <Route path='/team-bio/libby-brignon' component={LibbyBio} />
+      <Route path='/team-bio/mark-hughes' component={MarkBio} />
+      <Route path='/team-bio/sue-na' component={SueBio} />
+      <Route path='/team-bio/van-spears' component={VanBio} />
+      <Route path='/team-bio/will-schnieder' component={WillBio} />
 
-          {/* property valuation links */}
-          <Route path='/property-valuation/your-property-info' component={YourPropertyInfo} />
+      {/* property valuation links */}
+      <Route path='/property-valuation/your-property-info' component={YourPropertyInfo} />
 
-          {/* contact links */}
-          <Route path='/contact/contact-form' component={Contact} />
+      {/* contact links */}
+      <Route path='/contact/contact-form' component={Contact} />
 
-          {/* referral links */}
-          <Route path='/referrals/referrals4you' component={Referrals4You} />
+      {/* referral links */}
+      <Route path='/referrals/referrals4you' component={Referrals4You} />
       </ThemeProvider>
     </div>
   );

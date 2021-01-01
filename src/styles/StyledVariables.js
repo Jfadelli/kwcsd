@@ -23,31 +23,8 @@ const flex = `
 const Div = styled.div`
     ${flex};
 `
-const SpacedDiv = styled.div`
-    margin: 0 0 2rem;
-`
 
-// Navbar
-const NavBar = styled.div`
-    display: flex;
-    flex-wrap: none;
-    flex-direction: row;
-    justify-content: center;
-    background-color: ${kwRed};
-    height: 3.5rem;
-    margin: 1rem 0;
-    position: relative;
-    z-index: 100;
-    width: 100%;
-`
-const TwoColDiv = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: auto auto;
-    max-width: 80%;
-    min-width: 60%;
-`
+
 
 // cards
 
@@ -164,12 +141,8 @@ const StyledVariables = {
     H2,
     H3,
     P,
-    NavBar,
-
     Div,
-    TwoColDiv,
     Img,
-    SpacedDiv
 }
 
 export default StyledVariables
