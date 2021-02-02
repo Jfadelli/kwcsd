@@ -26,6 +26,9 @@ const contactUsSchema = Yup.object().shape({
         .string()
         .oneOf(['lessThan3','lessThan6','lessThan12','nextYear'])
         .required("timeframe is required"),
+    agent: Yup
+        .string()
+        .oneOf(['MarkHughes','LibbyBrignon','SueNa','NA']),
     message: Yup
         .string()
 })

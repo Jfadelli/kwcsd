@@ -174,7 +174,5 @@ export const useStyles = makeStyles((theme) => ({
     },
 
     // nav
-    vwHelper:{
-        width: '100%'
-    }
+
 }));

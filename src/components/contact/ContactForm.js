@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 // import { useHistory } from 'react-router-dom'
 import axios from 'axios'
+
 import * as Yup from 'yup'
 import Footer from '../footer'
 
@@ -26,6 +27,10 @@ const initialValues = {
         lessThan12: false,
         nextYear: false,
     },
+    agent:{
+        MarkHughes: false,
+    },
+
     name: '',
     email: '',
     phone: '',
@@ -35,6 +40,7 @@ const initialValues = {
 const initialFormErrors = {
     intent: '',
     timeframe: '',
+    agent: '',
     name: '',
     email: '',
     phone: '',
@@ -47,6 +53,7 @@ export default function Contact() {
     const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [disabled, setDisabled] = useState(true);
+
     // const [message, setMessage] = useState([]);
 
     //////////////// HELPERS ////////////////
@@ -100,6 +107,7 @@ export default function Contact() {
             phone: formValues.phone.trim(),
             message: formValues.message.trim()
         };
+        console.log('here is the message... ', newMessage)
         postNewMessage(newMessage);
     }
 
@@ -142,6 +150,19 @@ export default function Contact() {
                             <option value="nextYear">Next year</option>
                         </select>
 
+                        <label> Agent:</label>
+                        <select 
+                        value={formValues.agent}
+                        onChange={onInputChange}
+                        name='agent'
+                        >
+                            <option value='NA'>Please select and agent</option>
+                            <option value='MarkHughes'>Mark Hughes (Generalist)</option>
+                            <option value="LibbyBrignon">Libby Brignon (Land)</option>
+                            <option value="Sue Na">Sue Na (Multi-Family)</option>
+
+                        </select>
+
                         <label>Full Name</label>
                         <input 
                             value={formValues.name}
@@ -162,7 +183,6 @@ export default function Contact() {
 
                         <label>Phone Number</label>
                         <input
-                            maxLength='10'
                             value={formValues.phone}
                             onChange={onInputChange}
                             type='tel' 
