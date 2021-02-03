@@ -4,15 +4,12 @@ import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import theme from './styles/theme'
 import { useStyles } from './styles/style'
-<<<<<<< HEAD
 
 import {
   CSSTransition,
   TransitionGroup,
 } from 'react-transition-group';
 import './styles/fade.css'
-=======
->>>>>>> e51fab5db5bb02c6eb0786b873f09945c9b352f2
 
 // Components
 import Nav from './components/Nav'
