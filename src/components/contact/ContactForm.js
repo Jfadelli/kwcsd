@@ -156,7 +156,7 @@ export default function Contact() {
                         onChange={onInputChange}
                         name='agent'
                         >
-                            <option value='NA'>Please select and agent</option>
+                            <option value='NA'>Please select an agent</option>
                             <option value='MarkHughes'>Mark Hughes (Generalist)</option>
                             <option value="LibbyBrignon">Libby Brignon (Land)</option>
                             <option value="Sue Na">Sue Na (Multi-Family)</option>
