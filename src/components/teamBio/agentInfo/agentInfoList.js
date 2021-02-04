@@ -1,4 +1,11 @@
 export const Agent = {
+    JasonTest:{
+        name: 'Jason Fadelli',
+        phone: '760.405.3432',
+        email: 'jfadelli@gmail.com',
+        loopnetLink:'http://www.loopnet.com/brokerdirectory/profile/Mark%20Hughes/6glpewv',
+        loopnetListingImage:'https://images1.loopnet.com/i2/hU3AOPYluQ3AhAPo1uUnk0NYB4DiVaZaRga8xQr43dM/112/image.jpg',
+    },
     MarkHughes: {
         name: 'Mark Hughes',
         phone: '858.720.1900',
@@ -41,6 +48,13 @@ export const Agent = {
         loopnetLink:'https://www.loopnet.com/brokerdirectory/profile/will-schneider/wb7jxwl',
         loopnetListingImage:'https://images1.loopnet.com/i2/hU3AOPYluQ3AhAPo1uUnk0NYB4DiVaZaRga8xQr43dM/112/image.jpg',
     }, 
+    TommyShort:{
+        name: 'Tommy Short',
+        phone: '858.436.8303',
+        email: 'tommyeshort@kw.com',
+        loopnetLink:'/',
+        loopnetListingImage:'https://images1.loopnet.com/i2/hU3AOPYluQ3AhAPo1uUnk0NYB4DiVaZaRga8xQr43dM/112/image.jpg',
+    }
 }
 
 // \/\/\/ template to add new agent \/\/\/

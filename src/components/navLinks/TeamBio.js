@@ -65,6 +65,7 @@ export default function ServicesOffered() {
                     <Link className={classes.link} to = '/team-bio/libby-brignon'><MenuItem onClick={handleClose}>Libby Brignon</MenuItem></Link>
                     <Link className={classes.link} to = '/team-bio/mark-hughes' ><MenuItem onClick={handleClose} >Mark Hughes</MenuItem></Link>
                     <Link className={classes.link} to = '/team-bio/sue-na'><MenuItem onClick={handleClose}>Sue Na</MenuItem></Link>
+                    <Link className={classes.link} to = '/team-bio/tommy-short'><MenuItem onClick={handleClose}>Tommy Short</MenuItem></Link>
                     <Link className={classes.link} to = '/team-bio/van-spears'><MenuItem onClick={handleClose}>Van Spears</MenuItem></Link>
                     <Link className={classes.link} to = '/team-bio/will-schnieder'><MenuItem onClick={handleClose}>Will Schneider</MenuItem></Link>
                     {/* <Link className={classes.link} to = '/team-bio/someone-else'><MenuItem onClick={handleClose}>Someone Else</MenuItem></Link> */}

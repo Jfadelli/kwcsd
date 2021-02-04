@@ -13,6 +13,11 @@ import contactUsSchema from '../validation/contactUsSchema'
 
 import './style.css'
 
+import { Agent } from '../teamBio/agentInfo/agentInfoList'
+
+const liveAPI = 'https://kwcsd-mail-util.herokuapp.com/api/send'
+// const testAPI = 'http://localhost:5000/api/send'
+
 const initialValues = {
     intent: {
         buy: false,
@@ -28,7 +33,6 @@ const initialValues = {
         nextYear: false,
     },
     agent:{
-        MarkHughes: false,
     },
 
     name: '',
@@ -58,11 +62,11 @@ export default function Contact() {
 
     //////////////// HELPERS ////////////////
     const postNewMessage = message => {
-        axios.post('https://kwcsd-mail-util.herokuapp.com/api/send', message)
+        axios.post(liveAPI, message)
             .then(res => {
                 if (res.data.status === 'success'){
-                    alert('Message Sent.');
-                }else if (res.data.status === 'fail') {
+                    alert('Message Sent.');} 
+                else if (res.data.status === 'fail') {
                     alert('Message failed to send.')}
             })
             .catch(err => {
@@ -105,7 +109,8 @@ export default function Contact() {
             name: formValues.name.trim(),
             email: formValues.email.trim(),
             phone: formValues.phone.trim(),
-            message: formValues.message.trim()
+            message: formValues.message.trim(),
+            agent: formValues.agent
         };
         console.log('here is the message... ', newMessage)
         postNewMessage(newMessage);
@@ -156,12 +161,14 @@ export default function Contact() {
                         onChange={onInputChange}
                         name='agent'
                         >
-                            <option value='NA'>Please select an agent</option>
-                            <option value='MarkHughes'>Mark Hughes (Generalist)</option>
-                            <option value="LibbyBrignon">Libby Brignon (Land)</option>
-                            <option value="Sue Na">Sue Na (Multi-Family)</option>
-
+                            <option value={Agent.MarkHughes.email}>Please select an agent</option>
+                            <option value={Agent.JasonTest.email}>Jason Fadelli</option>
+                            <option value={Agent.MarkHughes.email}>Mark Hughes (Generalist)</option>
+                            <option value={Agent.Libby.email}>Libby Brignon (Land)</option>
+                            <option value={Agent.SueNa.email}>Sue Na (Multi-Family)</option>
+                            
                         </select>
+                        
 
                         <label>Full Name</label>
                         <input 

@@ -1,4 +1,5 @@
 import * as Yup from "yup";
+import { Agent } from '../teamBio/agentInfo/agentInfoList'
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
@@ -17,7 +18,6 @@ const contactUsSchema = Yup.object().shape({
         .max(10, 'Please double check your phone number')
         .min(10, "Phone number must include area code.")
         .required("Phone number is required"),
-
     intent: Yup
         .string()
         .oneOf(['buy','sell','lease','offerToLease','consult'])
@@ -28,7 +28,7 @@ const contactUsSchema = Yup.object().shape({
         .required("timeframe is required"),
     agent: Yup
         .string()
-        .oneOf(['MarkHughes','LibbyBrignon','SueNa','NA']),
+        .oneOf([Agent.MarkHughes.email, Agent.Libby.email, Agent.SueNa.email,'NA']),
     message: Yup
         .string()
 })

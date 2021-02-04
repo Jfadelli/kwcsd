@@ -29,6 +29,7 @@ import WillBio from './components/teamBio/will-schnieder'
 import VanBio from './components/teamBio/van-spears'
 import AntoniaBio from './components/teamBio/antonia-bokelman'
 import SueBio from './components/teamBio/sue-na'
+import TommyShortBio from './components/teamBio/tommy-short'
 
 // Misc Links
 import YourPropertyInfo from './components/propertyValuation/YourPropertyInfo'
@@ -65,6 +66,7 @@ function App() {
               <Route path='/team-bio/libby-brignon' component={LibbyBio} />
               <Route path='/team-bio/mark-hughes' component={MarkBio} />
               <Route path='/team-bio/sue-na' component={SueBio} />
+              <Route path='/team-bio/tommy-short' component={TommyShortBio} />
               <Route path='/team-bio/van-spears' component={VanBio} />
               <Route path='/team-bio/will-schnieder' component={WillBio} />
 

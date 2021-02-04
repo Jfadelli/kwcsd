@@ -6,7 +6,6 @@ import { Agent } from './agentInfo/agentInfoList'
 import { useStyles } from './style/teamBioStyles'
 import { useMediaQuery } from '../hooks/mediaQuery'
 
-
 import { Card,
     CardActionArea,
     CardMedia,
