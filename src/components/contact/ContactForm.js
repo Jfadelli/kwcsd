@@ -162,11 +162,14 @@ export default function Contact() {
                         name='agent'
                         >
                             <option value={Agent.MarkHughes.email}>Please select an agent</option>
-                            <option value={Agent.JasonTest.email}>Jason Fadelli</option>
-                            <option value={Agent.MarkHughes.email}>Mark Hughes (Generalist)</option>
+                            <option value={Agent.Antonia.email}>Antonia Bokelman</option>
                             <option value={Agent.Libby.email}>Libby Brignon (Land)</option>
+                            <option value={Agent.MarkHughes.email}>Mark Hughes (Generalist)</option>
                             <option value={Agent.SueNa.email}>Sue Na (Multi-Family)</option>
-                            
+                            <option value={Agent.TommyShort.email}>Tommy Short</option>
+                            <option value={Agent.VanSpears.email}>Van Spears</option>
+                            <option value={Agent.WillSchnieder.email}>Will Schnieder</option>
+
                         </select>
                         
 
