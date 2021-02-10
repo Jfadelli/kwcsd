@@ -44,7 +44,7 @@ export const Agent = {
     WillSchnieder: {
         name: 'Will Schnieder',
         phone: '760.450.4100',
-        email: 'will@kwcommercial.com',
+        email: 'willschneider@kwcommercial.com',
         loopnetLink:'https://www.loopnet.com/brokerdirectory/profile/will-schneider/wb7jxwl',
         loopnetListingImage:'https://images1.loopnet.com/i2/hU3AOPYluQ3AhAPo1uUnk0NYB4DiVaZaRga8xQr43dM/112/image.jpg',
     }, 
