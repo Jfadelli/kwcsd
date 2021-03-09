@@ -5,6 +5,7 @@ import Bio from './bios/tommyShortBio'
 import { Agent } from './agentInfo/agentInfoList'
 import { useStyles } from './style/teamBioStyles'
 import { useMediaQuery } from '../hooks/mediaQuery'
+import LoopnetListingImageOverride from '../../static/images/mediteraneo.JPG'
 
 import { Card,
     CardActionArea,
@@ -55,7 +56,7 @@ export default function TommyShortBio() {
                             <CardMedia 
                                 style={propPhotoStyle.container(isRow)}
                                 className={classes.propertyPhoto}
-                                image={Agent.TommyShort.loopnetListingImage}
+                                image={LoopnetListingImageOverride}
                                 title= {Agent.TommyShort.name + " Loopnet Listing"}
                             />
                         </a>

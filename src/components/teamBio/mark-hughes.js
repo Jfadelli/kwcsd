@@ -5,6 +5,7 @@ import Bio from './bios/markBio'
 import { Agent } from './agentInfo/agentInfoList'
 import { useStyles } from './style/teamBioStyles'
 import { useMediaQuery } from '../hooks/mediaQuery'
+import LoopnetListingImageOverride from '../../static/images/NCV.jpg'
 
 import { Card,
     CardActionArea,
@@ -55,7 +56,7 @@ export default function MarkBio() {
                             <CardMedia 
                                 style={propPhotoStyle.container(isRow)}
                                 className={classes.propertyPhoto}
-                                image={Agent.MarkHughes.loopnetListingImage}
+                                image={LoopnetListingImageOverride}
                                 title= {Agent.MarkHughes.name + " Loopnet Listing"}
                             />
                         </a>
