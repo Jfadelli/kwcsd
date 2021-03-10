@@ -28,9 +28,13 @@ const contactUsSchema = Yup.object().shape({
         .required("timeframe is required"),
     agent: Yup
         .string()
-        .oneOf([Agent.MarkHughes.email, Agent.Libby.email, Agent.SueNa.email,'NA']),
+        .oneOf([Agent.MarkHughes.email, Agent.Libby.email, Agent.SueNa.email, Agent.JasonTest.email, Agent.TommyShort.email, Agent.VanSpears.email, Agent.WillSchnieder.email, Agent.Antonia.email,'NA']),
     message: Yup
-        .string()
+        .string(),
+    captcha: Yup
+        .boolean(true)
+        .required()
+
 })
 
 export default contactUsSchema

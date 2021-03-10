@@ -15,30 +15,33 @@ import './style.css'
 
 import { Agent } from '../teamBio/agentInfo/agentInfoList'
 
-const liveAPI = 'https://kwcsd-mail-util.herokuapp.com/api/send'
-// const testAPI = 'http://localhost:5000/api/send'
+import ReCAPTCHA from "react-recaptcha";
+
+// const liveAPI = 'https://kwcsd-mail-util.herokuapp.com/api/send'
+const testAPI = 'http://localhost:5000/api/send'
+
 
 const initialValues = {
     intent: {
-        buy: false,
+        buy: true,
         sell: false,
         lease: false,
         offerToLease: false,
         consult: false,
     },
     timeframe: {
-        lessThan3: false,
+        lessThan3: true,
         lessThan6: false,
         lessThan12: false,
         nextYear: false,
     },
-    agent:{
-    },
+    agent: 'jfadelli@gmail.com',
+    name: 'jason',
+    email: 'jfadelli@gmail.com',
+    phone: '7604053432',
+    message: 'test message',
+    captcha: false
 
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
 }
 
 const initialFormErrors = {
@@ -48,11 +51,13 @@ const initialFormErrors = {
     name: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
+    captcha:''
 }
 
 
 export default function Contact() {
+    // const [captchaValue, setCaptchaValue] = useState(false)
     const isHidden = useMediaQuery('(min-width: 1023px)');
     const [formValues, setFormValues] = useState(initialValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors);
@@ -62,12 +67,14 @@ export default function Contact() {
 
     //////////////// HELPERS ////////////////
     const postNewMessage = message => {
-        axios.post(liveAPI, message)
+        axios.post(testAPI, message)
             .then(res => {
-                if (res.data.status === 'success'){
-                    alert('Message Sent.');} 
+                if (res.data.status === 'success') {
+                    alert('Message Sent.');
+                }
                 else if (res.data.status === 'fail') {
-                    alert('Message failed to send.')}
+                    alert('Message failed to send.')
+                }
             })
             .catch(err => {
                 console.log(err)
@@ -103,7 +110,7 @@ export default function Contact() {
 
     const onSubmitHandler = evt => {
         evt.preventDefault();
-        const newMessage ={
+        const newMessage = {
             intent: formValues.intent,
             timeframe: formValues.timeframe,
             name: formValues.name.trim(),
@@ -115,6 +122,7 @@ export default function Contact() {
         console.log('here is the message... ', newMessage)
         postNewMessage(newMessage);
     }
+
 
     //////////////// SIDE EFFECTS //////////////// 
     useEffect(() => {
@@ -129,11 +137,11 @@ export default function Contact() {
                 <div className="content-row">
                     <form className="contact-us" onSubmit={onSubmitHandler}>
                         <label>I am looking to:</label>
-                        <select 
+                        <select
                             value={formValues.intent}
                             onChange={onInputChange}
                             name="intent"
-                            >   
+                        >
                             <option value=''>Please select an option</option>
                             <option value="buy">Buy</option>
                             <option value="sell">Sell</option>
@@ -143,11 +151,11 @@ export default function Contact() {
                         </select>
 
                         <label >My Timeframe is:</label>
-                        <select 
+                        <select
                             value={formValues.timeframe}
                             onChange={onInputChange}
                             name="timeframe"
-                            >
+                        >
                             <option value=''>Please select an option</option>
                             <option value="lessThan3">Less than 3 months</option>
                             <option value="lessThan6">Less than 6 months</option>
@@ -156,11 +164,12 @@ export default function Contact() {
                         </select>
 
                         <label> Agent:</label>
-                        <select 
-                        value={formValues.agent}
-                        onChange={onInputChange}
-                        name='agent'
+                        <select
+                            value={formValues.agent}
+                            onChange={onInputChange}
+                            name='agent'
                         >
+                            <option value={Agent.JasonTest.email}>Jason Test</option>
                             <option value={Agent.MarkHughes.email}>Please select an agent</option>
                             <option value={Agent.Antonia.email}>Antonia Bokelman</option>
                             <option value={Agent.Libby.email}>Libby Brignon (Land)</option>
@@ -171,22 +180,22 @@ export default function Contact() {
                             <option value={Agent.WillSchnieder.email}>Will Schnieder</option>
 
                         </select>
-                        
+
 
                         <label>Full Name</label>
-                        <input 
+                        <input
                             value={formValues.name}
                             onChange={onInputChange}
-                            type='text' 
+                            type='text'
                             placeholder='full name'
-                            name='name' 
+                            name='name'
                         />
 
                         <label>Email Address</label>
-                        <input 
+                        <input
                             value={formValues.email}
                             onChange={onInputChange}
-                            type='email' 
+                            type='email'
                             placeholder='email address'
                             name='email'
                         />
@@ -195,26 +204,32 @@ export default function Contact() {
                         <input
                             value={formValues.phone}
                             onChange={onInputChange}
-                            type='tel' 
+                            type='tel'
                             placeholder='phone'
                             name='phone'
+                            maxLength='10'
                         />
 
                         <label> Message</label>
                         <textarea
                             value={formValues.message}
                             onChange={onInputChange}
-                            type='text' 
-                            className="message-box" 
+                            type='text'
+                            className="message-box"
                             placeholder='type your message here'
                             name="message"
                         />
-
+                        <ReCAPTCHA
+                            sitekey="6LdbnHgaAAAAAIiCridFguHC1-fhyJX9QgoEdiQ_"
+                            onChange={onInputChange}
+                        />
                         <button disabled={disabled} onSubmit={onSubmitHandler}> Send</button>
+
                     </form>
                     <img style={styles.container(isHidden)} id="teamworkimg" alt="generic team working together" src={Teamwork} />
                 </div>
             </div>
+
 
             <Footer />
         </div>
@@ -223,6 +238,6 @@ export default function Contact() {
 
 const styles = {
     container: isHidden => ({
-      display: isHidden ? 'flex' : 'none',
+        display: isHidden ? 'flex' : 'none',
     })
-  };
+};
