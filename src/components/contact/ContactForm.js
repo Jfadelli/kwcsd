@@ -17,8 +17,8 @@ import { Agent } from '../teamBio/agentInfo/agentInfoList'
 
 import ReCAPTCHA from "react-recaptcha";
 
-// const liveAPI = 'https://kwcsd-mail-util.herokuapp.com/api/send'
-const testAPI = 'http://localhost:5000/api/send'
+const liveAPI = 'https://kwcsd-mail-util.herokuapp.com/api/send'
+// const testAPI = 'http://localhost:5000/api/send'
 
 
 const initialValues = {
@@ -35,11 +35,11 @@ const initialValues = {
         lessThan12: false,
         nextYear: false,
     },
-    agent: 'jfadelli@gmail.com',
-    name: 'jason',
-    email: 'jfadelli@gmail.com',
-    phone: '7604053432',
-    message: 'test message',
+    agent: '',
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
     captcha: false
 
 }
@@ -67,7 +67,7 @@ export default function Contact() {
 
     //////////////// HELPERS ////////////////
     const postNewMessage = message => {
-        axios.post(testAPI, message)
+        axios.post(liveAPI, message)
             .then(res => {
                 if (res.data.status === 'success') {
                     alert('Message Sent.');
@@ -169,9 +169,9 @@ export default function Contact() {
                             onChange={onInputChange}
                             name='agent'
                         >
-                            <option value={Agent.JasonTest.email}>Jason Test</option>
+                            {/* <option value={Agent.JasonTest.email}>Jason Test</option> */}
                             <option value={Agent.MarkHughes.email}>Please select an agent</option>
-                            <option value={Agent.Antonia.email}>Antonia Bokelman</option>
+                            <option value={Agent.AndreFournier.email}>Andre Forunier</option>
                             <option value={Agent.Libby.email}>Libby Brignon (Land)</option>
                             <option value={Agent.MarkHughes.email}>Mark Hughes (Team Lead | Generalist)</option>
                             <option value={Agent.SueNa.email}>Sue Na (Flex/Industrial | Multi Unit | Retail)</option>
