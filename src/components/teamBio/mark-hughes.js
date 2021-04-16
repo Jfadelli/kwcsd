@@ -7,15 +7,17 @@ import { useStyles } from './style/teamBioStyles'
 import { useMediaQuery } from '../hooks/mediaQuery'
 import LoopnetListingImageOverride from '../../static/images/NCV.jpg'
 
-import { Card,
+import {
+    Card,
     CardActionArea,
     CardMedia,
     CardContent,
-    Typography } from '@material-ui/core'
+    Typography
+} from '@material-ui/core'
 
 // mailto util
 const mailTo = "mailto:"
-const mailtoLink = mailTo+Agent.MarkHughes.email
+const mailtoLink = mailTo + Agent.MarkHughes.email
 
 export default function MarkBio() {
     const classes = useStyles()
@@ -28,14 +30,14 @@ export default function MarkBio() {
                 <Card className={classes.agentCard}>
                     <CardActionArea>
                         <a href={mailtoLink}>
-                            <CardMedia 
+                            <CardMedia
                                 className={classes.headshot}
                                 image={Headshot}
                                 title={Agent.MarkHughes.name + " Headshot"}
-                                />
-                       </a>
+                            />
+                        </a>
                     </CardActionArea>
-               
+
                     <div className={classes.agentInfo}>
                         <p gutterBottom varient="h5" component="h1" className={classes.title}>
                             {Agent.MarkHughes.name}
@@ -43,7 +45,7 @@ export default function MarkBio() {
 
                         <Typography variant="h5" color="textSecondary" component="p">
                             {Agent.MarkHughes.phone}
-                            </Typography>
+                        </Typography>
                         <Typography variant="h6">
                             <a className={classes.email} href={mailtoLink}>
                                 {Agent.MarkHughes.email}
@@ -54,22 +56,22 @@ export default function MarkBio() {
                 <Card style={propCardStyle.container(isRow)} className={classes.propertyCard}>
                     <CardActionArea>
                         <a href={Agent.MarkHughes.loopnetLink}>
-                            <CardMedia 
+                            <CardMedia
                                 style={propPhotoStyle.container(isRow)}
                                 className={classes.propertyPhoto}
                                 image={LoopnetListingImageOverride}
-                                title= {Agent.MarkHughes.name + " Loopnet Listing"}
+                                title={Agent.MarkHughes.name + " Loopnet Listing"}
                             />
                         </a>
                     </CardActionArea>
                 </Card>
             </div>
             <div className={classes.horizLine} />
-            <div className={classes.flexCol}> 
+            <div className={classes.flexCol}>
 
-                    <Bio />
+                <Bio />
 
-                <Footer/>
+                <Footer />
             </div>
         </div>
     )
@@ -77,23 +79,23 @@ export default function MarkBio() {
 
 const rowStyle = {
     container: isRow => ({
-      flexDirection: isRow ? 'row' : 'column',
-      justifyContent: isRow ? 'space-evenly': 'center',
-      alignItems: isRow ? 'center' : 'center',
-      maxWidth: isRow ? '1024px' : '500px', 
+        flexDirection: isRow ? 'row' : 'column',
+        justifyContent: isRow ? 'space-evenly' : 'center',
+        alignItems: isRow ? 'center' : 'center',
+        maxWidth: isRow ? '1024px' : '500px',
     })
-  };
+};
 
-  const propCardStyle = {
+const propCardStyle = {
     container: isRow => ({
         maxHeight: isRow ? '45vh' : '30vh',
         padding: isRow ? '0' : '10px',
     })
-  };
-  
-  const propPhotoStyle = {
+};
+
+const propPhotoStyle = {
     container: isRow => ({
         maxHeight: isRow ? '50vh' : '30vh',
         padding: isRow ? '0' : '10px',
     })
-  };
+};
