@@ -1,22 +1,26 @@
+
 import React from 'react'
-import Headshot from '../../static/images/van.jpg'
+import Headshot from '../../static/images/AndreHeadshot.png'
 import Footer from '../footer'
-import Bio from './bios/vanBio'
+import Bio from './bios/andreBio'
 import { Agent } from './agentInfo/agentInfoList'
 import { useStyles } from './style/teamBioStyles'
 import { useMediaQuery } from '../hooks/mediaQuery'
 
-import { Card,
+import {
+    Card,
     CardActionArea,
     CardMedia,
     CardContent,
-    Typography } from '@material-ui/core'
+    Typography
+} from '@material-ui/core'
+
 
 // mailto util
 const mailTo = "mailto:"
-const mailtoLink = mailTo+Agent.VanSpears.email
+const mailtoLink = mailTo + Agent.AndreFournier.email
 
-export default function VanBio() {
+export default function AndreFournierBio() {
     const classes = useStyles()
     const isRow = useMediaQuery('(min-width: 768px)');
 
@@ -27,47 +31,49 @@ export default function VanBio() {
                 <Card className={classes.agentCard}>
                     <CardActionArea>
                         <a href={mailtoLink}>
-                            <CardMedia 
+                            <CardMedia
                                 className={classes.headshot}
                                 image={Headshot}
-                                title={Agent.VanSpears.name + " Headshot"}
-                                />
-                       </a>
+                                title={Agent.AndreFournier.name + " Headshot"}
+                            />
+                        </a>
                     </CardActionArea>
-               
+
                     <div className={classes.agentInfo}>
-                        <p gutterBottom varient="h5" component="h1" className={classes.title}>
-                            {Agent.VanSpears.name}
+                        <p className={classes.title}>
+                            {Agent.AndreFournier.name}
                         </p>
                         <Typography variant="h5" color="textSecondary" component="p">
-                            {Agent.VanSpears.phone}
-                            </Typography>
-                        <Typography variant="h6" >
-                            <a className={classes.email} href={mailtoLink} style={{fontSize:"15px"}}>
-                                {Agent.VanSpears.email}
+                            {Agent.AndreFournier.phone}
+                        </Typography>
+
+                        <Typography variant="h6">
+                            <a className={classes.email} href={mailtoLink}>
+                                {Agent.AndreFournier.email}
                             </a>
                         </Typography>
                     </div>
+
                 </Card>
                 <Card style={propCardStyle.container(isRow)} className={classes.propertyCard}>
                     <CardActionArea>
-                        <a href={Agent.VanSpears.loopnetLink}>
-                            <CardMedia 
+                        <a href={Agent.AndreFournier.loopnetLink}>
+                            <CardMedia
                                 style={propPhotoStyle.container(isRow)}
                                 className={classes.propertyPhoto}
-                                image={Agent.VanSpears.loopnetListingImage}
-                                title= {Agent.VanSpears.name + " Loopnet Listing"}
+                                image={Agent.AndreFournier.loopnetListingImage}
+                                title={Agent.AndreFournier.name + " Loopnet Listing"}
                             />
                         </a>
                     </CardActionArea>
                 </Card>
             </div>
             <div className={classes.horizLine} />
-            <div className={classes.flexCol}> 
+            <div className={classes.flexCol}>
 
-                    <Bio />
+                <Bio />
 
-                <Footer/>
+                <Footer />
             </div>
         </div>
     )
@@ -75,23 +81,24 @@ export default function VanBio() {
 
 const rowStyle = {
     container: isRow => ({
-      flexDirection: isRow ? 'row' : 'column',
-      justifyContent: isRow ? 'space-evenly': 'center',
-      alignItems: isRow ? 'center' : 'center',
-      maxWidth: isRow ? '1024px' : '500px',
+        flexDirection: isRow ? 'row' : 'column',
+        justifyContent: isRow ? 'space-evenly' : 'center',
+        alignItems: isRow ? 'center' : 'center',
+        maxWidth: isRow ? '1024px' : '500px',
     })
-  };
+};
 
-  const propCardStyle = {
+const propCardStyle = {
     container: isRow => ({
         maxHeight: isRow ? '45vh' : '30vh',
         padding: isRow ? '0' : '10px',
     })
-  };
-  
-  const propPhotoStyle = {
+};
+
+const propPhotoStyle = {
     container: isRow => ({
         maxHeight: isRow ? '50vh' : '30vh',
         padding: isRow ? '0' : '10px',
     })
-  };
+};
+

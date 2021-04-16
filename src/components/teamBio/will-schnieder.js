@@ -35,19 +35,19 @@ export default function WillBio() {
                        </a>
                     </CardActionArea>
                
-                    <CardContent>
-                        <Typography gutterBottom varient="h5" component="h1" className={classes.title}>
+                    <div className={classes.agentInfo}>
+                        <p gutterBottom className={classes.title}>
                             {Agent.WillSchnieder.name}
-                        </Typography>
+                        </p>
                         <Typography variant="h5" color="textSecondary" component="p">
                             {Agent.WillSchnieder.phone}
                             </Typography>
                         <Typography variant="h6">
-                            <a className={classes.email} href={mailtoLink}>
+                            <a className={classes.email} href={mailtoLink} style={{fontSize:"15px"}}>
                                 {Agent.WillSchnieder.email}
                             </a>
                         </Typography>
-                    </CardContent>
+                    </div>
                 </Card>
                 <Card style={propCardStyle.container(isRow)} className={classes.propertyCard}>
                     <CardActionArea>

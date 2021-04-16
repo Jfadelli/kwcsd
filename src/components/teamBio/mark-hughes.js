@@ -36,10 +36,11 @@ export default function MarkBio() {
                        </a>
                     </CardActionArea>
                
-                    <CardContent>
-                        <Typography gutterBottom varient="h5" component="h1" className={classes.title}>
+                    <div className={classes.agentInfo}>
+                        <p gutterBottom varient="h5" component="h1" className={classes.title}>
                             {Agent.MarkHughes.name}
-                        </Typography>
+                        </p>
+
                         <Typography variant="h5" color="textSecondary" component="p">
                             {Agent.MarkHughes.phone}
                             </Typography>
@@ -48,7 +49,7 @@ export default function MarkBio() {
                                 {Agent.MarkHughes.email}
                             </a>
                         </Typography>
-                    </CardContent>
+                    </div>
                 </Card>
                 <Card style={propCardStyle.container(isRow)} className={classes.propertyCard}>
                     <CardActionArea>

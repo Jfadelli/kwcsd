@@ -54,7 +54,15 @@ export const Agent = {
         email: 'tommyeshort@kw.com',
         loopnetLink:'/',
         loopnetListingImage:'https://images1.loopnet.com/i2/hU3AOPYluQ3AhAPo1uUnk0NYB4DiVaZaRga8xQr43dM/112/image.jpg',
+    },
+    AndreFournier:{
+        name:'Andre Fournier',
+        phone: '508.542.3454',
+        email: 'afournier@kwcommercial.com',
+        loopnetLink:'/',
+        loopnetListingImage:'https://images1.loopnet.com/i2/hU3AOPYluQ3AhAPo1uUnk0NYB4DiVaZaRga8xQr43dM/112/image.jpg',
     }
+
 }
 
 // \/\/\/ template to add new agent \/\/\/

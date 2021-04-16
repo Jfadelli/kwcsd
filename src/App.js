@@ -30,9 +30,15 @@ import VanBio from './components/teamBio/van-spears'
 import AntoniaBio from './components/teamBio/antonia-bokelman'
 import SueBio from './components/teamBio/sue-na'
 import TommyShortBio from './components/teamBio/tommy-short'
+import AndreFournierBio from './components/teamBio/andre-fournier'
+
+// Property
+import YourPropertyInfo from './components/property/YourPropertyInfo'
+import PropertySearch from './components/buildoutPluggin/PropertySearch'
+
+
 
 // Misc Links
-import YourPropertyInfo from './components/propertyValuation/YourPropertyInfo'
 import Contact from './components/contact/ContactForm'
 import Referrals4You from './components/referrals/referrals'
 
@@ -62,6 +68,7 @@ function App() {
               <Route path='/services/development-services' component={DevelopmentServices} />
 
               {/* team bio links */}
+              <Route path='/team-bio/andre-fournier' component={AndreFournierBio} />
               <Route path='/team-bio/antonia-bokelman' component={AntoniaBio} />
               <Route path='/team-bio/libby-brignon' component={LibbyBio} />
               <Route path='/team-bio/mark-hughes' component={MarkBio} />
@@ -70,8 +77,9 @@ function App() {
               <Route path='/team-bio/van-spears' component={VanBio} />
               <Route path='/team-bio/will-schnieder' component={WillBio} />
 
-              {/* property valuation links */}
-              <Route path='/property-valuation/your-property-info' component={YourPropertyInfo} />
+              {/* property links */}
+              <Route path='/property/your-property-info' component={YourPropertyInfo} />
+              <Route path='/property/property-search' component={PropertySearch}/>
 
               {/* contact links */}
               <Route path='/contact/contact-form' component={Contact} />
