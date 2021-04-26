@@ -86,7 +86,6 @@ export default function Bio() {
                         </div>
                         <div className={classes.horizLine} />
                         <div className={classes.flexCol}>
-                            {console.log(currBio)}
                             {currBio[0].map(el => {
                                 return (
                                     <div className={classes.content}>
