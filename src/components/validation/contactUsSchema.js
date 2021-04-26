@@ -26,13 +26,14 @@ const contactUsSchema = Yup.object().shape({
         .string()
         .oneOf(['lessThan3','lessThan6','lessThan12','nextYear'])
         .required("timeframe is required"),
-    agent: Yup
-        .string()
-        .oneOf([Agent.MarkHughes.email, Agent.Libby.email, Agent.SueNa.email, Agent.JasonTest.email, Agent.TommyShort.email, Agent.VanSpears.email, Agent.WillSchnieder.email, Agent.Antonia.email,'NA']),
+    // agent: Yup
+    //     .string()
+    //     .oneOf([Agent[0].AndreFournier.email, Agent[0].MarkHughes.email, Agent[0].Libby.email, Agent[0].SueNa.email, Agent[0].JasonTest.email, Agent[0].TommyShort.email, Agent[0].VanSpears.email, Agent[0].WillSchnieder.email, Agent[0].Antonia.email,'NA']),
     message: Yup
         .string(),
     captcha: Yup
-        .boolean(true)
+        .boolean()
+        .oneOf([true])
         .required()
 
 })

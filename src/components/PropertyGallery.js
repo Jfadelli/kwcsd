@@ -60,7 +60,8 @@ const PropertyGallery = () => {
     const classes = useStyles()
     const [listings, setListings] = useState([])
     useEffect(() => {
-        axios.get('https://kwsd-web-scraper.herokuapp.com/api/listings')
+        // axios.get('https://kwsd-web-scraper.herokuapp.com/api/listings')
+        axios.get('http://localhost:5000/api/listings/')
             .then(resp => setListings(resp.data))
     }, [])
 

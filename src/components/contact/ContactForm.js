@@ -1,25 +1,17 @@
 import React, { useState, useEffect } from 'react'
-// import { useHistory } from 'react-router-dom'
 import axios from 'axios'
-
 import * as Yup from 'yup'
+import ReCAPTCHA from "react-recaptcha";
+
 import Footer from '../footer'
-
 import { useMediaQuery } from '../hooks/mediaQuery'
-
 import Teamwork from '../../static/images/teamwork.jfif'
-
 import contactUsSchema from '../validation/contactUsSchema'
+import { Agent } from '../teamBio/agentInfo/agentInfoList'
 
 import './style.css'
 
-import { Agent } from '../teamBio/agentInfo/agentInfoList'
-
-import ReCAPTCHA from "react-recaptcha";
-
-const liveAPI = 'https://kwcsd-mail-util.herokuapp.com/api/send'
-// const testAPI = 'http://localhost:5000/api/send'
-
+const testAPI = 'http://localhost:5000/api/send'
 
 const initialValues = {
     intent: {
@@ -40,8 +32,7 @@ const initialValues = {
     email: '',
     phone: '',
     message: '',
-    captcha: false
-
+    captcha: false,
 }
 
 const initialFormErrors = {
@@ -52,7 +43,7 @@ const initialFormErrors = {
     email: '',
     phone: '',
     message: '',
-    captcha:''
+    captcha: '',
 }
 
 
@@ -67,7 +58,7 @@ export default function Contact() {
 
     //////////////// HELPERS ////////////////
     const postNewMessage = message => {
-        axios.post(liveAPI, message)
+        axios.post(testAPI, message)
             .then(res => {
                 if (res.data.status === 'success') {
                     alert('Message Sent.');
@@ -84,7 +75,26 @@ export default function Contact() {
             })
     }
 
+    var verifyCallback = function(response) {
+        console.log(formValues.captcha)
+        console.log('response',response)
+        setFormValues({...formValues, captcha:true} )
+        
+        // if(response!=null){
+        //     // $("#rss").show();
+        // }
+        
+        // setFormValues(...formValues.captcha = true)
+        
+        
+
+
+
+
+    };
+
     //////////////// EVENT HANDLERS ////////////////
+    
     const onInputChange = evt => {
         const { name, value } = evt.target
         Yup
@@ -106,6 +116,7 @@ export default function Contact() {
             ...formValues,
             [name]: value
         })
+        console.log(formValues.captcha)
     }
 
     const onSubmitHandler = evt => {
@@ -119,8 +130,11 @@ export default function Contact() {
             message: formValues.message.trim(),
             agent: formValues.agent
         };
-        console.log('here is the message... ', newMessage)
-        postNewMessage(newMessage);
+        if(formValues.captcha === true){
+            console.log('here is the message... ', newMessage)
+            postNewMessage(newMessage);
+        }
+        else {alert('please complete the captcha')}
     }
 
 
@@ -132,7 +146,9 @@ export default function Contact() {
     }, [formValues])
 
     return (
+        
         <div className="wrapper">
+            
             <div className="flexColumn">
                 <div className="content-row">
                     <form className="contact-us" onSubmit={onSubmitHandler}>
@@ -221,9 +237,10 @@ export default function Contact() {
                         />
                         <ReCAPTCHA
                             sitekey="6LdbnHgaAAAAAIiCridFguHC1-fhyJX9QgoEdiQ_"
-                            onChange={onInputChange}
+                            // onChange={onChange}
+                            verifyCallback = {verifyCallback}
                         />
-                        <button disabled={disabled} onSubmit={onSubmitHandler}> Send</button>
+                        <button disabled={disabled} onSubmit={onSubmitHandler}>Send</button>
 
                     </form>
                     <img style={styles.container(isHidden)} id="teamworkimg" alt="generic team working together" src={Teamwork} />

@@ -8,11 +8,13 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { useStyles } from './style';
 import { Link } from 'react-router-dom'
+import { Agent } from '../teamBio/agentInfo/agentInfoList'
 
 export default function ServicesOffered() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
+  let Agents = Object.values(Agent)
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -61,15 +63,12 @@ export default function ServicesOffered() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link className={classes.link} to = '/team-bio/andre-fournier'><MenuItem onClick={handleClose}>Andre Fournier</MenuItem></Link>
-                    {/* <Link className={classes.link} to = '/team-bio/antonia-bokelman'><MenuItem onClick={handleClose}>Antonia Bokelman</MenuItem></Link> */}
-                    <Link className={classes.link} to = '/team-bio/libby-brignon'><MenuItem onClick={handleClose}>Libby Brignon</MenuItem></Link>
-                    <Link className={classes.link} to = '/team-bio/mark-hughes' ><MenuItem onClick={handleClose} >Mark Hughes</MenuItem></Link>
-                    <Link className={classes.link} to = '/team-bio/sue-na'><MenuItem onClick={handleClose}>Sue Na</MenuItem></Link>
-                    <Link className={classes.link} to = '/team-bio/tommy-short'><MenuItem onClick={handleClose}>Tommy Short</MenuItem></Link>
-                    <Link className={classes.link} to = '/team-bio/van-spears'><MenuItem onClick={handleClose}>Van Spears</MenuItem></Link>
-                    <Link className={classes.link} to = '/team-bio/will-schnieder'><MenuItem onClick={handleClose}>Will Schneider</MenuItem></Link>
-                    {/* <Link className={classes.link} to = '/team-bio/someone-else'><MenuItem onClick={handleClose}>Someone Else</MenuItem></Link> */}
+                    {Agents.map(el => {
+                      return(
+                        <Link className={classes.link} to ={`/${el.pageLocation}`}><MenuItem onClick={handleClose}>{el.name ? el.name : null }</MenuItem></Link>
+                      )
+                    })}
+                  
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
