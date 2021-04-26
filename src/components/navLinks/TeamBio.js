@@ -65,7 +65,7 @@ export default function ServicesOffered() {
                   <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                     {Agents.map(el => {
                       return(
-                        <Link className={classes.link} to ={`/${el.pageLocation}`}><MenuItem onClick={handleClose}>{el.name ? el.name : null }</MenuItem></Link>
+                        <Link className={classes.link} to ={`/team-bio/${el.pageLocation}`}><MenuItem onClick={handleClose}>{el.name ? el.name : null }</MenuItem></Link>
                       )
                     })}
                   
