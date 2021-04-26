@@ -54,6 +54,7 @@ export const useStyles = makeStyles(theme => ({
         
     },
     agentCard:{
+        zIndex:'-1',
         margin: 'auto',
         width: 250,
         height: 400, 

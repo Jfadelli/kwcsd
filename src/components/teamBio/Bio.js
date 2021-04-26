@@ -30,15 +30,13 @@ export default function Bio() {
     return (
         <div>
             {currAgent.map(el => {
+                const mailtoLink = mailTo + el.email
+                
                 let currBio = []
                 var brk = el.bio.split('~'); // must add ~ to bio array on line desired line breaks
                 currBio.push(brk)
-                // if(pageName === 'libby-birgnon'){
-                //     let Headshot = Libby} else {
-                //         return
-                //     }
 
-                const mailtoLink = mailTo + el.email
+                
                 return (
                     <div className={classes.wrapper}>
                         <div className={classes.flexRow} style={rowStyle.container(isRow)}>
