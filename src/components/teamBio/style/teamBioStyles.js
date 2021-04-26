@@ -59,7 +59,6 @@ export const useStyles = makeStyles(theme => ({
         width: 250,
         height: 400, 
         position: 'relative',
-
     },
     headshot: {
         height: 240, 
