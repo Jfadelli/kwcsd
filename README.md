@@ -19,9 +19,11 @@ A custom react site for a high level commercial real estate team working with KW
 1. Jason Fadelli - Creator
 2. Dang Lu - Co-Creator <sup>The guy who fixed everything and didn't sleep</sup>
 
+## In Development
+1. reCapthca
+2. Buildout Integration
+
 ## Future nice to haves
-1. Captcha
-2. Dynamic bio pictures
-3. Backend for admin to add / edit content
-4. Upgrade responsive design
-5. A summer vacation at a lake
+1. Backend for admin to add / edit content
+2. Responsive design improvements
+
