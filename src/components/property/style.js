@@ -65,6 +65,7 @@ export const useStyles = makeStyles((theme) => ({
         fontVariant: 'small-caps',
         border: '3px solid',
         borderRadius: '3px',
+        backgroundColor:'green'
     },
 
     errors : {

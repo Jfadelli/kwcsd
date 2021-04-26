@@ -22,23 +22,27 @@ import LandlordRep from './components/services/landlord-rep'
 import InvestmentAcquisitionAndSales from './components/services/Investment-Acq'
 import DevelopmentServices from './components/services/development-services'
 
-// Team Bio
-import MarkBio from './components/teamBio/mark-hughes'
-import LibbyBio from './components/teamBio/libby-brignon'
-import WillBio from './components/teamBio/will-schnieder'
-import VanBio from './components/teamBio/van-spears'
-import AntoniaBio from './components/teamBio/antonia-bokelman'
-import SueBio from './components/teamBio/sue-na'
-import TommyShortBio from './components/teamBio/tommy-short'
+// New Multi Bio Component
+import Bio from './components/teamBio/Bio'
+
+// Property
+import YourPropertyInfo from './components/property/YourPropertyInfo'
+import PropertySearch from './components/buildoutPluggin/PropertySearch'
+
+
 
 // Misc Links
-import YourPropertyInfo from './components/propertyValuation/YourPropertyInfo'
 import Contact from './components/contact/ContactForm'
 import Referrals4You from './components/referrals/referrals'
+
+import { Agent } from './components/teamBio/agentInfo/agentInfoList'
+
 
 
 function App() {
   const classes = useStyles();
+  let Agents = Object.values(Agent)
+
   return (
     <div className={classes.app}>
       <Nav />
@@ -50,34 +54,33 @@ function App() {
             classNames='fade'>
             <ThemeProvider theme={theme}>
               <CssBaseline />
-          
+
               <Switch location={location}>
-              <Route exact path='/' component={Home} />
-              <Route path='/thank-you' component={ThankYou} />
+                <Route exact path='/' component={Home} />
+                <Route path='/thank-you' component={ThankYou} />
 
-              {/* services offered links */}
-              <Route path='/services/tenant-rep' component={TenantRep} />
-              <Route path='/services/landlord-rep' component={LandlordRep} />
-              <Route path='/services/Investment-Acq' component={InvestmentAcquisitionAndSales} />
-              <Route path='/services/development-services' component={DevelopmentServices} />
+                {/* services offered links */}
+                <Route path='/services/tenant-rep' component={TenantRep} />
+                <Route path='/services/landlord-rep' component={LandlordRep} />
+                <Route path='/services/Investment-Acq' component={InvestmentAcquisitionAndSales} />
+                <Route path='/services/development-services' component={DevelopmentServices} />
 
-              {/* team bio links */}
-              <Route path='/team-bio/antonia-bokelman' component={AntoniaBio} />
-              <Route path='/team-bio/libby-brignon' component={LibbyBio} />
-              <Route path='/team-bio/mark-hughes' component={MarkBio} />
-              <Route path='/team-bio/sue-na' component={SueBio} />
-              <Route path='/team-bio/tommy-short' component={TommyShortBio} />
-              <Route path='/team-bio/van-spears' component={VanBio} />
-              <Route path='/team-bio/will-schnieder' component={WillBio} />
+                {/* team bio links */}
+                {Agents.map(el => {
+                  return (
+                    <Route path={`/team-bio/`+el.pageLocation} component={Bio} />
+                  )
+                })}
 
-              {/* property valuation links */}
-              <Route path='/property-valuation/your-property-info' component={YourPropertyInfo} />
+                {/* property links */}
+                <Route path='/property/your-property-info' component={YourPropertyInfo} />
+                <Route path='/property/property-search' component={PropertySearch} />
 
-              {/* contact links */}
-              <Route path='/contact/contact-form' component={Contact} />
+                {/* contact links */}
+                <Route path='/contact/contact-form' component={Contact} />
 
-              {/* referral links */}
-              <Route path='/referrals/referrals4you' component={Referrals4You} />
+                {/* referral links */}
+                <Route path='/referrals/referrals4you' component={Referrals4You} />
               </Switch>
             </ThemeProvider>
           </CSSTransition>

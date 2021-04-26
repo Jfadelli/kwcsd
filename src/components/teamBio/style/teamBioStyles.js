@@ -41,12 +41,24 @@ export const useStyles = makeStyles(theme => ({
     },
 
     //card styles
+    agentInfo:{
+        display: 'flex',
+        // backgroundColor:'blue',
+        position: 'relative',
+        top: '5%',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems:'center',
+    
+
+        
+    },
     agentCard:{
+        zIndex:'-1',
         margin: 'auto',
         width: 250,
         height: 400, 
         position: 'relative',
-        zIndex: '-1'
     },
     headshot: {
         height: 240, 
@@ -62,14 +74,18 @@ export const useStyles = makeStyles(theme => ({
         height: "50vh",
     },
     title: {
+        display:'flex',
+        alignItems:' center',
         color: theme.palette.primary.dark,
-        fontSize: "1.25rem"
+        fontSize: "2rem",
+        margin: "auto" 
     },
     email:{
+        display: 'flex',
         textDecoration:'none',
         fontSize:'1rem',
         color:'rgb(180 1 1)',
-
+        zIndex:"100"
     },
 
     // font styles

@@ -50,7 +50,7 @@ export default function ServicesOffered() {
           onClick={handleToggle}
           className={classes.navButton}
         >
-          Property Valuation
+          Property
         </Button>
         <Popper className={classes.popper} open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
@@ -61,7 +61,8 @@ export default function ServicesOffered() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link className={classes.link} to ='/property-valuation/your-property-info' ><MenuItem onClick={handleClose} >Your Property Info</MenuItem></Link>
+                    <Link className={classes.link} to ='/property/your-property-info' ><MenuItem onClick={handleClose} >Your Property Info</MenuItem></Link>
+                    <Link className={classes.link} to ='/property/property-search' ><MenuItem onClick={handleClose} >Property Search</MenuItem></Link>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
