@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import TextTruncate from 'react-text-truncate'
+// import TextTruncate from 'react-text-truncate'
+
 
 import { makeStyles } from '@material-ui/styles'
+
+const darkText = 'rgba(20, 20, 20, .8)'
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -14,69 +17,100 @@ const useStyles = makeStyles(theme => ({
         flexWrap: 'wrap',
         justifyContent: 'space-evenly',
     },
-    propCard:{
+    propCard: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         width: '400px',
-        height: '310px',
+        height: '370px',
         boxShadow: '.25rem .25rem .25rem .25rem rgba(0,0,0,0.2)',
         transition: '0.3s',
-        borderRadius:'6px',
+        borderRadius: '6px',
         margin: '.5rem',
-        '&:hover':{
+        '&:hover': {
             boxShadow: '.25rem .25rem .25rem .35rem rgba(0,0,0,0.2)',
             transition: '0.3s',
         }
     },
-    propPhoto:{
-        alignSelf:'center',
-        maxWidth: '400px',
+    propPhoto: {
+        alignSelf: 'center',
+        objectFit: 'cover',
+        maxWidth: '380px',
         minWidth: '350px',
         minHeight: '225px',
         maxHeight: '300px',
-        margin: '30px 30px 5px 30px', 
+        margin: '15px 15px 5px 15px',
+        borderRadius:'3px'
     },
-    propInfo:{
-        margin: '0 0 10px 0',
-        '&:h5':{
-            fontSize: '1rem',
-            lineHeight: '.5rem'
-        }
+    propTitle: {
+        color: darkText,
+        margin: '0 0 0px 0',
+        fontSize: '1.25rem',
+        fontWeight: 'bold',
+        lineHeight: '.9rem',
+        Overflow: 'hidden',
+        whiteSpace: 'nowrap',
     },
-    propDetail:{
-        fontSize:'.90rem',
-        width: '100%',
-        minWidth:'400px',
+    propPrice: {
+        margin: '',
+        fontSize: '1rem',
+        lineHeight: '.5rem',
+        color: darkText,
+        fontWeight:'bold',
+
     },
+    propDetail: {
+    margin:'-10px 0 0 0',
+    padding: '0 20px',
+    lineHeight: '1rem',
+    fontSize: '.90rem',
+    width: '100%',
+    minWidth: '400px',
+    textAlign: 'justify'
+    },
+    link: {
+        textDecoration: 'none',
+        color: 'rgba(10,10,10, .7)'
+    }
 }));
 
 // easiest known way to handle the h5 block within the card
 const cardDetailStyle = {
-    fontSize:'1rem', lineHeight:'.5rem', textAlign:'center'
+    fontSize: '1rem', lineHeight: '.5rem', textAlign: 'center'
+}
+
+function truncateString(str, num) {
+    if (num > str.length) {
+        return str;
+    } else {
+        str = str.substring(0, num);
+        return str + "...";
+    }
 }
 
 const PropertyGallery = () => {
     const classes = useStyles()
     const [listings, setListings] = useState([])
     useEffect(() => {
-        // axios.get('https://kwsd-web-scraper.herokuapp.com/api/listings')
-        axios.get('http://localhost:5000/api/listings/')
+        axios.get('https://kwsd-web-scraper.herokuapp.com/api/listings')
+        // axios.get('http://localhost:5000/api/listings/')
             .then(resp => setListings(resp.data))
     }, [])
 
     return (
         <div className={classes.root}>
             <section className={classes.propGal}>
+
                 {listings.map(listing => (
-                    <div className={classes.root}>
-                        <div className={classes.propCard} key={listing.id}>
-                            <a href={listing.link}>
+                    <div>
+                        <a className={classes.link} href={listing.link}>
+                            <div className={classes.propCard} key={listing.id}>
                                 <img src={listing.img} className={classes.propPhoto} alt='Subject Property' />
-                            </a>
-                            <h5 style={cardDetailStyle} className={classes.propInfo}>{listing.address} - ${listing.price}</h5>
-                            <TextTruncate line={2} className={classes.propDetail} text={listing.description} />
-                        </div>
+                                <p className={classes.propTitle}>{truncateString(listing.address, 35)}</p>
+                                <p className={classes.propPrice}>{listing.price}</p>
+                                <p className={classes.propDetail}> {truncateString(listing.description, 125)} </p>
+                            </div>
+                        </a>
                     </div>
                 ))}
             </section>

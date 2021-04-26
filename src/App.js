@@ -22,16 +22,6 @@ import LandlordRep from './components/services/landlord-rep'
 import InvestmentAcquisitionAndSales from './components/services/Investment-Acq'
 import DevelopmentServices from './components/services/development-services'
 
-// Team Bio
-// import MarkBio from './components/teamBio/mark-hughes'
-// import LibbyBio from './components/teamBio/libby-brignon'
-// import WillBio from './components/teamBio/will-schnieder'
-// import VanBio from './components/teamBio/van-spears'
-// import AntoniaBio from './components/teamBio/antonia-bokelman'
-// import SueBio from './components/teamBio/sue-na'
-// import TommyShortBio from './components/teamBio/tommy-short'
-// import AndreFournierBio from './components/teamBio/andre-fournier'
-
 // New Multi Bio Component
 import Bio from './components/teamBio/Bio'
 
