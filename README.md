@@ -2,12 +2,15 @@
 A commercial real estate website
 
 ## libraries
-- React
-- Material-UI
-- Axios
-- Styled-Components
-- React-Router
+- react
+- material-ui
+- xxios
+- styled-components
+- react-router-dom
 - Yup
+- react-text-truncate
+- react-reacpthca
+
 
 ## Purpose
 A custom react site for a high level commercial real estate team working with KW Commercial in San Diego, CA.  
