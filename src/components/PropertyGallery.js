@@ -35,10 +35,8 @@ const useStyles = makeStyles(theme => ({
     propPhoto: {
         alignSelf: 'center',
         objectFit: 'cover',
-        maxWidth: '380px',
-        minWidth: '350px',
-        minHeight: '225px',
-        maxHeight: '300px',
+        width:'380px',
+        height: '230px',
         margin: '15px 15px 5px 15px',
         borderRadius:'3px'
     },
@@ -66,7 +64,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: '.90rem',
     width: '100%',
     minWidth: '400px',
-    textAlign: 'justify'
+    textAlign: 'center'
     },
     link: {
         textDecoration: 'none',
@@ -74,10 +72,6 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-// easiest known way to handle the h5 block within the card
-const cardDetailStyle = {
-    fontSize: '1rem', lineHeight: '.5rem', textAlign: 'center'
-}
 
 function truncateString(str, num) {
     if (num > str.length) {
@@ -108,7 +102,7 @@ const PropertyGallery = () => {
                                 <img src={listing.img} className={classes.propPhoto} alt='Subject Property' />
                                 <p className={classes.propTitle}>{truncateString(listing.address, 35)}</p>
                                 <p className={classes.propPrice}>{listing.price}</p>
-                                <p className={classes.propDetail}> {truncateString(listing.description, 125)} </p>
+                                <p className={classes.propDetail}> {truncateString(listing.description, 180)} </p>
                             </div>
                         </a>
                     </div>
