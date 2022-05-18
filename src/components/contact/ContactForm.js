@@ -166,7 +166,7 @@ export default function Contact() {
                             <option value="consult">Consult/Other</option>
                         </select>
 
-                        <label >My Timeframe is:</label>
+                        <label >My timeframe is:</label>
                         <select
                             value={formValues.timeframe}
                             onChange={onInputChange}
@@ -187,18 +187,18 @@ export default function Contact() {
                         >
                             {/* <option value={Agent.JasonTest.email}>Jason Test</option> */}
                             <option value={Agent.MarkHughes.email}>Please select an agent</option>
-                            <option value={Agent.AndreFournier.email}>Andre Forunier</option>
+                            <option value={Agent.HeatherMattlin.email}>Heather Mattlin</option>
                             <option value={Agent.Libby.email}>Libby Brignon (Land)</option>
                             <option value={Agent.MarkHughes.email}>Mark Hughes (Team Lead | Generalist)</option>
                             <option value={Agent.SueNa.email}>Sue Na (Flex/Industrial | Multi Unit | Retail)</option>
                             <option value={Agent.TommyShort.email}>Tommy Short</option>
                             <option value={Agent.VanSpears.email}>Van Spears (Multi-Family | Industrial | Leasing | Investment)</option>
-                            <option value={Agent.WillSchnieder.email}>Will Schnieder</option>
+                            <option value={Agent.WillSchneider.email}>Will Schneider (Industrial | Multi-Family | Office)</option>
 
                         </select>
 
 
-                        <label>Full Name</label>
+                        <label>Full name</label>
                         <input
                             value={formValues.name}
                             onChange={onInputChange}
@@ -207,7 +207,7 @@ export default function Contact() {
                             name='name'
                         />
 
-                        <label>Email Address</label>
+                        <label>Email address</label>
                         <input
                             value={formValues.email}
                             onChange={onInputChange}
@@ -216,7 +216,7 @@ export default function Contact() {
                             name='email'
                         />
 
-                        <label>Phone Number</label>
+                        <label>Phone number</label>
                         <input
                             value={formValues.phone}
                             onChange={onInputChange}
@@ -235,12 +235,13 @@ export default function Contact() {
                             placeholder='type your message here'
                             name="message"
                         />
-                        <ReCAPTCHA
+                        {/* <ReCAPTCHA
                             sitekey="6LdbnHgaAAAAAIiCridFguHC1-fhyJX9QgoEdiQ_"
                             // onChange={onChange}
                             verifyCallback = {verifyCallback}
-                        />
-                        <button disabled={disabled} onSubmit={onSubmitHandler}>Send</button>
+                        /> */}
+                        {/* <button disabled={disabled} onSubmit={onSubmitHandler}>Send</button> */}
+                        <button onSubmit={onSubmitHandler}>Send</button>
 
                     </form>
                     <img style={styles.container(isHidden)} id="teamworkimg" alt="generic team working together" src={Teamwork} />

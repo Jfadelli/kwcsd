@@ -93,21 +93,22 @@ export const Agent = {
         
         Contact his KW Commercial office today.`,
     },
-    WillSchnieder: {
-        name: 'Will Schnieder',
+    WillSchneider: {
+        name: 'Will Schneider',
         phone: '760.450.4100',
         email: 'willschneider@kwcommercial.com',
         loopnetLink: 'https://www.loopnet.com/brokerdirectory/profile/will-schneider/wb7jxwl',
-        loopnetListingImage: 'https://images1.loopnet.com/i2/hU3AOPYluQ3AhAPo1uUnk0NYB4DiVaZaRga8xQr43dM/112/image.jpg',
-        pageLocation:'will-schnieder',
+        loopnetListingImage: 'https://i.ibb.co/hW2Th2Z/lga-entry-photo.jpg',
+        pageLocation:'will-schneider',
         headshot:'https://i.ibb.co/SdNPwVs/willheadshot.jpg',
-        bio: `William “Will” Schneider, an Advisor for the SVN Asset Advisory Group(“SVNAAG”), specializes in multi - family sales and office sales and leasing.Will brings to SVNAAG a unique background in commercial real estate, finance, and law.Before joining SVNAAG, Will was the Vice President of Investment Sales, Multi - Family Group for a mid - size, boutique commercial real estate firm in San Diego.In this capacity, Will branched out into office sales and leasing.Will has also been a commercial mortgage broker who financed a variety of commercial properties including multi - family, industrial, and office buildings.He began his career as a loan officer for the Bank of America, where he made consumer and commercial loans.~
-
-        In addition to his real estate and finance positions, Will had a successful career for many years as a litigation attorney, judge pro tem, arbitrator, and mediator in Los Angeles and San Diego counties.During this time, Will purchased a series of multi - family properties for his own portfolio by completing 1031 tax - deferred exchanges.Will retired from the practice of law in December 2012 to focus exclusively on commercial real estate brokerage.~
+        bio: `William "Will" Schneider is a broker-associate for the KW Commercial Carmel Valley/Del Mar office in San Diego, CA.  Will specializes in industrial and office sales and leasing, multi-family investment sales, and 1031 tax-deferred exchanges-an excellent way to build wealth through commercial real estate.  Will has also joined the elite Pacific Commercial Partners Team at KW Commercial under Team Leader, Mark Hughes, to provide a wider variety of commercial real estate services to his clients.~
         
-        Will’s transition from attorney to commercial real estate broker was the result of having evaluated numerous multi - family and commercial properties in California and across the nation as an investor and commercial mortgage broker.Will has a passion for the commercial real estate business.He believes that every commercial property has its own unique character which brings excitement and opportunity.Furthermore, with SVN’s talented staff of professionals and its global reach of offices and advisors, SVNAAG provides the ideal platform to deliver the finest local and national commercial real estate services available.~
+        Before joining KW Commercial, Will was a broker-associate for SVN (formerly Sperry Van Ness).  Prior to that, he was the vice-president of multi-family investment sales for a boutique commercial real estate firm in San Diego.  Will has also been a commercial mortgage broker who financed a variety of commercial properties including multi-family, industrial, and office buildings.  He began his career as a loan officer for the Bank of America making consumer and commercial loans.~
         
-        Will is a licensed California real estate broker and a member of the National Association of Realtors(“NAR”), the San Diego Association of Realtors(“SDAR”), and the North San Diego County Association of Real Estate - Commercial Division.He is also a member of the Carlsbad Chamber of Commerce and he participates on the planning committee for the Mira Costa College Real Estate Advisory Board.Will graduated from U.C.L.A.with a Bachelor of Science degree in Business Administration, and he received his Juris Doctor degree from Whittier College School of Law.`,
+        In addition to his real estate and finance background, Will had a successful career for many years as a litigation attorney in private practice and government service and he did community service as a judge pro tem, arbitrator, and mediator in Los Angeles and San Diego counties.  During this time, Will purchased a series of multi-family properties for his own portfolio by successfully utilizing 1031 tax-deferred exchanges.  Will transitioned from the practice of law in December 2012 to focus exclusively on commercial real estate brokerage.~
+        
+        Will graduated from U.C.L.A. with a Bachelor of Science degree in Business Administration and he received his Juris Doctor degree from Whittier College School of Law.  Will is a licensed California real estate broker and a member of the National, California, and San Diego Association of Realtors.  He is also a member of the Carlsbad Chamber of Commerce, Business Resource Committee.  Will and his wife have lived in San Diego County since 1993 where they raised two sons.
+        `,
     },
     TommyShort: {
         name: 'Tommy Short',
@@ -125,19 +126,18 @@ export const Agent = {
 
         Whether starting a new business or expanding to new locations, when you work with Tommy you get more than an agent. You will benefit from experience and a keen eye that can work with you from start to finish to help you succeed. Having lived in San Diego for over 20 years along with his international background brings him a deep respect and appreciation for the multiple cultural roots of each unique neighborhood and niche throughout San Diego County and beyond. His passion is bringing great locales, real estate, food, beverage and entertainment together to create new opportunities for individuals and communities, and leveraging assets to achieve their highest potential. Integrity, honesty, dedication to quality, and care for people and planet are his guiding principles.`,
     },
-    AndreFournier: {
-        name: 'Andre Fournier',
-        phone: '508.542.3454',
-        email: 'afournier@kwcommercial.com',
+    HeatherMattlin: {
+        name: 'Heather Mattlin',
+        phone: '619.200.2026',
+        email: 'heathermattlin@kw.com',
         loopnetLink: '/',
-        loopnetListingImage: 'https://images1.loopnet.com/i2/hU3AOPYluQ3AhAPo1uUnk0NYB4DiVaZaRga8xQr43dM/112/image.jpg',
-        pageLocation:'andre-fournier',
-        headshot:'https://i.ibb.co/nP5GqcZ/Andre-Headshot.png',
-        bio: `Commercial Real Estate Investors and Business Owners can benefit from working with Andre because of his uniquely developed network. Capital gains tax can be deferred in ways best suited for the seller’s situation. By using unique tax deferral methods, you will notice a higher ROI. The funds can be reinvested into real estate or specific to the individuals risk tolerance.~
+        loopnetListingImage: 'https://i.ibb.co/V9Vrknk/heather-matlin-loopnet-image.jpg',
+        pageLocation:'heather-mattlin',
+        headshot:'https://i.ibb.co/7JRJXmK/heather-mattlin.jpg',
+        bio: `Heather Mattlin is a licensed commercial real estate agent on the KW Pacific Commercial Partners team based in Carmel Valley/Del Mar. Raised in a family of real estate builders/investors with projects throughout the San Diego County area, Heather has a lifetime of practical experience with buying, selling and marketing properties. Currently specializing in multi-family sales and acquisitions, she also has experience in NNN tenant representation and vacant land purchases. Heather uses her background and education to ensure that her clients receive the best possible guidance and service with honest and consistent communication.~
 
-        Companies of all sizes have increased their cash flow realizing savings in many areas missed by CPAs. Smaller companies affected from COVID-19 can also receive increases. Stop giving more to Uncle Sam, stop leaving money on the table and start working with me.~
-
-        On top of the cash flow increase and tax deferral possibilities, you will get precise underwriting, current market data and clean deal analysis reports. Ask for a complementary ProForma on your property today.`,
+        Heather graduated from San Francisco State University with dual BSc degrees in Marketing and International Business and worked in the logistics field for a global technology firm for several years before transitioning to her true passion of real estate.  
+        `,
     }
 }
 

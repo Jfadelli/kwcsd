@@ -27,7 +27,7 @@ const PropertySearch = () => {
         <h1 className={classes.title}>Property Search</h1>
         <div className={classes.heading} style={{color:'red', fontVariant:'small-caps', margin:'-20px 0 0 0' }}> feature is currently under development</div>
 
-        <div className={classes.subHeading} style={{textAlign:'justify'}}>We understand that you want to see all of the listings that the Pacific Commercial Parnters Team currently has. For the time being please view a small selection of available peoprties below. Be sure to check back soon for the full search feature.</div>
+        <div className={classes.subHeading} style={{textAlign:'justify'}}>We understand that you want to see all of the listings that the Pacific Commercial Parnters Team currently has. For the time being please view a small selection of available properties below. Be sure to check back soon for the full search feature.</div>
    
 
 

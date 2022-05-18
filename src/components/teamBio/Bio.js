@@ -15,7 +15,6 @@ import {
     Typography
 } from '@material-ui/core'
 
-
 export default function Bio() {
     const classes = useStyles()
     const isRow = useMediaQuery('(min-width: 768px)');
