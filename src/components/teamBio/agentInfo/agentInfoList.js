@@ -14,7 +14,7 @@ export const Agent = {
         phone: '858.720.1900',
         email: 'mhughes@kwcommercial.com',
         loopnetLink: 'http://www.loopnet.com/brokerdirectory/profile/Mark%20Hughes/6glpewv',
-        loopnetListingImage: 'https://images1.loopnet.com/i2/hU3AOPYluQ3AhAPo1uUnk0NYB4DiVaZaRga8xQr43dM/112/image.jpg',
+        loopnetListingImage: 'https://i.ibb.co/V9Vrknk/heather-matlin-loopnet-image.jpg',
         pageLocation:'mark-hughes',
         headshot:'https://i.ibb.co/vqRBrPk/markheadshot.png',
         bio: `Mr.Hughes has over 30 years of experience covering all aspects of commercial real estate brokerage, development, marketing, finance, and  management.He has made extensive development and civic contributions to San Diego County.~
@@ -131,7 +131,7 @@ export const Agent = {
         phone: '619.200.2026',
         email: 'heathermattlin@kw.com',
         loopnetLink: '/',
-        loopnetListingImage: 'https://i.ibb.co/V9Vrknk/heather-matlin-loopnet-image.jpg',
+        loopnetListingImage: 'https://i.ibb.co/XLPH8LR/heather-mattlin-property-photo-2.png',
         pageLocation:'heather-mattlin',
         headshot:'https://i.ibb.co/7JRJXmK/heather-mattlin.jpg',
         bio: `Heather Mattlin is a licensed commercial real estate agent on the KW Pacific Commercial Partners team based in Carmel Valley/Del Mar. Raised in a family of real estate builders/investors with projects throughout the San Diego County area, Heather has a lifetime of practical experience with buying, selling and marketing properties. Currently specializing in multi-family sales and acquisitions, she also has experience in NNN tenant representation and vacant land purchases. Heather uses her background and education to ensure that her clients receive the best possible guidance and service with honest and consistent communication.~
@@ -140,7 +140,6 @@ export const Agent = {
         `,
     }
 }
-
 
 // \/\/\/ template to add new agent \/\/\/
 // newAgentName: {

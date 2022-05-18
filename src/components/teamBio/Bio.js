@@ -12,7 +12,8 @@ import {
     Card,
     CardActionArea,
     CardMedia,
-    Typography
+    Typography,
+    Link
 } from '@material-ui/core'
 
 export default function Bio() {
@@ -30,43 +31,43 @@ export default function Bio() {
         <div>
             {currAgent.map(el => {
                 const mailtoLink = mailTo + el.email
-                
+
                 let currBio = []
                 var brk = el.bio.split('~'); // must add ~ to bio array on line desired line breaks
                 currBio.push(brk)
 
-                
+
                 return (
                     <div className={classes.wrapper}>
                         <div className={classes.flexRow} style={rowStyle.container(isRow)}>
-                            <Card className={classes.agentCard}>
-                                <CardActionArea>
-                                    <a href={mailtoLink}>
-                                        <CardMedia
-                                            className={classes.headshot}
-                                            
-                                            image={el.headshot}
-                                            title={el.name + " Headshot"}
-                                        />
-                                    </a>
-                                </CardActionArea>
+                            <Link href={mailtoLink} underline="none" rel="noopener" target="_blank">
+                                <Card className={classes.agentCard}>
 
-                                <div className={classes.agentInfo}>
-                                    <p className={classes.title}>
-                                        {el.name}
-                                    </p>
-                                    <Typography variant="h5" color="textSecondary" component="p">
-                                        {el.phone}
-                                    </Typography>
+                                    <CardActionArea>
+                                            <CardMedia
+                                                className={classes.headshot}
+                                                image={el.headshot}
+                                                title={el.name + " Headshot"}
+                                            />
+                                    </CardActionArea>
 
-                                    <Typography variant="h6">
-                                        <a className={classes.email} href={mailtoLink}>
-                                            {el.email}
-                                        </a>
-                                    </Typography>
-                                </div>
+                                    <div className={classes.agentInfo}>
+                                        <p className={classes.title}>
+                                            {el.name}
+                                        </p>
+                                        <Typography variant="h5" color="textSecondary" component="p">
+                                            {el.phone}
+                                        </Typography>
+                                        <Typography variant="h6">
+                                            <a className={classes.email} href={mailtoLink} target="_blank">
+                                                {el.email}
+                                            </a>
+                                        </Typography>
+                                    </div>
 
-                            </Card>
+                                </Card>
+                            </Link>
+                            
                             <Card style={propCardStyle.container(isRow)} className={classes.propertyCard}>
                                 <CardActionArea>
                                     <a href={el.loopnetLink}>
@@ -94,7 +95,7 @@ export default function Bio() {
                                     </div>)
                             })}
                         </div>
-                        <Footer/>
+                        <Footer />
                     </div>
                 )
             })
