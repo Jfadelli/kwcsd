@@ -16,8 +16,8 @@ A commercial real estate website
 A custom react site for a high level commercial real estate team working with KW Commercial in San Diego, CA.  
 
 ## Credits
-1. Jason Fadelli - Creator
-2. Dang Lu - Co-Creator <sup>The guy who fixed everything and didn't sleep</sup>
+1. Jason Fadelli - Dev
+2. Dang Lu - Dev <sup>The one and only</sup>
 
 ## In Development
 1. reCapthca
