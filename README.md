@@ -4,7 +4,7 @@ A commercial real estate website
 ## libraries
 - react
 - material-ui
-- xxios
+- axios
 - styled-components
 - react-router-dom
 - Yup
