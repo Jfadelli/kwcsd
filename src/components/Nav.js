@@ -5,7 +5,7 @@ import ServicesOffered from './navLinks/ServicesOffered.js'
 import TeamBio from './navLinks/TeamBio.js'
 import PropertyValuation from './navLinks/Property.js'
 import Contact from './navLinks/Contact.js'
-import Referrals from './navLinks/Referrals.js'
+// import Referrals from './navLinks/Referrals.js'
 import Home from './navLinks/HomeLink.js'
 
 import Logo from '../static/images/logo.jpg'
@@ -27,7 +27,7 @@ export default function Nav() {
         <TeamBio />
         <PropertyValuation />
         <Contact />
-        <Referrals />
+        {/* <Referrals /> */}
       </Toolbar>
     </div>
   </div>

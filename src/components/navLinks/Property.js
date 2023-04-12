@@ -52,7 +52,7 @@ export default function ServicesOffered() {
         >
           Property
         </Button>
-        <Popper className={classes.popper} open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+        <Popper className={classes.popper} zIndex="2" open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
             <Grow
               {...TransitionProps}

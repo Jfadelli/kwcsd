@@ -11,7 +11,7 @@ import { Agent } from '../teamBio/agentInfo/agentInfoList'
 
 import './style.css'
 
-const testAPI = 'http://localhost:5000/api/send'
+const testAPI = 'https://kwcsd-mail-util.herokuapp.com/api/send'
 
 const initialValues = {
     intent: {
@@ -32,7 +32,7 @@ const initialValues = {
     email: '',
     phone: '',
     message: '',
-    captcha: false,
+    captcha: true,
 }
 
 const initialFormErrors = {
@@ -130,11 +130,12 @@ export default function Contact() {
             message: formValues.message.trim(),
             agent: formValues.agent
         };
-        if(formValues.captcha === true){
-            console.log('here is the message... ', newMessage)
-            postNewMessage(newMessage);
-        }
-        else {alert('please complete the captcha')}
+        postNewMessage(newMessage);
+        // if(formValues.captcha === true){
+        //     console.log('here is the message... ', newMessage)
+        //     postNewMessage(newMessage);
+        // }
+        // else {alert('please complete the captcha')}
     }
 
 
@@ -145,6 +146,8 @@ export default function Contact() {
         })
     }, [formValues])
 
+
+    // Main Function
     return (
         
         <div className="wrapper">
@@ -185,14 +188,13 @@ export default function Contact() {
                             onChange={onInputChange}
                             name='agent'
                         >
-                            {/* <option value={Agent.JasonTest.email}>Jason Test</option> */}
+                            <option value={Agent.JasonTest.email}>Jason Test</option>
                             <option value={Agent.MarkHughes.email}>Please select an agent</option>
                             <option value={Agent.HeatherMattlin.email}>Heather Mattlin</option>
                             <option value={Agent.Libby.email}>Libby Brignon (Land)</option>
                             <option value={Agent.MarkHughes.email}>Mark Hughes (Team Lead | Generalist)</option>
                             <option value={Agent.SueNa.email}>Sue Na (Flex/Industrial | Multi Unit | Retail)</option>
-                            <option value={Agent.TommyShort.email}>Tommy Short</option>
-                            <option value={Agent.VanSpears.email}>Van Spears (Multi-Family | Industrial | Leasing | Investment)</option>
+                            <option value={Agent.PeterKim.email}>Peter Kim</option>
                             <option value={Agent.WillSchneider.email}>Will Schneider (Industrial | Multi-Family | Office)</option>
 
                         </select>

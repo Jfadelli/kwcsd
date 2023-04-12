@@ -58,7 +58,7 @@ export default function ServicesOffered() {
           {({ TransitionProps, placement }) => (
             <Grow
               {...TransitionProps}
-              style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+              style={{transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
             >
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>

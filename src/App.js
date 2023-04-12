@@ -80,7 +80,7 @@ function App() {
                 <Route path='/contact/contact-form' component={Contact} />
 
                 {/* referral links */}
-                <Route path='/referrals/referrals4you' component={Referrals4You} />
+                {/* <Route path='/referrals/referrals4you' component={Referrals4You} /> */}
               </Switch>
             </ThemeProvider>
           </CSSTransition>

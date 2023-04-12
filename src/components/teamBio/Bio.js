@@ -24,24 +24,24 @@ export default function Bio() {
     var pageName = useLocation().pathname.slice(10)
     let currAgent = Agents.filter(el => el.pageLocation === pageName)
 
-    const mailTo = "mailto:"
-
+    const handleMailto = () => {
+        console.log("click")
+    }
 
     return (
         <div>
             {currAgent.map(el => {
-                const mailtoLink = mailTo + el.email
+                const mailtoLink = "mailto:" + el.email
 
                 let currBio = []
                 var brk = el.bio.split('~'); // must add ~ to bio array on line desired line breaks
                 currBio.push(brk)
 
-
                 return (
                     <div className={classes.wrapper}>
                         <div className={classes.flexRow} style={rowStyle.container(isRow)}>
-                            <Link href={mailtoLink} underline="none" rel="noopener" target="_blank">
                                 <Card className={classes.agentCard}>
+                                {/* <Link href={mailtoLink} underline="none" rel="noopener" target="_blank"> */}
 
                                     <CardActionArea>
                                             <CardMedia
@@ -58,15 +58,16 @@ export default function Bio() {
                                         <Typography variant="h5" color="textSecondary" component="p">
                                             {el.phone}
                                         </Typography>
-                                        <Typography variant="h6">
+                                        <Typography className={classes.email} variant="h6" onClick={handleMailto}>
                                             <a className={classes.email} href={mailtoLink} target="_blank">
-                                                {el.email}
+                                                {el.email} 
                                             </a>
                                         </Typography>
                                     </div>
+                                    {/* </Link> */}
 
                                 </Card>
-                            </Link>
+                            
                             
                             <Card style={propCardStyle.container(isRow)} className={classes.propertyCard}>
                                 <CardActionArea>

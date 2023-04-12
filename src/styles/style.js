@@ -276,5 +276,10 @@ export const useStyles = makeStyles((theme) => ({
         border: '2px solid ' + colors.jet,
         boxShadow: '30px -10px ' + colors.main,
     },
+    iFrame: {
+        backgroundColor:'blue',
+        width: 'auto',
+        height:'75vh'
+    }
 
 }));
