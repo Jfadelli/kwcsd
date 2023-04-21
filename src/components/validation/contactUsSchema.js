@@ -1,5 +1,6 @@
 import * as Yup from "yup";
-import { Agent } from '../teamBio/agentInfo/agentInfoList'
+// import { Agent } from '../teamBio/agentInfo/agentInfoList'
+
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
@@ -26,15 +27,15 @@ const contactUsSchema = Yup.object().shape({
         .string()
         .oneOf(['lessThan3','lessThan6','lessThan12','nextYear'])
         .required("timeframe is required"),
-    // agent: Yup
-    //     .string()
-    //     .oneOf([Agent[0].AndreFournier.email, Agent[0].MarkHughes.email, Agent[0].Libby.email, Agent[0].SueNa.email, Agent[0].JasonTest.email, Agent[0].TommyShort.email, Agent[0].VanSpears.email, Agent[0].WillSchnieder.email, Agent[0].Antonia.email,'NA']),
+    agent: Yup
+        .string(),
+        // .oneOf([])
     message: Yup
         .string(),
-    captcha: Yup
-        .boolean()
-        .oneOf([true])
-        .required()
+    // captcha: Yup
+    //     .boolean()
+    //     .oneOf([true])
+    //     .required()
 
 })
 

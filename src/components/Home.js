@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../static/images/sdskyline.png';
 import PropertyGallery from './PropertyGallery'
+import PropertySearch from './RealNex/PropertySearch'
 import Footer from './footer'
 import { useStyles } from '../styles/style'
 import { useMediaQuery } from './hooks/mediaQuery'
@@ -28,7 +29,7 @@ export default function Home() {
           </section>
           <br/><br/>
 
-          {/* <hr className={classes.horizLine} /> */}
+          <hr className={classes.horizLine} />
 
           <h2 className={classes.h2}>Our Services</h2>
 
@@ -42,13 +43,13 @@ export default function Home() {
 
           <hr className={classes.horizLine} />
 
-          <section className={classes.content}>
+          {/* <section className={classes.content}>
             <a className={classes.linkToLoopnet} href="http://www.loopnet.com/brokerdirectory/profile/Mark%20Hughes/6glpewv">View some of our commercial real estate listings for sale or lease</a>
-          </section>
+          </section> */}
 
-          <section className={classes.gallery}>
-            <PropertyGallery />
-          </section>
+          {/* <section className={classes.gallery}> */}
+            <PropertySearch />
+          {/* </section> */}
 
           <hr className={classes.horizLine} />
 

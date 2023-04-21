@@ -15,16 +15,18 @@ A commercial real estate website
 4.5.22
 1. Update work Order
    1. U.I.
-      1. Refresh Style Elements
-         1. Colors, Fonts, Font Sizes
-      2. Fix Broken Intake Form 
-         1. Contact us
-         2. Property Intake
-      3. Integrate RealNex iFrame
-      4. Update Roster
-         1. Remove Van and Tommy*
-         2. Add New Guy
-         3. 
+      - [ ] 1. Refresh Style Elements
+      - [ ] 3. Colors, Fonts, Font Sizes
+   2. Fix Broken Intake Form 
+      - [ ] 1. Contact us
+      - [ ] 2. Property Intake
+      - [x] 3. Integrate RealNex iFrame 
+   3. Update Roster
+      - [x] 1. Remove Van and Tommy*
+      - [x] 2. Add PK
+   4. Update Content
+      - [x] 1. Typographical errors
+      - [x] 2. Modified Content
 
 
 

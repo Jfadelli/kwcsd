@@ -20,14 +20,14 @@ import ThankYou from './components/thankYou'
 import TenantRep from './components/services/tenant-rep'
 import LandlordRep from './components/services/landlord-rep'
 import InvestmentAcquisitionAndSales from './components/services/Investment-Acq'
-import DevelopmentServices from './components/services/development-services'
+import EntitlementServices from './components/services/Entitlement-services'
 
 // New Multi Bio Component
 import Bio from './components/teamBio/Bio'
 
 // Property
 import YourPropertyInfo from './components/property/YourPropertyInfo'
-import PropertySearch from './components/buildoutPluggin/PropertySearch'
+import PropertySearch from './components/RealNex/PropertySearch'
 
 
 
@@ -63,7 +63,7 @@ function App() {
                 <Route path='/services/tenant-rep' component={TenantRep} />
                 <Route path='/services/landlord-rep' component={LandlordRep} />
                 <Route path='/services/Investment-Acq' component={InvestmentAcquisitionAndSales} />
-                <Route path='/services/development-services' component={DevelopmentServices} />
+                <Route path='/services/development-services' component={EntitlementServices} />
 
                 {/* team bio links */}
                 {Agents.map(el => {

@@ -1,51 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import * as Yup from 'yup'
-import ReCAPTCHA from "react-recaptcha";
+// import ReCAPTCHA from "react-recaptcha";
 
 import Footer from '../footer'
 import { useMediaQuery } from '../hooks/mediaQuery'
 import Teamwork from '../../static/images/teamwork.jfif'
 import contactUsSchema from '../validation/contactUsSchema'
 import { Agent } from '../teamBio/agentInfo/agentInfoList'
+import {initialValues, initialFormErrors} from './initialValues'
 
 import './style.css'
 
-const testAPI = 'https://kwcsd-mail-util.herokuapp.com/api/send'
-
-const initialValues = {
-    intent: {
-        buy: true,
-        sell: false,
-        lease: false,
-        offerToLease: false,
-        consult: false,
-    },
-    timeframe: {
-        lessThan3: true,
-        lessThan6: false,
-        lessThan12: false,
-        nextYear: false,
-    },
-    agent: '',
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-    captcha: true,
-}
-
-const initialFormErrors = {
-    intent: '',
-    timeframe: '',
-    agent: '',
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-    captcha: '',
-}
-
+const nodeServerApi = 'https://calm-beyond-58148.herokuapp.com/api/send'
 
 export default function Contact() {
     // const [captchaValue, setCaptchaValue] = useState(false)
@@ -58,7 +25,7 @@ export default function Contact() {
 
     //////////////// HELPERS ////////////////
     const postNewMessage = message => {
-        axios.post(testAPI, message)
+        axios.post(nodeServerApi, message)
             .then(res => {
                 if (res.data.status === 'success') {
                     alert('Message Sent.');
@@ -75,23 +42,15 @@ export default function Contact() {
             })
     }
 
-    var verifyCallback = function(response) {
-        console.log(formValues.captcha)
-        console.log('response',response)
-        setFormValues({...formValues, captcha:true} )
-        
+    // var verifyCallback = function(response) {
+    //     console.log(formValues.captcha)
+    //     console.log('response',response)
+    //     setFormValues({...formValues, captcha:true} )
         // if(response!=null){
         //     // $("#rss").show();
         // }
-        
         // setFormValues(...formValues.captcha = true)
-        
-        
-
-
-
-
-    };
+    // };
 
     //////////////// EVENT HANDLERS ////////////////
     
@@ -115,8 +74,9 @@ export default function Contact() {
         setFormValues({
             ...formValues,
             [name]: value
+            
         })
-        console.log(formValues.captcha)
+        
     }
 
     const onSubmitHandler = evt => {
@@ -137,7 +97,6 @@ export default function Contact() {
         // }
         // else {alert('please complete the captcha')}
     }
-
 
     //////////////// SIDE EFFECTS //////////////// 
     useEffect(() => {
@@ -188,15 +147,15 @@ export default function Contact() {
                             onChange={onInputChange}
                             name='agent'
                         >
-                            <option value={Agent.JasonTest.email}>Jason Test</option>
-                            <option value={Agent.MarkHughes.email}>Please select an agent</option>
+                            <option value="mhughes@kwcommercial.com">Please Select an Agent</option>
+                            <option value={Agent.MarkHughes.email}>Mark Hughes (Team Lead | Generalist)</option>
                             <option value={Agent.HeatherMattlin.email}>Heather Mattlin</option>
                             <option value={Agent.Libby.email}>Libby Brignon (Land)</option>
                             <option value={Agent.MarkHughes.email}>Mark Hughes (Team Lead | Generalist)</option>
                             <option value={Agent.SueNa.email}>Sue Na (Flex/Industrial | Multi Unit | Retail)</option>
                             <option value={Agent.PeterKim.email}>Peter Kim</option>
                             <option value={Agent.WillSchneider.email}>Will Schneider (Industrial | Multi-Family | Office)</option>
-
+                            {/* <option value={Agent.JasonTest.email}>Jason Test</option>*/}
                         </select>
 
 
@@ -242,8 +201,8 @@ export default function Contact() {
                             // onChange={onChange}
                             verifyCallback = {verifyCallback}
                         /> */}
-                        {/* <button disabled={disabled} onSubmit={onSubmitHandler}>Send</button> */}
-                        <button onSubmit={onSubmitHandler}>Send</button>
+                        <button disabled={disabled} onSubmit={onSubmitHandler}>Send</button>
+                        {/* <button onSubmit={onSubmitHandler}>Send</button> */}
 
                     </form>
                     <img style={styles.container(isHidden)} id="teamworkimg" alt="generic team working together" src={Teamwork} />

@@ -22,7 +22,7 @@ return (
 
                         <li>Knowledge is power. A sophisticated Landlord negotiates with a depth of market knowledge. To achieve knowledge parity, the Tenant must also gain a similar depth of knowledge. Working with a tenant representative allows the Tenant to understand and utilize this knowledge and power.</li>
 
-                        <li>Lease Expiration is the only reasonable time for most companies to enter the market, and it only happens, on average, once every 5 years.  Whether you intend to move, or not, allow yourself to be “in the market” every time your lease expires. This will enable you to achieve a competitive market real estate lease even if you don’t move.</li>
+                        <li>Lease Expiration is the only reasonable time for most companies to enter the market, and it only happens, on average, once every 5 years. Whether you intend to move, or not, allow yourself to be “in the market” every time your lease expires. This will enable you to achieve a competitive market real estate lease even if you don’t move.</li>
 
                         <li>If a Landlord knows you are not considering (even if just for negotiating purposes) alternative locations, you are considered a Captive Tenant, and this status will be reflected in your renewal negotiations. Tenant representation gives you the benefit of in-depth knowledge of lease clauses which can be onerous to lessees. (This is the time to correct any past mistakes).</li>
 
@@ -31,10 +31,9 @@ return (
 
                         <li>Knowledge regarding operating expenses, renewal/expansion and give-back options.</li>
 
-                        <li>Skilled tenant representation give you an edge in obtaining necessary tenant improvements or other concessions. (Knowing what to ask for and when to ask is the key!)</li>
+                        <li>Skilled tenant representation gives you an edge in obtaining necessary tenant improvements or other concessions. (Knowing what to ask for and when to ask is the key!)</li>
 
-                        <li>Landlords may try to intimidate the Tenant into not using their own representation by promising lower rents if the broker is left out.  These savings are seldom, if ever,
-                            passed onto the Tenant.</li>
+                        <li>Landlords may try to intimidate the Tenant into not using their own representation by promising lower rents if the broker is left out. These savings are seldom, if ever, passed onto the Tenant.</li>
 
                         <li>By using a 3rd party agent, you can be more aggressive in your efforts to negotiate a market lease without compromising your relationship with your landlord.</li>
                     </section>
@@ -44,7 +43,7 @@ return (
                         <li>Negotiate a lease</li>
                         <li>Find new space</li>
                         <li>Renegotiate at renewal</li>
-                        <li>Buy buildings (own vs. rent)</li>
+                        <li>Buy buildings (perform own vs. rent analyses)</li>
                         <li>Plan and budget tenant improvements</li>
                         <li>Analyze and negotiate build to suit opportunities</li>
                         <li>Plan for the future (e.g. avoid costly surprises)</li>
@@ -52,6 +51,7 @@ return (
 
                     <section className={classes.p}>
                         <p>If you are prepared to purchase, we’ll provide a comprehensive market evaluation, negotiate your acquisition price, analyze your investment financially and negotiate your contract. We’ve got you covered from start to finish.</p>
+                        <br/>
                         <p>By <Link to='/contact/contact-form'>contacting us today</Link>,
                         you can avoid costly mistakes and surprises.  Remember, the Landlord pays our fees!</p>
                     </section>
