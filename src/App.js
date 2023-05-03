@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom'
 import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import theme from './styles/theme'
-import { useStyles } from './styles/style'
+// import { useStyles } from './styles/style'
+import './style.css'
 
 import {
   CSSTransition,
@@ -33,62 +34,88 @@ import PropertySearch from './components/RealNex/PropertySearch'
 
 // Misc Links
 import Contact from './components/contact/ContactForm'
-import Referrals4You from './components/referrals/referrals'
+// import Referrals4You from './components/referrals/referrals'
 
 import { Agent } from './components/teamBio/agentInfo/agentInfoList'
 
+import packageJson from "../package.json";
 
 
-function App() {
-  const classes = useStyles();
-  let Agents = Object.values(Agent)
 
-  return (
-    <div className={classes.app}>
-      <Nav />
-      <Route render={({ location }) => (
-        <TransitionGroup>
-          <CSSTransition
-            key={location.key}
-            timeout={500}
-            classNames='fade'>
-            <ThemeProvider theme={theme}>
-              <CssBaseline />
 
-              <Switch location={location}>
-                <Route exact path='/' component={Home} />
-                <Route path='/thank-you' component={ThankYou} />
+class App extends Component {
+  componentDidMount() {
+    const caching = () => {
+      let version = localStorage.getItem('version');
+      if (version != packageJson.version) {
+        if ('caches' in window) {
+          caches.keys().then((names) => {
+            // Delete all the cache files
+            names.forEach(name => {
+              caches.delete(name);
+            })
+          });
 
-                {/* services offered links */}
-                <Route path='/services/tenant-rep' component={TenantRep} />
-                <Route path='/services/landlord-rep' component={LandlordRep} />
-                <Route path='/services/Investment-Acq' component={InvestmentAcquisitionAndSales} />
-                <Route path='/services/development-services' component={EntitlementServices} />
+          // Makes sure the page reloads. Changes are only visible after you refresh.
+          window.location.reload(true);
+        }
 
-                {/* team bio links */}
-                {Agents.map(el => {
-                  return (
-                    <Route path={`/team-bio/`+el.pageLocation} component={Bio} />
-                  )
-                })}
+        localStorage.clear();
+        localStorage.setItem('version', packageJson.version);
+      }
+    };
+  }
 
-                {/* property links */}
-                <Route path='/property/your-property-info' component={YourPropertyInfo} />
-                <Route path='/property/property-search' component={PropertySearch} />
 
-                {/* contact links */}
-                <Route path='/contact/contact-form' component={Contact} />
+  render() {
+    // const classes = useStyles();
+    let Agents = Object.values(Agent)
+    return (
+      <div className="app">
+        <Nav />
+        <Route render={({ location }) => (
+          <TransitionGroup>
+            <CSSTransition
+              key={location.key}
+              timeout={500}
+              classNames='fade'>
+              <ThemeProvider theme={theme}>
+                <CssBaseline />
 
-                {/* referral links */}
-                {/* <Route path='/referrals/referrals4you' component={Referrals4You} /> */}
-              </Switch>
-            </ThemeProvider>
-          </CSSTransition>
+                <Switch location={location}>
+                  <Route exact path='/' component={Home} />
+                  <Route path='/thank-you' component={ThankYou} />
 
-        </TransitionGroup>
-      )} />
-    </div>
-  );
+                  {/* services offered links */}
+                  <Route path='/services/tenant-rep' component={TenantRep} />
+                  <Route path='/services/landlord-rep' component={LandlordRep} />
+                  <Route path='/services/Investment-Acq' component={InvestmentAcquisitionAndSales} />
+                  <Route path='/services/entitlement-services' component={EntitlementServices} />
+
+                  {/* team bio links */}
+                  {Agents.map(el => {
+                    return (
+                      <Route path={`/team-bio/` + el.pageLocation} component={Bio} />
+                    )
+                  })}
+
+                  {/* property links */}
+                  <Route path='/property/your-property-info' component={YourPropertyInfo} />
+                  <Route path='/property/property-search' component={PropertySearch} />
+
+                  {/* contact links */}
+                  <Route path='/contact/contact-form' component={Contact} />
+
+                  {/* referral links */}
+                  {/* <Route path='/referrals/referrals4you' component={Referrals4You} /> */}
+                </Switch>
+              </ThemeProvider>
+            </CSSTransition>
+
+          </TransitionGroup>
+        )} />
+      </div>
+    );
+  }
 }
-
 export default App;

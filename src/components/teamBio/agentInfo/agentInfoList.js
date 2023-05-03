@@ -131,16 +131,16 @@ export const Agent = {
         Heather graduated from San Francisco State University with dual BSc degrees in Marketing and International Business and worked in the logistics field for a global technology firm for several years before transitioning to her true passion of real estate.  
         `,
     },
-    JasonTest: {
-        pageLocation:'jason-fadelli',
-        name: 'Jason Fadelli',
-        phone: '760.405.3432',
-        email: 'jfadelli@gmail.com',
-        loopnetLink: 'http://www.loopnet.com/brokerdirectory/profile/Mark%20Hughes/6glpewv',
-        loopnetListingImage: 'https://images1.loopnet.com/i2/hU3AOPYluQ3AhAPo1uUnk0NYB4DiVaZaRga8xQr43dM/112/image.jpg',
-        bio: 'Jason Test Bio',
+    // JasonTest: {
+    //     pageLocation:'jason-fadelli',
+    //     name: 'Jason Fadelli',
+    //     phone: '760.405.3432',
+    //     email: 'jfadelli@gmail.com',
+    //     loopnetLink: 'http://www.loopnet.com/brokerdirectory/profile/Mark%20Hughes/6glpewv',
+    //     loopnetListingImage: 'https://images1.loopnet.com/i2/hU3AOPYluQ3AhAPo1uUnk0NYB4DiVaZaRga8xQr43dM/112/image.jpg',
+    //     bio: 'Jason Test Bio',
 
-    },
+    // },
 }
 
 

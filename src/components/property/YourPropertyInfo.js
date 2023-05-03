@@ -9,7 +9,7 @@ import Footer from '../footer'
 
 import { useStyles } from '../../styles/style'
 
-import { initialValues, initialFormErrors } from './initialValuesTesting'
+import { initialValues, initialFormErrors } from './initialValues'
 
 import { useMediaQuery } from '../hooks/mediaQuery'
 
