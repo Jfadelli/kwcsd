@@ -54,7 +54,7 @@ export const useStyles = makeStyles(theme => ({
         
     },
     agentCard:{
-        zIndex:'-1',
+        zIndex:1,
         margin: 'auto',
         width: 250,
         height: 400, 
@@ -85,7 +85,7 @@ export const useStyles = makeStyles(theme => ({
         textDecoration:'none',
         fontSize:'1rem',
         color:'rgb(180 1 1)',
-        zIndex:"100"
+        zIndex:"1000"
     },
 
     // font styles

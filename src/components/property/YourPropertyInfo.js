@@ -17,14 +17,15 @@ export default function YourPropertyInfo(props) {
     const [property, setProperty] = useState([]);
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState(initialFormErrors);
-    const [disabled, setDisabled] = useState(true);
+    // const [disabled, setDisabled] = useState(true);
     const isSmall = useMediaQuery('(min-width: 768px)');
     const isRow = useMediaQuery('(min-width: 768px)');
     // const isWide = useMediaQuery('(min-width: 768px)');
 
     //////////////// HELPERS ////////////////
     const postNewProperty = property => {
-        axios.post('https://kwcsd-mail-util.herokuapp.com/api/newProperty', property)
+        // axios.post('http://localhost:5000/api/newProperty', property)
+        axios.post('https://calm-beyond-58148.herokuapp.com/api/newProperty', property)
             .then(res => {
                 if (res.data.status === 'success') {
                     alert('Message Sent.');
@@ -80,12 +81,13 @@ export default function YourPropertyInfo(props) {
         }
         setProperty(newProperty)
         postNewProperty(property)
+        console.log('posted')
     }
 
     //////////////// SIDE EFFECTS //////////////// 
     useEffect(() => {
         PropertyValuationSchema.isValid(formValues).then(valid => {
-            setDisabled(!valid);
+            // setDisabled(!valid);
         })
     }, [formValues])
 
@@ -234,7 +236,8 @@ export default function YourPropertyInfo(props) {
                                             name='lot_size'
                                         />
                                     </label>
-                                    <button className={classes.button} disabled={disabled} onSubmit={onSubmit}>submit</button >
+                                    {/* disabled={disabled} */}
+                                    <button className={classes.button}  onSubmit={onSubmit}>submit</button >
                                 </form>
                             </div>
                         </div>

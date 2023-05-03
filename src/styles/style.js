@@ -5,7 +5,8 @@ export const useStyles = makeStyles((theme) => ({
     app: {
         overflow: 'hidden',
         height: '100%',
-        minHeight: '100vh'
+        minHeight: '100vh',
+        backgroundColor: colors.bg,
     },
     root: {
         display: 'flex',
@@ -70,7 +71,8 @@ export const useStyles = makeStyles((theme) => ({
         alignContent: 'center',
         justifyCntent: 'center',
         alignItems: 'center',
-        fontSize: '1rem',
+        fontSize: '1.15rem',
+        lineHeight:'30px',
         width: '100vw',
         maxWidth: '1024px',
         '& p': {
@@ -88,16 +90,17 @@ export const useStyles = makeStyles((theme) => ({
 
     link: {
         textDecoration: 'none',
-        color: 'rgb(200 1 1)',
+        color: colors.dark,
         fontWeight: '500',
         fontSize: '1.5rem',
         textAlign: 'center',
         borderBottom: '1px dotted black',
         lineHeight: '3rem',
+        marginBottom:'6px',
         width: '50%',
         '&:hover': {
             color: colors.alt,
-            borderBottom: 'dotted '+ colors.alt
+            borderBottom: '1px dotted '+ colors.alt
         }
     },
 
@@ -115,8 +118,9 @@ export const useStyles = makeStyles((theme) => ({
 
     // decorations
     horizLine: {
+
         margin: '5vh auto 2vh auto',
-        border: '1px solid #666666',
+        border: `1px solid ${colors.main}`,
         maxWidth: '1024px',
         width: '100%'
     },
@@ -140,7 +144,7 @@ export const useStyles = makeStyles((theme) => ({
 
     // font styles
     p: {
-        fontSize: "1rem",
+        fontSize: "1.25rem",
     },
     list: {
         fontSize: "1.15rem",
@@ -193,7 +197,8 @@ export const useStyles = makeStyles((theme) => ({
 
     },
     navToolbar: {
-        display: 'flex'
+        display: 'flex',
+        // backgroundColor: colors.bg
     },
 
     // property evaluation form
@@ -236,12 +241,12 @@ export const useStyles = makeStyles((theme) => ({
     },
 
     h2: {
-        color: colors.main,
-        textShadow: '-1px 2px 0 #000',
+        color: colors.dark,
+        // textShadow: '-1px 2px 0 #000',
         backgroundColor: 'none',
         margin: '10px 0 4vh 0',
         fontSize: '2em',
-        borderBottom: '2px solid black',
+        // borderBottom: '2px solid black',
     },
 
     button: {
@@ -276,5 +281,10 @@ export const useStyles = makeStyles((theme) => ({
         border: '2px solid ' + colors.jet,
         boxShadow: '30px -10px ' + colors.main,
     },
+    iFrame: {
+        backgroundColor:'blue',
+        width: 'auto',
+        height:'75vh'
+    }
 
 }));
