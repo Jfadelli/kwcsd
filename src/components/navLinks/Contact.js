@@ -39,7 +39,8 @@ export default function ServicesOffered() {
   React.useEffect(() => {
     if (prevOpen.current === true && open === false) {
       anchorRef.current.focus();
-    }prevOpen.current = open; }, [open]);
+    } prevOpen.current = open;
+  }, [open]);
 
   return (
     <div className={classes.root}>
@@ -51,7 +52,7 @@ export default function ServicesOffered() {
           onClick={handleToggle}
           className={classes.navButton}
         >
-          Contact
+          Contact Us
         </Button>
         <Popper className={classes.popper} open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
@@ -62,17 +63,17 @@ export default function ServicesOffered() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link className={classes.link} to ='/contact/contact-form' ><MenuItem onClick={handleClose} >Contact Us</MenuItem></Link>
+                    <Link className={classes.link} to='/contact/contact-form' ><MenuItem onClick={handleClose} >Contact Us</MenuItem></Link>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
-              
-              
-              
+
+
+
             </Grow>
           )}
         </Popper>
-        
+
       </div>
     </div>
   );

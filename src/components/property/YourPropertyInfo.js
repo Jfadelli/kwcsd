@@ -4,7 +4,7 @@ import axios from 'axios'
 import * as Yup from 'yup'
 import PropertyValuationSchema from '../validation/PropertyValuationSchema'
 
-import PropertyPhoto from '../../static/images/mf-cre.jpg'
+import PropertyPhoto from '../../static/images/hi-rise-bldg.jpg'
 import Footer from '../footer'
 
 import { useStyles } from '../../styles/style'
@@ -99,8 +99,9 @@ export default function YourPropertyInfo(props) {
                 <h2 className={classes.title}>Property Valuation</h2>
                 <div className={classes.content}>
                     <section className={classes.p}>
-                        <p>Representing sellers of investment real estate may require many of the same services, in addition to a thorough understanding of electronic marketing media, a creative approach to packaging, expert sales and negotiating skills, and a strong broker network. In addition to investment brokerage, we offer consulting services in development, financial analysis and finance. Our Investment Services team has over 35 years experience, which covers all of the above criteria essential to providing our clients with the highest quality representation available.</p>
+                        <p>Please identify any listed KW Commercial property for Sale or Lease that you are interested in and we will thoroughly research the market and provide you with a report indicating our opinion of the value of the investment, the competitive Sale or Lease values in the market, and alternate market opportunities we identify that meet your criteria. We will represent you in any Sale or Lease opportunity and the Seller or Building Owner will compensate us through their listing agent at no cost to you. We can also search multiple national commercial listing services for you.</p>
                     </section>
+
                     <h2 className={classes.h2}>Property Information</h2>
                     <section className={classes.flexRow} style={isRowStyle.container(isRow)}>
 
@@ -112,7 +113,7 @@ export default function YourPropertyInfo(props) {
 
                                 <form className={classes.form} onSubmit={onSubmit} >
                                     <label style={isRowStyle.container(isRow)}>Enter your name:&nbsp;
-                            <input
+                                        <input
                                             value={formValues.name}
                                             onChange={onInputChange}
                                             type='text'
@@ -122,7 +123,7 @@ export default function YourPropertyInfo(props) {
                                     </label>
 
                                     <label style={isRowStyle.container(isRow)}>Enter your E-mail:&nbsp;*
-                            <input
+                                        <input
                                             value={formValues.email}
                                             onChange={onInputChange}
                                             type='email'
@@ -132,7 +133,7 @@ export default function YourPropertyInfo(props) {
                                     </label>
 
                                     <label style={isRowStyle.container(isRow)}>Enter your phone:&nbsp;*
-                            <input
+                                        <input
                                             maxLength='10'
                                             value={formValues.phone}
                                             onChange={onInputChange}
@@ -144,7 +145,7 @@ export default function YourPropertyInfo(props) {
                                     </label>
 
                                     <label style={isRowStyle.container(isRow)}>Enter your street address:&nbsp;*
-                            <input
+                                        <input
                                             value={formValues.street_address}
                                             onChange={onInputChange}
                                             type='text'
@@ -154,7 +155,7 @@ export default function YourPropertyInfo(props) {
                                     </label>
 
                                     <label style={isRowStyle.container(isRow)}>Enter your city:&nbsp;*
-                                <input
+                                        <input
                                             value={formValues.city}
                                             onChange={onInputChange}
                                             type='text'
@@ -180,7 +181,7 @@ export default function YourPropertyInfo(props) {
                             <div className={classes.flexCol} >
                                 <form className={classes.form} onSubmit={onSubmit} >
                                     <label style={isRowStyle.container(isRow)}>Enter your zip:&nbsp;*
-                            <input
+                                        <input
                                             value={formValues.zip}
                                             onChange={onInputChange}
                                             type='zip'
@@ -191,7 +192,7 @@ export default function YourPropertyInfo(props) {
                                     </label>
 
                                     <label style={isRowStyle.container(isRow)}>Enter your country:&nbsp;*
-                            <input
+                                        <input
                                             value={formValues.country}
                                             onChange={onInputChange}
                                             type='text'
@@ -201,7 +202,7 @@ export default function YourPropertyInfo(props) {
                                     </label>
 
                                     <label style={isRowStyle.container(isRow)}>Property Type:
-                            <select
+                                        <select
                                             onChange={onInputChange}
                                             value={formValues.property_type}
                                             name='property_type'
@@ -218,7 +219,7 @@ export default function YourPropertyInfo(props) {
                                     </label>
 
                                     <label style={isRowStyle.container(isRow)}>Enter your building square footage:&nbsp;*
-                            <input
+                                        <input
                                             value={formValues.building_sf}
                                             onChange={onInputChange}
                                             type='text'
@@ -228,7 +229,7 @@ export default function YourPropertyInfo(props) {
                                     </label>
 
                                     <label style={isRowStyle.container(isRow)}>Enter your lot square footage:&nbsp;*
-                            <input
+                                        <input
                                             value={formValues.lot_size}
                                             onChange={onInputChange}
                                             type='text'
@@ -237,7 +238,7 @@ export default function YourPropertyInfo(props) {
                                         />
                                     </label>
                                     {/* disabled={disabled} */}
-                                    <button className={classes.button}  onSubmit={onSubmit}>submit</button >
+                                    <button className={classes.button} onSubmit={onSubmit}>submit</button >
                                 </form>
                             </div>
                         </div>

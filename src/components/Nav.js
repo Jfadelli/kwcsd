@@ -8,7 +8,7 @@ import Contact from './navLinks/Contact.js'
 // import Referrals from './navLinks/Referrals.js'
 import Home from './navLinks/HomeLink.js'
 
-import Logo from '../static/images/logo.jpg'
+import Logo from '../static/images/logo.png'
 import { useStyles } from './../styles/style'
 import { useMediaQuery } from './hooks/mediaQuery'
 
@@ -19,18 +19,18 @@ export default function Nav() {
 
   return (
     <div className={classes.spacedDiv}>
-    <div className={classes.navBar} style={styles.container(isRow)}>
-      <Toolbar className={classes.navToolbar} style={styles.container(isRow)}>
-        <a href='/'> <img style={logoStyle.container(isSmall)} src={Logo} alt='keller williams commercial' /></a>
-        <Home />
-        <ServicesOffered />
-        <TeamBio />
-        <PropertyValuation />
-        <Contact />
-        {/* <Referrals /> */}
-      </Toolbar>
+      <div className={classes.navBar} style={styles.container(isRow)}>
+        <Toolbar className={classes.navToolbar} style={styles.container(isRow)}>
+          <a href='/'> <img style={logoStyle.container(isSmall)} src={Logo} alt='keller williams commercial logo' /></a>
+          <Home />
+          <ServicesOffered />
+          <TeamBio />
+          <PropertyValuation />
+          <Contact />
+          {/* <Referrals /> */}
+        </Toolbar>
+      </div>
     </div>
-  </div>
   );
 }
 
@@ -39,15 +39,16 @@ const styles = {
     flexDirection: isRow ? 'row' : 'column',
     height: isRow ? '' : 'auto',
     alignContent: isRow ? '' : 'center',
-    zIndex:'0'
+    zIndex: '0'
   }),
 };
 
 const logoStyle = {
   container: isSmall => ({
     display: isSmall ? 'flex' : 'none',
-    height: isSmall ? '88px': '0',
+    height: isSmall ? '88px' : '0',
     width: isSmall ? '150px' : '0',
-    margin: isSmall ?  '0 100px 0 auto' : 'auto'
+    margin: isSmall ? '0 100px 0 auto' : 'auto',
+    backgroundColor: isSmall ? 'transparent' : 'transparent'
   })
 }

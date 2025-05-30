@@ -24,10 +24,10 @@ export default function Home() {
         <div className={classes.contentWrapper}>
 
           <section className={classes.content}>
-            <p> With over 100 years of combined experience covering all aspects of commercial real estate brokerage, development, marketing, finance, and management, our team is ready to serve you.</p><br />
+            <p>With over 100 years of combined experience covering all aspects of commercial real estate brokerage, development, marketing, finance, and management, our team is ready to serve you.</p><br />
             <p>Whether you are leasing, purchasing or selling, let us leverage our extensive experience and network of personal contacts to achieve your goals by providing the most creative and cost effective deal structures available in today's marketplace.</p>
           </section>
-          <br/><br/>
+          <br /><br />
 
           <hr className={classes.horizLine} />
 
@@ -38,7 +38,7 @@ export default function Home() {
             <Link className={classes.link} to='/services/tenant-rep'>Tenant Representation</Link>
             <Link className={classes.link} to='/services/landlord-rep'>Landlord Representation</Link>
             <Link className={classes.link} to='/services/Investment-Acq'>Investment Acquisition & Sales</Link>
-            <Link className={classes.link} to='/services/development-services'>Development & Entitlement</Link>
+            <Link className={classes.link} to='/services/development-and-entitlement-services'>Development & Entitlement</Link>
           </section>
 
           <hr className={classes.horizLine} />
@@ -48,7 +48,7 @@ export default function Home() {
           </section> */}
 
           {/* <section className={classes.gallery}> */}
-            <PropertySearch />
+          <PropertySearch />
           {/* </section> */}
 
           <hr className={classes.horizLine} />

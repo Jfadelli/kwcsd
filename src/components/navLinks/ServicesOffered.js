@@ -64,7 +64,7 @@ export default function ServicesOffered() {
               <Paper >
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link className={classes.link} to='/services/entitlement-services'><MenuItem onClick={handleClose}>Entitlement Services</MenuItem></Link>
+                    <Link className={classes.link} to='/services/development-and-entitlement-services'><MenuItem onClick={handleClose}>Entitlement Services</MenuItem></Link>
                     <Link className={classes.link} to='/services/Investment-Acq'><MenuItem onClick={handleClose}>Investment Acquisition</MenuItem></Link>
                     <Link className={classes.link} to='/services/landlord-rep'><MenuItem onClick={handleClose}>Landlord Representation</MenuItem></Link>
                     <Link className={classes.link} to='/services/tenant-rep' ><MenuItem onClick={handleClose} >Tenant Representation</MenuItem></Link>
