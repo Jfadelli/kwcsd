@@ -5,7 +5,7 @@ import Teamwork from '../../static/images/teamwork.jfif'
 import Footer from '../footer'
 import { useMediaQuery } from '../hooks/mediaQuery'
 
-const nodeServerApi = 'https://calm-beyond-58148.herokuapp.com/api/send'
+const nodeServerApi = 'https://kwcsandiego.com/api/send_email.php'
 
 
 const InputForm = () => {
