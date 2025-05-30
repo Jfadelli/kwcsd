@@ -26,8 +26,8 @@ A commercial real estate website
 
 
 2. Personal Audit
-   1. [ ] temp update contact to open email client
-      - [ ] Find & Deploy mail server solution in cPanel 
+   1. [x] temp update contact to open email client
+      - [wip] Find & Deploy mail server solution in cPanel 
    2. [x] Update banner white space
 
 
