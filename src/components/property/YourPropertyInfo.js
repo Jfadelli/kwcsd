@@ -7,7 +7,7 @@ import PropertyValuationSchema from '../validation/PropertyValuationSchema'
 import PropertyPhoto from '../../static/images/hi-rise-bldg.jpg'
 import Footer from '../footer'
 
-import { useStyles } from '../../styles/style'
+import { useStyles } from './style'
 
 import { initialValues, initialFormErrors } from './initialValues'
 
@@ -25,7 +25,7 @@ export default function YourPropertyInfo(props) {
     //////////////// HELPERS ////////////////
     const postNewProperty = property => {
         // axios.post('http://localhost:5000/api/newProperty', property)
-        axios.post('https://calm-beyond-58148.herokuapp.com/api/newProperty', property)
+        axios.post('https://kwcsandiego.com/api/send_email.php', property)
             .then(res => {
                 if (res.data.status === 'success') {
                     alert('Message Sent.');
@@ -93,23 +93,25 @@ export default function YourPropertyInfo(props) {
 
     const classes = useStyles()
 
+    //////////////// Form JSX //////////////// 
+
     return (
         <div className={classes.wrapper}>
             <div className={classes.flexCol}>
-                <h2 className={classes.title}>Property Valuation</h2>
                 <div className={classes.content}>
+                    <h2 className={classes.title}>Property Valuation</h2>
                     <section className={classes.p}>
                         <p>Please identify any listed KW Commercial property for Sale or Lease that you are interested in and we will thoroughly research the market and provide you with a report indicating our opinion of the value of the investment, the competitive Sale or Lease values in the market, and alternate market opportunities we identify that meet your criteria. We will represent you in any Sale or Lease opportunity and the Seller or Building Owner will compensate us through their listing agent at no cost to you. We can also search multiple national commercial listing services for you.</p>
                     </section>
-
+                    <br />
                     <h2 className={classes.h2}>Property Information</h2>
-                    <section className={classes.flexRow} style={isRowStyle.container(isRow)}>
+                    <section className={classes.formSection} style={isRowStyle.container(isRow)}>
 
                         <div className={classes.flexCol}>
                             <img className={classes.img} style={picStyle.container(isSmall)} src={PropertyPhoto} alt="mf cre blg" />
                         </div>
                         <div className={classes.flexRow} style={isRowStyle.container(isRow)}>
-                            <div className={classes.flexCol} >
+                            <div className={classes.flexCol}>
 
                                 <form className={classes.form} onSubmit={onSubmit} >
                                     <label style={isRowStyle.container(isRow)}>Enter your name:&nbsp;
@@ -163,23 +165,23 @@ export default function YourPropertyInfo(props) {
                                             name='city'
                                         />
                                     </label>
-                                </form>
-                                <div className={classes.errors}>
-                                    <e>{formErrors.name}</e>
-                                    <e>{formErrors.email}</e>
-                                    <e>{formErrors.phone}</e>
-                                    <e>{formErrors.street_address}</e>
-                                    <e>{formErrors.city}</e>
-                                    <e>{formErrors.zip}</e>
-                                    <e>{formErrors.country}</e>
-                                    <e>{formErrors.building_sf}</e>
-                                    <e>{formErrors.lot_sf}</e>
-                                    <e>{formErrors.property_type}</e>
-                                </div>
-                            </div>
+                                    {/* </form> */}
+                                    <div className={classes.errors}>
+                                        <e>{formErrors.name}</e>
+                                        <e>{formErrors.email}</e>
+                                        <e>{formErrors.phone}</e>
+                                        <e>{formErrors.street_address}</e>
+                                        <e>{formErrors.city}</e>
+                                        <e>{formErrors.zip}</e>
+                                        <e>{formErrors.country}</e>
+                                        <e>{formErrors.building_sf}</e>
+                                        <e>{formErrors.lot_sf}</e>
+                                        <e>{formErrors.property_type}</e>
+                                    </div>
+                                    {/* </div> */}
 
-                            <div className={classes.flexCol} >
-                                <form className={classes.form} onSubmit={onSubmit} >
+                                    {/* <div className={classes.flexCol} > */}
+                                    {/* <form className={classes.form} onSubmit={onSubmit} > */}
                                     <label style={isRowStyle.container(isRow)}>Enter your zip:&nbsp;*
                                         <input
                                             value={formValues.zip}
@@ -257,9 +259,11 @@ const picStyle = {
 }
 
 const isRowStyle = {
-    container: isRow => ({
+    container: (isRow) => ({
+        display: 'flex',
         flexDirection: isRow ? 'row' : 'column',
         alignItems: isRow ? 'flex-start' : 'center',
-        display: isRow ? '' : 'flex'
-    })
-}
+        gap: '10px',           // optional: spacing between label text and input
+        marginBottom: '10px',  // optional: vertical spacing between rows
+    }),
+};

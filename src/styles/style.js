@@ -72,7 +72,7 @@ export const useStyles = makeStyles((theme) => ({
         justifyCntent: 'center',
         alignItems: 'center',
         fontSize: '1.15rem',
-        lineHeight:'30px',
+        lineHeight: '30px',
         width: '100vw',
         maxWidth: '1024px',
         '& p': {
@@ -96,11 +96,11 @@ export const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         borderBottom: '1px dotted black',
         lineHeight: '3rem',
-        marginBottom:'6px',
+        marginBottom: '6px',
         width: '50%',
         '&:hover': {
             color: colors.alt,
-            borderBottom: '1px dotted '+ colors.alt
+            borderBottom: '1px dotted ' + colors.alt
         }
     },
 
@@ -257,12 +257,12 @@ export const useStyles = makeStyles((theme) => ({
         fontVariant: 'small-caps',
         color: colors.main,
         backgroundColor: colors.alt,
-        border: '2px dotted '+ colors.main,
+        border: '2px dotted ' + colors.main,
         borderRadius: '4px',
-        '&:hover':{
+        '&:hover': {
             color: colors.alt,
             backgroundColor: colors.main,
-            border: '2px dotted '+ colors.dark,
+            border: '2px dotted ' + colors.dark,
             cursor: 'pointer'
         }
     },
@@ -282,9 +282,9 @@ export const useStyles = makeStyles((theme) => ({
         boxShadow: '30px -10px ' + colors.main,
     },
     iFrame: {
-        backgroundColor:'blue',
+        backgroundColor: 'blue',
         width: 'auto',
-        height:'75vh'
+        height: '75vh'
     }
 
 }));
