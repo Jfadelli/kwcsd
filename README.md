@@ -57,7 +57,7 @@ A custom react site for a high level commercial real estate team working with KW
 
 ## Credits
 1. Jason Fadelli - Creator
-2. Dang Lu - Co-Creator <sup>The guy who fixed everything and didn't sleep</sup>
+2. Dang Lu - Creator
 
 ## In Development
 1. reCapthca
