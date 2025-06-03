@@ -4,7 +4,7 @@ A commercial real estate website
 ## libraries
 - react
 - material-ui
-- xxios
+- axios
 - styled-components
 - react-router-dom
 - Yup
@@ -58,6 +58,7 @@ A custom react site for a high level commercial real estate team working with KW
 ## Credits
 1. Jason Fadelli - Creator
 2. Dang Lu - Creator
+
 
 ## In Development
 1. reCapthca
