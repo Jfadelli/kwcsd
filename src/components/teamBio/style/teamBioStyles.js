@@ -2,115 +2,119 @@ import { makeStyles } from '@material-ui/styles'
 
 export const useStyles = makeStyles(theme => ({
     //baseline styles
-    wrapper:{
+    wrapper: {
         display: 'flex',
         flexGrow: 1,
         margin: 'auto',
-        alignItems:'center',
-        alignContent:'center',
-        justifyContent:'center',
+        alignItems: 'center',
+        alignContent: 'center',
+        justifyContent: 'center',
         flexDirection: 'column',
     },
     flexRow: {
-        alignSelf:'center',
+        alignSelf: 'center',
         display: "flex",
         justifyContent: "space-evenly",
         maxWidth: '1024px',
         minWidth: '1023px',
         width: '100%',
     },
-    flexCol: { 
+    flexCol: {
         display: "flex",
-        flexDirection: "column",    
+        flexDirection: "column",
         justifyContent: "center",
         textAlign: "left",
         margin: "2vh 5%",
     },
-    content:{
+    content: {
         alignSelf: 'center',
         display: 'flex',
         flexDirection: 'column',
         alignContent: 'center',
         justifyCntent: 'center',
-        alignItems:'center',
-        fontSize: '1rem', 
+        alignItems: 'center',
+        fontSize: '1rem',
         maxWidth: '1024px',
-        '& p':{ 
+        '& p': {
             margin: 'auto .5rem'
         }
     },
 
     //card styles
-    agentInfo:{
+    agentInfo: {
         display: 'flex',
         // backgroundColor:'blue',
         position: 'relative',
         top: '5%',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems:'center',
-    
+        alignItems: 'center',
 
-        
+
+
     },
-    agentCard:{
-        zIndex:1,
+    agentCard: {
+        zIndex: 1,
         margin: 'auto',
         width: 250,
-        height: 400, 
+        height: 400,
         position: 'relative',
     },
     headshot: {
-        height: 240, 
+        height: 240,
     },
-    propertyCard:{
+    propertyCard: {
         margin: 10,
         height: "45vh",
         width: "60%",
-        position:'relative',
-        zIndex:'-1'
+        position: 'relative',
+        zIndex: '-1'
     },
-    propertyPhoto:{
-        height: "50vh",
+    propertyPhoto: {
+        maxHeight: "40vh",
+        maxWidth: "50vw",
+        borderRadius: "6px",
+        boxShadow: 'rgba(0, 0, .8, 0.74) 0px 5px 10px',
+
     },
     title: {
-        display:'flex',
-        alignItems:' center',
+        display: 'flex',
+        alignItems: ' center',
         color: theme.palette.primary.dark,
         fontSize: "2rem",
-        margin: "auto" 
+        margin: "auto"
     },
-    email:{
+    email: {
         display: 'flex',
-        textDecoration:'none',
-        fontSize:'1rem',
-        color:'rgb(180 1 1)',
-        zIndex:"1000"
+        textDecoration: 'none',
+        fontSize: '1rem',
+        color: 'rgb(180 1 1)',
+        zIndex: "1000"
     },
 
     // font styles
-    p:{
+    p: {
         fontSize: "1rem",
     },
-    list:{
+    list: {
         fontSize: "1.15rem",
         margin: " .5rem 0",
         padding: "0 0 0 .5rem",
-        '& li':{
+        '& li': {
             padding: "0 0 .5rem 1rem",
         }
     },
-    heading:{
+    heading: {
         display: 'flex',
         alignSelf: 'center',
-        textAlign:'center',
+        textAlign: 'center',
         fontSize: "1.5rem",
         margin: "0 8rem",
         padding: "0rem",
     },
 
     //decorations
-    horizLine:{
+    horizLine: {
         margin: '2vh auto 2vh auto',
         border: '1px solid #666666',
         maxWidth: '1024px',

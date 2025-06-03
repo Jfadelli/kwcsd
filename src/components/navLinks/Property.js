@@ -38,7 +38,8 @@ export default function ServicesOffered() {
   React.useEffect(() => {
     if (prevOpen.current === true && open === false) {
       anchorRef.current.focus();
-    }prevOpen.current = open; }, [open]);
+    } prevOpen.current = open;
+  }, [open]);
 
   return (
     <div className={classes.root}>
@@ -61,18 +62,18 @@ export default function ServicesOffered() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList className={classes.menuList} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <Link className={classes.link} to ='/property/your-property-info' ><MenuItem onClick={handleClose} >Your Property Info</MenuItem></Link>
-                    <Link className={classes.link} to ='/property/property-search' ><MenuItem onClick={handleClose} >Property Search</MenuItem></Link>
+                    <Link className={classes.link} to='/property/your-property-info' ><MenuItem onClick={handleClose} >YOUR PROPERTY INFO</MenuItem></Link>
+                    <Link className={classes.link} to='/property/property-search' ><MenuItem onClick={handleClose} >PROPERTY SEARCH</MenuItem></Link>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
-              
-              
-              
+
+
+
             </Grow>
           )}
         </Popper>
-        
+
       </div>
     </div>
   );

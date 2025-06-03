@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -21,7 +21,7 @@ import ThankYou from './components/thankYou'
 import TenantRep from './components/services/tenant-rep'
 import LandlordRep from './components/services/landlord-rep'
 import InvestmentAcquisitionAndSales from './components/services/Investment-Acq'
-import EntitlementServices from './components/services/Entitlement-services'
+import DevlopmentAndEntitlementServices from './components/services/DevelopmentAndEntitlementServices'
 
 // New Multi Bio Component
 import Bio from './components/teamBio/Bio'
@@ -90,7 +90,7 @@ class App extends Component {
                   <Route path='/services/tenant-rep' component={TenantRep} />
                   <Route path='/services/landlord-rep' component={LandlordRep} />
                   <Route path='/services/Investment-Acq' component={InvestmentAcquisitionAndSales} />
-                  <Route path='/services/entitlement-services' component={EntitlementServices} />
+                  <Route path='/services/development-and-entitlement-services' component={DevlopmentAndEntitlementServices} />
 
                   {/* team bio links */}
                   {Agents.map(el => {
