@@ -47,7 +47,7 @@ class App extends Component {
   componentDidMount() {
     const caching = () => {
       let version = localStorage.getItem('version');
-      if (version != packageJson.version) {
+      if (version !== packageJson.version) {
         if ('caches' in window) {
           caches.keys().then((names) => {
             // Delete all the cache files
@@ -55,6 +55,7 @@ class App extends Component {
               caches.delete(name);
             })
           });
+
 
           // Makes sure the page reloads. Changes are only visible after you refresh.
           window.location.reload(true);
@@ -64,6 +65,8 @@ class App extends Component {
         localStorage.setItem('version', packageJson.version);
       }
     };
+    caching(); // <--- actually invoke it
+
   }
 
 
@@ -93,11 +96,13 @@ class App extends Component {
                   <Route path='/services/development-and-entitlement-services' component={DevlopmentAndEntitlementServices} />
 
                   {/* team bio links */}
-                  {Agents.map(el => {
-                    return (
-                      <Route path={`/team-bio/` + el.pageLocation} component={Bio} />
-                    )
-                  })}
+                  {Agents.map((el) => (
+                    <Route 
+                      key={el.pageLocation}
+                      path={`/team-bio/${el.pageLocation}`} 
+                      component={Bio}
+                    />
+                  ))}
 
                   {/* property links */}
                   <Route path='/property/your-property-info' component={YourPropertyInfo} />
