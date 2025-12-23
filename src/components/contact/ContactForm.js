@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'
 import './style.css'
 import Teamwork from '../../static/images/teamwork.jfif'
 import Footer from '../footer'
 import { useMediaQuery } from '../hooks/mediaQuery'
-
-const nodeServerApi = 'https://kwcsandiego.com/api/send_email.php'
+import { sendContactForm } from '../../services/emailService'
 
 
 const InputForm = () => {
@@ -28,8 +26,8 @@ const InputForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const message = {
-                intent: formValues.intent,
+            const data = {
+                type: formValues.type,
                 timeframe: formValues.timeframe,
                 fullName: formValues.fullName.trim(),
                 email: formValues.email.trim(),
@@ -37,19 +35,27 @@ const InputForm = () => {
                 message: formValues.message.trim(),
                 agent: formValues.agent
             };
-            axios.post(nodeServerApi, message)
-                .then(res => {
-                    if (res.data.status === 'success') {
-                        alert('Message Sent.');
-                    }
-                    else if (res.data.status === 'fail') {
-                        alert('Message failed to send.')
-                    }
-                })
-            // TODO: handle success/failure
+
+            const result = await sendContactForm(data);
+
+            if (result.success) {
+                alert('Message sent successfully!');
+                // Reset form
+                setFormValues({
+                    type: "",
+                    timeframe: "",
+                    agent: "",
+                    fullName: "",
+                    email: "",
+                    phone: "",
+                    message: "",
+                });
+            } else {
+                alert(`Failed to send message: ${result.message}`);
+            }
         } catch (error) {
-            console.error(error);
-            // TODO: handle error
+            console.error('Error submitting contact form:', error);
+            alert('An unexpected error occurred. Please try again.');
         }
     };
     useEffect(() => {
@@ -97,8 +103,8 @@ const InputForm = () => {
                         <label htmlFor="email">Email Address:</label>
                         <input type="email" id="email" name="email" onChange={handleChange} />
 
-                        <label htmlFor="phoneNumber">Phone Number:</label>
-                        <input type="tel" id="phoneNumber" name="phoneNumber" onChange={handleChange} />
+                        <label htmlFor="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" onChange={handleChange} />
 
                         <label htmlFor="message">Message:</label>
                         <textarea id="message" name="message" onChange={handleChange} />

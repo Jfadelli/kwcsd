@@ -1,6 +1,6 @@
 import React from 'react'
 import Footer from '../../components/footer'
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@mui/styles'
 import { useStyles } from '../../styles/style'
 
 const customListStyles = makeStyles(theme => ({

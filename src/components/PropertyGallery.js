@@ -3,7 +3,7 @@ import axios from 'axios'
 // import TextTruncate from 'react-text-truncate'
 
 
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@mui/styles'
 
 const darkText = 'rgba(20, 20, 20, .8)'
 

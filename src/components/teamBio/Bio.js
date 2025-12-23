@@ -16,7 +16,7 @@ import {
     CardMedia,
     Typography,
     // Link
-} from '@material-ui/core'
+} from '@mui/material'
 
 export default function Bio() {
     const classes = useStyles()

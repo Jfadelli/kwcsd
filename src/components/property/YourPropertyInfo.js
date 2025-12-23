@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-
 import * as Yup from 'yup'
 import PropertyValuationSchema from '../validation/PropertyValuationSchema'
+import { sendPropertyValuation } from '../../services/emailService'
 
 import PropertyPhoto from '../../static/images/hi-rise-bldg.jpg'
 import Footer from '../footer'
@@ -23,22 +22,20 @@ export default function YourPropertyInfo(props) {
     // const isWide = useMediaQuery('(min-width: 768px)');
 
     //////////////// HELPERS ////////////////
-    const postNewProperty = property => {
-        // axios.post('http://localhost:5000/api/newProperty', property)
-        axios.post('https://kwcsandiego.com/api/send_email.php', property)
-            .then(res => {
-                if (res.data.status === 'success') {
-                    alert('Message Sent.');
-                } else if (res.data.status === 'fail') {
-                    alert('Message failed to send.')
-                }
-            })
-            .catch(err => {
-                console.log(err)
-            })
-            .finally(() => {
-                setFormValues(initialValues)
-            })
+    const postNewProperty = async (property) => {
+        try {
+            const result = await sendPropertyValuation(property);
+
+            if (result.success) {
+                alert('Property valuation request sent successfully!');
+                setFormValues(initialValues);
+            } else {
+                alert(`Failed to send request: ${result.message}`);
+            }
+        } catch (err) {
+            console.error('Error submitting property valuation:', err);
+            alert('An unexpected error occurred. Please try again.');
+        }
     }
 
     //////////////// EVENT HANDLERS ////////////////
@@ -80,7 +77,7 @@ export default function YourPropertyInfo(props) {
             lot_size: formValues.lot_size.trim()
         }
         setProperty(newProperty)
-        postNewProperty(property)
+        postNewProperty(newProperty)  // Fixed: use newProperty instead of stale state
         console.log('posted')
     }
 

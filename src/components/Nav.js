@@ -1,5 +1,5 @@
 import React from 'react';
-import Toolbar from '@material-ui/core/Toolbar';
+import Toolbar from '@mui/material/Toolbar';
 
 import ServicesOffered from './navLinks/ServicesOffered.js'
 import TeamBio from './navLinks/TeamBio.js'
