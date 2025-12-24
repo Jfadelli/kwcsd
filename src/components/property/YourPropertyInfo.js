@@ -13,13 +13,9 @@ import { initialValues, initialFormErrors } from './initialValues'
 import { useMediaQuery } from '../hooks/mediaQuery'
 
 export default function YourPropertyInfo(props) {
-    const [property, setProperty] = useState([]);
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState(initialFormErrors);
-    // const [disabled, setDisabled] = useState(true);
     const isSmall = useMediaQuery('(min-width: 768px)');
-    const isRow = useMediaQuery('(min-width: 768px)');
-    // const isWide = useMediaQuery('(min-width: 768px)');
 
     //////////////// HELPERS ////////////////
     const postNewProperty = async (property) => {
@@ -76,9 +72,7 @@ export default function YourPropertyInfo(props) {
             building_sf: formValues.building_sf.trim(),
             lot_size: formValues.lot_size.trim()
         }
-        setProperty(newProperty)
-        postNewProperty(newProperty)  // Fixed: use newProperty instead of stale state
-        console.log('posted')
+        postNewProperty(newProperty)
     }
 
     //////////////// SIDE EFFECTS //////////////// 
@@ -102,106 +96,130 @@ export default function YourPropertyInfo(props) {
                     </section>
                     <br />
                     <h2 className={classes.h2}>Property Information</h2>
-                    <section className={classes.formSection} style={isRowStyle.container(isRow)}>
 
-                        <div className={classes.flexCol}>
-                            <img className={classes.img} style={picStyle.container(isSmall)} src={PropertyPhoto} alt="mf cre blg" />
-                        </div>
-                        <div className={classes.flexRow} style={isRowStyle.container(isRow)}>
-                            <div className={classes.flexCol}>
+                    <form className={classes.form} onSubmit={onSubmit}>
+                        <div className={classes.formContainer}>
+                            <div className={classes.formImageSection} style={picStyle.container(isSmall)}>
+                                <div className={classes.imageWrapper}>
+                                    <img className={classes.img} src={PropertyPhoto} alt="Commercial real estate building" />
+                                </div>
+                            </div>
 
-                                <form className={classes.form} onSubmit={onSubmit} >
-                                    <label style={isRowStyle.container(isRow)}>Enter your name:&nbsp;
+                            <div className={classes.formFieldsSection}>
+                                <div className={classes.formGrid}>
+                                    <div className={classes.formField}>
+                                        <label className={classes.fieldLabel}>
+                                            Name <span className={classes.required}>*</span>
+                                        </label>
                                         <input
+                                            className={classes.input}
                                             value={formValues.name}
                                             onChange={onInputChange}
                                             type='text'
-                                            placeholder='Name'
+                                            placeholder='Your name'
                                             name='name'
                                         />
-                                    </label>
+                                        {formErrors.name && <span className={classes.error}>{formErrors.name}</span>}
+                                    </div>
 
-                                    <label style={isRowStyle.container(isRow)}>Enter your E-mail:&nbsp;*
+                                    <div className={classes.formField}>
+                                        <label className={classes.fieldLabel}>
+                                            Email <span className={classes.required}>*</span>
+                                        </label>
                                         <input
+                                            className={classes.input}
                                             value={formValues.email}
                                             onChange={onInputChange}
                                             type='email'
-                                            placeholder='Email'
+                                            placeholder='your.email@example.com'
                                             name='email'
                                         />
-                                    </label>
+                                        {formErrors.email && <span className={classes.error}>{formErrors.email}</span>}
+                                    </div>
 
-                                    <label style={isRowStyle.container(isRow)}>Enter your phone:&nbsp;*
+                                    <div className={classes.formField}>
+                                        <label className={classes.fieldLabel}>
+                                            Phone <span className={classes.required}>*</span>
+                                        </label>
                                         <input
+                                            className={classes.input}
                                             maxLength='10'
                                             value={formValues.phone}
                                             onChange={onInputChange}
                                             type='tel'
-                                            placeholder='xxx - xxx - xxxx'
+                                            placeholder='(555) 555-5555'
                                             name='phone'
-
                                         />
-                                    </label>
+                                        {formErrors.phone && <span className={classes.error}>{formErrors.phone}</span>}
+                                    </div>
 
-                                    <label style={isRowStyle.container(isRow)}>Enter your street address:&nbsp;*
+                                    <div className={classes.formField}>
+                                        <label className={classes.fieldLabel}>
+                                            Street Address <span className={classes.required}>*</span>
+                                        </label>
                                         <input
+                                            className={classes.input}
                                             value={formValues.street_address}
                                             onChange={onInputChange}
                                             type='text'
-                                            placeholder='Street Address'
+                                            placeholder='123 Main Street'
                                             name='street_address'
                                         />
-                                    </label>
+                                        {formErrors.street_address && <span className={classes.error}>{formErrors.street_address}</span>}
+                                    </div>
 
-                                    <label style={isRowStyle.container(isRow)}>Enter your city:&nbsp;*
+                                    <div className={classes.formField}>
+                                        <label className={classes.fieldLabel}>
+                                            City <span className={classes.required}>*</span>
+                                        </label>
                                         <input
+                                            className={classes.input}
                                             value={formValues.city}
                                             onChange={onInputChange}
                                             type='text'
-                                            placeholder='City'
+                                            placeholder='San Diego'
                                             name='city'
                                         />
-                                    </label>
-                                    {/* </form> */}
-                                    <div className={classes.errors}>
-                                        <e>{formErrors.name}</e>
-                                        <e>{formErrors.email}</e>
-                                        <e>{formErrors.phone}</e>
-                                        <e>{formErrors.street_address}</e>
-                                        <e>{formErrors.city}</e>
-                                        <e>{formErrors.zip}</e>
-                                        <e>{formErrors.country}</e>
-                                        <e>{formErrors.building_sf}</e>
-                                        <e>{formErrors.lot_sf}</e>
-                                        <e>{formErrors.property_type}</e>
+                                        {formErrors.city && <span className={classes.error}>{formErrors.city}</span>}
                                     </div>
-                                    {/* </div> */}
 
-                                    {/* <div className={classes.flexCol} > */}
-                                    {/* <form className={classes.form} onSubmit={onSubmit} > */}
-                                    <label style={isRowStyle.container(isRow)}>Enter your zip:&nbsp;*
+                                    <div className={classes.formField}>
+                                        <label className={classes.fieldLabel}>
+                                            Zip Code <span className={classes.required}>*</span>
+                                        </label>
                                         <input
+                                            className={classes.input}
                                             value={formValues.zip}
                                             onChange={onInputChange}
-                                            type='zip'
-                                            placeholder='Zip Code'
+                                            type='text'
+                                            placeholder='92101'
                                             name='zip'
-                                            maxlength='5'
+                                            maxLength='5'
                                         />
-                                    </label>
+                                        {formErrors.zip && <span className={classes.error}>{formErrors.zip}</span>}
+                                    </div>
 
-                                    <label style={isRowStyle.container(isRow)}>Enter your country:&nbsp;*
+                                    <div className={classes.formField}>
+                                        <label className={classes.fieldLabel}>
+                                            Country <span className={classes.required}>*</span>
+                                        </label>
                                         <input
+                                            className={classes.input}
                                             value={formValues.country}
                                             onChange={onInputChange}
                                             type='text'
-                                            placeholder='Country'
+                                            placeholder='United States'
                                             name='country'
                                         />
-                                    </label>
+                                        {formErrors.country && <span className={classes.error}>{formErrors.country}</span>}
+                                    </div>
 
-                                    <label style={isRowStyle.container(isRow)}>Property Type:
+                                    <div className={classes.formField}>
+                                        <label className={classes.fieldLabel}>
+                                            Property Type <span className={classes.required}>*</span>
+                                        </label>
                                         <select
+                                            className={classes.select}
                                             onChange={onInputChange}
                                             value={formValues.property_type}
                                             name='property_type'
@@ -215,33 +233,44 @@ export default function YourPropertyInfo(props) {
                                             <option value='recreation'>Recreation</option>
                                             <option value='specialty'>Specialty</option>
                                         </select>
-                                    </label>
+                                        {formErrors.property_type && <span className={classes.error}>{formErrors.property_type}</span>}
+                                    </div>
 
-                                    <label style={isRowStyle.container(isRow)}>Enter your building square footage:&nbsp;*
+                                    <div className={classes.formField}>
+                                        <label className={classes.fieldLabel}>
+                                            Building SF <span className={classes.required}>*</span>
+                                        </label>
                                         <input
+                                            className={classes.input}
                                             value={formValues.building_sf}
                                             onChange={onInputChange}
                                             type='text'
-                                            placeholder='Bldg. SF'
+                                            placeholder='e.g., 5,000 sq ft'
                                             name='building_sf'
                                         />
-                                    </label>
+                                        {formErrors.building_sf && <span className={classes.error}>{formErrors.building_sf}</span>}
+                                    </div>
 
-                                    <label style={isRowStyle.container(isRow)}>Enter your lot square footage:&nbsp;*
+                                    <div className={classes.formField}>
+                                        <label className={classes.fieldLabel}>
+                                            Lot Size <span className={classes.required}>*</span>
+                                        </label>
                                         <input
+                                            className={classes.input}
                                             value={formValues.lot_size}
                                             onChange={onInputChange}
                                             type='text'
-                                            placeholder='Lot SF'
+                                            placeholder='e.g., 10,000 sq ft'
                                             name='lot_size'
                                         />
-                                    </label>
-                                    {/* disabled={disabled} */}
-                                    <button className={classes.button} onSubmit={onSubmit}>submit</button >
-                                </form>
+                                        {formErrors.lot_size && <span className={classes.error}>{formErrors.lot_size}</span>}
+                                    </div>
+                                </div>
+
+                                <button className={classes.button} type="submit">Submit</button>
                             </div>
                         </div>
-                    </section>
+                    </form>
                 </div>
             </div>
             <Footer />
@@ -251,16 +280,6 @@ export default function YourPropertyInfo(props) {
 
 const picStyle = {
     container: isSmall => ({
-        display: isSmall ? 'flex' : 'none',
-    }),
-}
-
-const isRowStyle = {
-    container: (isRow) => ({
-        display: 'flex',
-        flexDirection: isRow ? 'row' : 'column',
-        alignItems: isRow ? 'flex-start' : 'center',
-        gap: '10px',           // optional: spacing between label text and input
-        marginBottom: '10px',  // optional: vertical spacing between rows
+        display: isSmall ? 'block' : 'none',
     }),
 };

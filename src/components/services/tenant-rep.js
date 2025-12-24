@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from '../../components/footer'
+import ServiceNavigation from './ServiceNavigation'
 import { Link } from 'react-router-dom'
 import { useStyles } from '../../styles/style'
 
@@ -8,6 +9,7 @@ export default function TenantRep() {
 
 return (
     <div className={classes.wrapper}>
+        <ServiceNavigation />
         <div className={classes.flexCol}>
             <h2 className={classes.title}>Tenant Representation:</h2>
             <div className={classes.content}>

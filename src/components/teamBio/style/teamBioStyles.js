@@ -10,14 +10,19 @@ export const useStyles = makeStyles(theme => ({
         alignContent: 'center',
         justifyContent: 'center',
         flexDirection: 'column',
+        maxWidth: '100vw',
+        overflowX: 'hidden',
     },
     flexRow: {
         alignSelf: 'center',
         display: "flex",
         justifyContent: "space-evenly",
         maxWidth: '1024px',
-        minWidth: '1023px',
         width: '100%',
+        '@media (max-width: 768px)': {
+            width: '95%',
+            maxWidth: '100%',
+        }
     },
     flexCol: {
         display: "flex",
@@ -35,23 +40,27 @@ export const useStyles = makeStyles(theme => ({
         alignItems: 'center',
         fontSize: '1rem',
         maxWidth: '1024px',
+        width: '100%',
+        boxSizing: 'border-box',
         '& p': {
             margin: 'auto .5rem'
+        },
+        '@media (max-width: 768px)': {
+            width: '95%',
+            padding: '0 10px',
         }
     },
 
     //card styles
     agentInfo: {
         display: 'flex',
-        // backgroundColor:'blue',
         position: 'relative',
-        top: '5%',
+        height: 160,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-
-
-
+        padding: '10px 5px',
+        boxSizing: 'border-box',
     },
     agentCard: {
         zIndex: 1,
@@ -59,9 +68,15 @@ export const useStyles = makeStyles(theme => ({
         width: 250,
         height: 400,
         position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
     },
     headshot: {
         height: 240,
+        width: '100%',
+        objectFit: 'cover',
+        objectPosition: 'center top',
+        flexShrink: 0,
     },
     propertyCard: {
         margin: 10,
@@ -73,23 +88,43 @@ export const useStyles = makeStyles(theme => ({
     propertyPhoto: {
         maxHeight: "40vh",
         maxWidth: "50vw",
+        minWidth: "400px",
+        minHeight: "300px",
+        width: "auto",
+        height: "auto",
         borderRadius: "6px",
         boxShadow: 'rgba(0, 0, .8, 0.74) 0px 5px 10px',
-
+        objectFit: 'cover',
+        '@media (max-width: 768px)': {
+            minWidth: '280px',
+            minHeight: '200px',
+            maxWidth: '100%',
+        }
     },
     title: {
         display: 'flex',
-        alignItems: ' center',
+        alignItems: 'center',
+        justifyContent: 'center',
         color: theme.palette.primary.dark,
-        fontSize: "2rem",
-        margin: "auto"
+        fontSize: "1.5rem",
+        margin: "5px 0",
+        lineHeight: 1.2,
+        textAlign: 'center',
+        width: '100%',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap',
     },
     email: {
         display: 'flex',
         textDecoration: 'none',
-        fontSize: '1rem',
+        fontSize: '0.9rem',
         color: 'rgb(180 1 1)',
-        zIndex: "1000"
+        zIndex: "1000",
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap',
+        maxWidth: '100%',
     },
 
     // font styles
@@ -119,5 +154,51 @@ export const useStyles = makeStyles(theme => ({
         border: '1px solid #666666',
         maxWidth: '1024px',
         width: '100%'
+    },
+
+    // navigation buttons
+    navButtonLeft: {
+        position: 'fixed',
+        left: '20px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        backgroundColor: 'rgba(180, 30, 30, 0.7)',
+        color: 'white',
+        width: '48px',
+        height: '48px',
+        borderRadius: '50%',
+        zIndex: 1000,
+        transition: 'all 0.3s ease',
+        '&:hover': {
+            backgroundColor: 'rgba(180, 30, 30, 0.9)',
+            transform: 'translateY(-50%) scale(1.1)',
+        },
+        '@media (max-width: 768px)': {
+            left: '10px',
+            width: '40px',
+            height: '40px',
+        }
+    },
+    navButtonRight: {
+        position: 'fixed',
+        right: '20px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        backgroundColor: 'rgba(180, 30, 30, 0.7)',
+        color: 'white',
+        width: '48px',
+        height: '48px',
+        borderRadius: '50%',
+        zIndex: 1000,
+        transition: 'all 0.3s ease',
+        '&:hover': {
+            backgroundColor: 'rgba(180, 30, 30, 0.9)',
+            transform: 'translateY(-50%) scale(1.1)',
+        },
+        '@media (max-width: 768px)': {
+            right: '10px',
+            width: '40px',
+            height: '40px',
+        }
     },
 }))

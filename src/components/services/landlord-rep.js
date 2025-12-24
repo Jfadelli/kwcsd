@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from '../../components/footer'
+import ServiceNavigation from './ServiceNavigation'
 import { makeStyles } from '@mui/styles'
 import { useStyles } from '../../styles/style'
 
@@ -30,6 +31,7 @@ export default function LandlordRep() {
 
     return (
         <div className={classes.wrapper}>
+            <ServiceNavigation />
             <div className={classes.flexCol}>
                 <h2 className={classes.title}>Landlord Representation</h2>
                 <div className={classes.content}>

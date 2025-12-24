@@ -4,9 +4,10 @@
     align-content: center;
     justify-content: flex-start;
     text-align: center;
-    margin: 0 auto;
-    /* background-color: #EBECEE; */
-    height:100vh
+    margin: 0;
+    padding: 0;
+    background-color: #EBECEE;
+    min-height:100vh
   }
 
   .link{

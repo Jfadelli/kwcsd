@@ -97,8 +97,15 @@
   * Addresses margins handled incorrectly in IE6/7
   */
  
+ html {
+     margin: 0;
+     padding: 0;
+ }
+
  body {
      margin: 0;
+     padding: 0;
+     background-color: #EBECEE;
  }
  
  

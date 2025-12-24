@@ -188,9 +188,10 @@ export const useStyles = makeStyles((theme) => ({
         flexWrap: 'none',
         flexDirection: 'row',
         justifyContent: 'center',
+        alignItems: 'center',
         backgroundColor: colors.main,
-        height: '3.5rem',
-        margin: '1rem 0 2rem',
+        height: '96px',
+        margin: '0 0 2rem',
         zIndex: ' 500',
         width: '100vw',
         boxShadow: 'rgba(0, 0, 0, 0.35) 0px 10px 5px',
@@ -198,6 +199,8 @@ export const useStyles = makeStyles((theme) => ({
     },
     navToolbar: {
         display: 'flex',
+        justifyContent: 'center',
+        width: '100%',
         // backgroundColor: colors.bg
     },
 
