@@ -9,6 +9,11 @@
 /coverage
 /src/components/contact/send_mail.php
 
+# API backend - sensitive credentials
+/api/config.php
+/api/PHPMailer/
+/api/vendor/
+
 # production
 /build
 
