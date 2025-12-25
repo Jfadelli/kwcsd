@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import './style.css'
 import Teamwork from '../../static/images/teamwork.jfif'
 import Footer from '../footer'
 import { useMediaQuery } from '../hooks/mediaQuery'
 import { sendContactForm } from '../../services/emailService'
+import { useStyles } from './contactStyles'
+import { Agent } from '../teamBio/agentInfo/agentInfoList'
 
 
 const InputForm = () => {
-    const isHidden = useMediaQuery('(min-width: 1023px)');
+    const isSmall = useMediaQuery('(min-width: 768px)');
+    const classes = useStyles();
+
     const [formValues, setFormValues] = useState({
         type: "",
         timeframe: "",
@@ -58,71 +61,171 @@ const InputForm = () => {
             alert('An unexpected error occurred. Please try again.');
         }
     };
+
     useEffect(() => {
     }, [formValues])
 
     return (
-        <div className="wrapper">
-            <div className="flexColumn">
-                <div className="content-row">
-                    <form className="contact-us" onSubmit={handleSubmit}>
-                        <label htmlFor="type">I am looking to:</label>
-                        <select name="type" id="type" onChange={handleChange}>
-                            <option value="">Select an option</option>
-                            <option value="buy">Buy</option>
-                            <option value="sell">Sell</option>
-                            <option value="lease">Lease</option>
-                            <option value="offerToLease">Offer to Lease</option>
-                            <option value="consult">Consult</option>
-                        </select>
+        <div className={classes.wrapper}>
+            <div className={classes.flexCol}>
+                <div className={classes.content}>
+                    <h2 className={classes.title}>Contact Us</h2>
+                    <section className={classes.p}>
+                        <p>We're here to help with all your commercial real estate needs. Whether you're looking to buy, sell, lease, or simply need expert advice, our team is ready to assist you.</p>
+                    </section>
 
-                        <label htmlFor="timeframe">My timeframe is:</label>
-                        <select name="timeframe" id="timeframe" onChange={handleChange}>
-                            <option value="">Select an option</option>
-                            <option value="lessThan3Months">Less than 3 Months</option>
-                            <option value="lessThan6Months">Less than 6 Months</option>
-                            <option value="lessThan12Months">Less than 12 Months</option>
-                            <option value="nextYear">Next Year</option>
-                        </select>
+                    <form className={classes.form} onSubmit={handleSubmit}>
+                        <div className={classes.formContainer}>
+                            <div className={classes.formImageSection} style={picStyle.container(isSmall)}>
+                                <div className={classes.imageWrapper}>
+                                    <img className={classes.img} src={Teamwork} alt="Commercial real estate team collaboration" />
+                                </div>
+                            </div>
 
-                        <label htmlFor="agent">Agent:</label>
-                        <select name="agent" id="agent" onChange={handleChange}>
-                            <option value="">Select an option</option>
-                            <option name="MarkHughes" value="markhughes@example.com">Mark Hughes (Team Lead | Generalist)</option>
-                            <option name="HeatherMattlin" value="heathermattlin@example.com">Heather Mattlin</option>
-                            <option name="Libby" value="libbybrignon@example.com">Libby Brignon (Land)</option>
-                            <option name="SueNa" value="suena@example.com">Sue Na (Flex/Industrial | Multi Unit | Retail)</option>
-                            <option name="PeterKim" value="peterkim@example.com">Peter Kim</option>
-                            <option name="WillSchneider" value="willschneider@example.com">Will Schneider (Industrial | Multi-Family | Office)</option>
-                            {/* <option name="JasonFadelli" value="jfadelli@gmail.com">Test</option> */}
-                        </select>
+                            <div className={classes.formFieldsSection}>
+                                <div className={classes.formGrid}>
+                                    <div className={classes.formField}>
+                                        <label className={classes.fieldLabel} htmlFor="type">
+                                            I am looking to <span className={classes.required}>*</span>
+                                        </label>
+                                        <select
+                                            className={classes.select}
+                                            name="type"
+                                            id="type"
+                                            value={formValues.type}
+                                            onChange={handleChange}
+                                        >
+                                            <option value="">- Select an option -</option>
+                                            <option value="buy">Buy</option>
+                                            <option value="sell">Sell</option>
+                                            <option value="lease">Lease</option>
+                                            <option value="offerToLease">Offer to Lease</option>
+                                            <option value="consult">Consult</option>
+                                        </select>
+                                    </div>
 
-                        <label htmlFor="name">Full Name:</label>
-                        <input type="text" id="fullName" name="fullName" onChange={handleChange} />
+                                    <div className={classes.formField}>
+                                        <label className={classes.fieldLabel} htmlFor="timeframe">
+                                            My timeframe is <span className={classes.required}>*</span>
+                                        </label>
+                                        <select
+                                            className={classes.select}
+                                            name="timeframe"
+                                            id="timeframe"
+                                            value={formValues.timeframe}
+                                            onChange={handleChange}
+                                        >
+                                            <option value="">- Select an option -</option>
+                                            <option value="lessThan3Months">Less than 3 Months</option>
+                                            <option value="lessThan6Months">Less than 6 Months</option>
+                                            <option value="lessThan12Months">Less than 12 Months</option>
+                                            <option value="nextYear">Next Year</option>
+                                        </select>
+                                    </div>
 
-                        <label htmlFor="email">Email Address:</label>
-                        <input type="email" id="email" name="email" onChange={handleChange} />
+                                    <div className={classes.formField}>
+                                        <label className={classes.fieldLabel} htmlFor="agent">
+                                            Preferred Agent
+                                        </label>
+                                        <select
+                                            className={classes.select}
+                                            name="agent"
+                                            id="agent"
+                                            value={formValues.agent}
+                                            onChange={handleChange}
+                                        >
+                                            <option value="">- Select an option -</option>
+                                            {Object.keys(Agent).map((agentKey) => {
+                                                const agent = Agent[agentKey];
+                                                const specialization = agent.specialization || 'General';
+                                                return (
+                                                    <option
+                                                        key={agentKey}
+                                                        name={agentKey}
+                                                        value={agent.email}
+                                                    >
+                                                        {agent.name} ({specialization})
+                                                    </option>
+                                                );
+                                            })}
+                                        </select>
+                                    </div>
 
-                        <label htmlFor="phone">Phone Number:</label>
-                        <input type="tel" id="phone" name="phone" onChange={handleChange} />
+                                    <div className={classes.formField}>
+                                        <label className={classes.fieldLabel} htmlFor="fullName">
+                                            Full Name <span className={classes.required}>*</span>
+                                        </label>
+                                        <input
+                                            className={classes.input}
+                                            type="text"
+                                            id="fullName"
+                                            name="fullName"
+                                            value={formValues.fullName}
+                                            placeholder="Your full name"
+                                            onChange={handleChange}
+                                        />
+                                    </div>
 
-                        <label htmlFor="message">Message:</label>
-                        <textarea id="message" name="message" onChange={handleChange} />
+                                    <div className={classes.formField}>
+                                        <label className={classes.fieldLabel} htmlFor="email">
+                                            Email Address <span className={classes.required}>*</span>
+                                        </label>
+                                        <input
+                                            className={classes.input}
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            value={formValues.email}
+                                            placeholder="your.email@example.com"
+                                            onChange={handleChange}
+                                        />
+                                    </div>
 
-                        <button onSubmit={handleSubmit} onClick={handleSubmit} type="submit">Submit</button>
+                                    <div className={classes.formField}>
+                                        <label className={classes.fieldLabel} htmlFor="phone">
+                                            Phone Number <span className={classes.required}>*</span>
+                                        </label>
+                                        <input
+                                            className={classes.input}
+                                            type="tel"
+                                            id="phone"
+                                            name="phone"
+                                            value={formValues.phone}
+                                            placeholder="(555) 555-5555"
+                                            onChange={handleChange}
+                                        />
+                                    </div>
+
+                                    <div className={classes.formFieldFullWidth}>
+                                        <label className={classes.fieldLabel} htmlFor="message">
+                                            Message <span className={classes.required}>*</span>
+                                        </label>
+                                        <textarea
+                                            className={classes.textarea}
+                                            id="message"
+                                            name="message"
+                                            value={formValues.message}
+                                            placeholder="Tell us about your needs..."
+                                            onChange={handleChange}
+                                        />
+                                    </div>
+                                </div>
+
+                                <button className={classes.button} type="submit">Submit</button>
+                            </div>
+                        </div>
                     </form>
-                    <img style={styles.container(isHidden)} id="teamworkimg" alt="generic team working together" src={Teamwork} />
-
                 </div>
-
             </div>
             <Footer />
         </div>
     );
 };
-const styles = {
-    container: isHidden => ({
-        display: isHidden ? 'flex' : 'none',
-    })
+
+const picStyle = {
+    container: isSmall => ({
+        display: isSmall ? 'block' : 'none',
+    }),
 };
+
 export default InputForm;
