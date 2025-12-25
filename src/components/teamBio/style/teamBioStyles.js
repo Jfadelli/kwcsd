@@ -86,15 +86,11 @@ export const useStyles = makeStyles(theme => ({
         zIndex: '-1'
     },
     propertyPhoto: {
-        maxHeight: "40vh",
-        maxWidth: "50vw",
-        minWidth: "400px",
-        minHeight: "300px",
-        width: "auto",
-        height: "auto",
+        height: "30.6vh",
+        width: "38.25vw",
+        objectFit: "cover",
         borderRadius: "6px",
         boxShadow: 'rgba(0, 0, .8, 0.74) 0px 5px 10px',
-        objectFit: 'cover',
         '@media (max-width: 768px)': {
             minWidth: '280px',
             minHeight: '200px',
