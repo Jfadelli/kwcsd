@@ -1,6 +1,7 @@
 import React from 'react'
 import Footer from '../../components/footer'
 import ServiceNavigation from './ServiceNavigation'
+import ServiceBreadcrumb from './ServiceBreadcrumb'
 import { Link } from 'react-router-dom'
 import { useStyles } from '../../styles/style'
 
@@ -10,8 +11,9 @@ export default function TenantRep() {
 return (
     <div className={classes.wrapper}>
         <ServiceNavigation />
+        <ServiceBreadcrumb />
         <div className={classes.flexCol}>
-            <h2 className={classes.title}>Tenant Representation:</h2>
+            <h2 className={classes.title}>Tenant Representation</h2>
             <div className={classes.content}>
                 <section className={classes.p}>
                     <p>Tenant Representation allows our clients to focus on operating their business, while leveraging our expertise to work with developers and landlords to find the best possible location for their business at the most economic cost. Our tenant representation services include a strategic planning meeting, followed by a market survey, a comparison of available properties, tours of the properties, preparation of offers and counter offers, and finally, the lease negotiation.  While most brokers consider the job finished at lease signing, we continue to maintain a relationship with our clients to assist in their future needs such as expansion, renewals and other lease related issues.</p>

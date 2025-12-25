@@ -1,6 +1,7 @@
 import React from 'react'
 import Footer from '../footer'
 import ServiceNavigation from './ServiceNavigation'
+import ServiceBreadcrumb from './ServiceBreadcrumb'
 import { useStyles } from '../../styles/style'
 
 export default function DevlopmentAndEntitlementServices() {
@@ -9,8 +10,9 @@ export default function DevlopmentAndEntitlementServices() {
     return (
         <div className={classes.wrapper}>
             <ServiceNavigation />
+            <ServiceBreadcrumb />
             <div className={classes.flexCol}>
-                <h2 className={classes.title}>Entitlement Services</h2>
+                <h2 className={classes.title}>Development & Entitlement Services</h2>
                 <div className={classes.content}>
                     <section className={classes.p}>
                         <p>Our Team Leader, Mark Hughes, has extensive experience in the development, and the

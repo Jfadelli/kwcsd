@@ -1,6 +1,7 @@
 import React from 'react'
 import Footer from '../../components/footer'
 import ServiceNavigation from './ServiceNavigation'
+import ServiceBreadcrumb from './ServiceBreadcrumb'
 import { useStyles } from '../../styles/style'
 
 export default function InvestmentAcquisitionAndSales() {
@@ -8,6 +9,7 @@ export default function InvestmentAcquisitionAndSales() {
     return (
         <div className={classes.wrapper}>
             <ServiceNavigation />
+            <ServiceBreadcrumb />
             <div className={classes.flexCol}>
                 <h2 className={classes.title}>Investment Acquisition & Sales</h2>
                 <div className={classes.content}>
