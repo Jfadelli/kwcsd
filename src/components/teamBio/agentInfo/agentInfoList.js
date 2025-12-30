@@ -30,7 +30,7 @@ export const Agent = {
     // *******************************************
     MarkHughes: {
         name: 'Mark Hughes',
-        phone: '858.720.1900',
+        phone: '714.614.7357',
         email: 'mhughes@kwcommercial.com',
         specialization: 'Team Lead | Generalist',
         loopnetLink: 'http://www.loopnet.com/brokerdirectory/profile/Mark%20Hughes/6glpewv',
