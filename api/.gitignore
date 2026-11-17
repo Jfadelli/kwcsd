@@ -1,9 +1,4 @@
-# Ignore config with sensitive credentials
+# Real credentials live only on the server.
 config.php
-
-# Ignore PHPMailer directory (download separately)
-PHPMailer/
-vendor/
-
-# Ignore composer files if using composer
-composer.lock
+# Rate-limit data written at runtime.
+storage/
