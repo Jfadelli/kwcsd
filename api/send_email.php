@@ -13,7 +13,7 @@
  *      browser can choose an agent id but never an email address.
  *
  * Responses: { status: "success"|"fail", message, errors? }
- * Works on PHP 7.4+.
+ * Works on PHP 7.1+ (the server runs 7.2). Keep it that way: no 7.3+ syntax.
  */
 
 declare(strict_types=1);
@@ -168,8 +168,15 @@ function handle_contact(array $data): void
         'Message' => $message,
     ]);
 
-    send_mail($to, $cc, "Website inquiry: {$inquiry} ({$name})", $html, $email, $name);
-    send_confirmation($email, 'Thanks for contacting KW Commercial San Diego');
+    // One SMTP connection for both emails: the host refuses a second
+    // connection opened right after the first.
+    $mail = new_mailer();
+    try {
+        send_mail($mail, $to, $cc, "Website inquiry: {$inquiry} ({$name})", $html, $email, $name);
+        send_confirmation($mail, $email, 'Thanks for contacting KW Commercial San Diego');
+    } finally {
+        $mail->smtpClose();
+    }
 }
 
 function handle_property_valuation(array $data): void
@@ -197,8 +204,13 @@ function handle_property_valuation(array $data): void
         'Lot size' => $lotSize,
     ]);
 
-    send_mail(DEFAULT_RECIPIENT, null, "Property valuation request: {$city} ({$name})", $html, $email, $name);
-    send_confirmation($email, 'We received your property valuation request');
+    $mail = new_mailer();
+    try {
+        send_mail($mail, DEFAULT_RECIPIENT, null, "Property valuation request: {$city} ({$name})", $html, $email, $name);
+        send_confirmation($mail, $email, 'We received your property valuation request');
+    } finally {
+        $mail->smtpClose();
+    }
 }
 
 // ---------------------------------------------------------------------------
@@ -297,16 +309,30 @@ function new_mailer(): PHPMailer
         $mail->SMTPAutoTLS = false; // 'none': local testing only
     }
     $mail->Timeout = 15;
+    // Reuse this connection for every email in the request (see handle_contact).
+    $mail->SMTPKeepAlive = true;
     $mail->CharSet = PHPMailer::CHARSET_UTF8;
     $mail->setFrom(FROM_EMAIL, FROM_NAME);
     $mail->isHTML(true);
     return $mail;
 }
 
-/** Sends to the team. Reply-To is the visitor, so agents can just hit Reply. */
-function send_mail(string $to, ?string $cc, string $subject, string $html, string $replyTo, string $replyName): void
+/** Clears the previous message's recipients and content so the mailer can send the next one. */
+function reset_message(PHPMailer $mail): void
 {
-    $mail = new_mailer();
+    $mail->clearAllRecipients();
+    $mail->clearReplyTos();
+    $mail->clearAttachments();
+    $mail->clearCustomHeaders();
+    $mail->Subject = '';
+    $mail->Body = '';
+    $mail->AltBody = '';
+}
+
+/** Sends to the team. Reply-To is the visitor, so agents can just hit Reply. */
+function send_mail(PHPMailer $mail, string $to, ?string $cc, string $subject, string $html, string $replyTo, string $replyName): void
+{
+    reset_message($mail);
     $mail->addAddress($to);
     if ($cc) {
         $mail->addCC($cc);
@@ -324,13 +350,13 @@ function send_mail(string $to, ?string $cc, string $subject, string $html, strin
  * A failure here is logged but doesn't fail the request: the team already
  * has the message.
  */
-function send_confirmation(string $to, string $subject): void
+function send_confirmation(PHPMailer $mail, string $to, string $subject): void
 {
     if (!SEND_USER_CONFIRMATION) {
         return;
     }
     try {
-        $mail = new_mailer();
+        reset_message($mail);
         $mail->addAddress($to);
         $mail->Subject = $subject;
         $mail->Body = '<p>Thank you for reaching out to Pacific Commercial Partners at KW Commercial San Diego.</p>'

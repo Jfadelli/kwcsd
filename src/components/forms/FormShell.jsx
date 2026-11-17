@@ -17,7 +17,9 @@ export function Honeypot({ field }) {
   return (
     <Box
       aria-hidden="true"
-      sx={{ position: 'absolute', left: '-10000px', top: 'auto', width: 1, height: 1, overflow: 'hidden' }}
+      // Pixel strings on purpose: in sx, width: 1 / height: 1 mean 100%, which made this
+      // box as tall as the form and let the card scroll its top labels out of view.
+      sx={{ position: 'absolute', left: '-10000px', top: 0, width: '1px', height: '1px', overflow: 'hidden' }}
     >
       <label htmlFor={id}>Leave this field empty</label>
       <input type="text" id={id} name={name} value={value} onChange={onChange} tabIndex={-1} autoComplete="off" />

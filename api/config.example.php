@@ -8,7 +8,7 @@
  */
 
 // --- SMTP (cPanel > Email Accounts > Connect Devices / "Configure Mail Client") ---
-define('SMTP_HOST', 'mail.kwcsandiego.com');
+define('SMTP_HOST', 'kwcsandiego.com');   // matches the server certificate; see cPanel > Email Accounts > Connect Devices
 define('SMTP_PORT', 465);              // 465 = SSL, 587 = TLS (STARTTLS)
 define('SMTP_ENCRYPTION', 'ssl');      // 'ssl' for 465, 'tls' for 587 ('none' only for local testing)
 define('SMTP_USERNAME', 'noreply@kwcsandiego.com');

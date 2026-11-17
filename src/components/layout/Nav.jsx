@@ -64,49 +64,58 @@ function NavDropdown({ entry }) {
 
 export default function Nav() {
   return (
-    <AppBar
-      position="static"
-      color="primary"
-      elevation={0}
-      sx={{ boxShadow: 'rgba(0, 0, 0, 0.35) 0px 10px 5px', mb: 4 }}
-    >
-      <Toolbar
-        component="nav"
-        aria-label="Main"
-        sx={{
-          minHeight: { xs: 72, md: 96 },
-          maxWidth: 1280,
-          width: '100%',
-          mx: 'auto',
-          justifyContent: 'space-between',
-          gap: 2,
-        }}
+    // Off-white strip above the red bar, with the logo overlapping both, as on v1.
+    <Box sx={{ bgcolor: '#fafafa', pt: 2, mb: { xs: 4, md: 5 } }}>
+      <AppBar
+        position="relative"
+        color="primary"
+        elevation={0}
+        sx={{ boxShadow: 'rgba(0, 0, 0, 0.35) 0px 10px 5px' }}
       >
-        <RouterLink to="/" aria-label="Pacific Commercial Partners home">
-          <Box
-            component="img"
-            src={logo}
-            alt="KW Commercial"
-            sx={{ height: { xs: 56, md: 80 }, width: 'auto' }}
-          />
-        </RouterLink>
+        <Toolbar
+          component="nav"
+          aria-label="Main"
+          sx={{
+            minHeight: { xs: 64, md: 56 },
+            maxWidth: 1280,
+            width: '100%',
+            mx: 'auto',
+            justifyContent: 'space-between',
+            gap: 2,
+          }}
+        >
+          <RouterLink to="/" aria-label="Pacific Commercial Partners home">
+            <Box
+              component="img"
+              src={logo}
+              alt="KW Commercial"
+              sx={{
+                height: { xs: 52, md: 88 },
+                width: 'auto',
+                // Desktop: let the 88px logo spill 12px above and 20px below the 56px bar.
+                mt: { md: '-12px' },
+                mb: { md: '-20px' },
+              }}
+            />
+          </RouterLink>
 
-        <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 0.5 }}>
-          {navigation.map((entry) =>
-            entry.items ? (
-              <NavDropdown key={entry.label} entry={entry} />
-            ) : (
-              <Button key={entry.label} sx={navButtonSx} component={RouterLink} to={entry.to}>
-                {entry.label}
-              </Button>
-            ),
-          )}
-        </Box>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 0.5 }}>
+            {navigation.map((entry) =>
+              entry.items ? (
+                <NavDropdown key={entry.label} entry={entry} />
+              ) : (
+                <Button key={entry.label} sx={navButtonSx} component={RouterLink} to={entry.to}>
+                  {entry.label}
+                </Button>
+              ),
+            )}
+          </Box>
 
-        <Box sx={{ display: { xs: 'block', md: 'none' } }}>
-          <MobileNav />
-        </Box>
-      </Toolbar>
-    </AppBar>
+          <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+            <MobileNav />
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 }
