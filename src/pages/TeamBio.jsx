@@ -82,7 +82,7 @@ export default function TeamBio() {
         <Box
           component="img"
           src={agent.listingImage || defaultListingPhoto}
-          alt={`Property represented by ${agent.name}`}
+          alt={agent.listingAlt || `Property represented by ${agent.name}`}
           loading="lazy"
           sx={{
             width: { xs: '100%', md: '55%' },

@@ -4,9 +4,9 @@ Newest first. `[x]` = done, `[ ]` = open.
 
 ## 11.16.26: Will Schneider (bio page) + team-site suggestions
 
-1. [ ] Lower and center headshot so the top of his head isn't cut off. *Waiting on new headshot jpg.*
+1. [x] Lower and center headshot so the top of his head isn't cut off. New headshot (WSS_Head_Shots_Saccardi_006) added.
 2. [x] Show the full email address (not cut off). Fixed in v2: the address wraps instead of truncating.
-3. [ ] Replace the Legacy Gymnastics photo with the "Grand Opening" photo. *Waiting on the jpg.*
+3. [x] Replace the Legacy Gymnastics photo with the LGA "Grand Opening" photo (12-03-22).
 4. [x] First line of bio: "broker-associate" → "Senior Broker-Associate" (KW Commercial approval letter dated 3/22/24).
 5. [x] Heather Mattlin still listed: removed in code since 5.30.25. Still visible on the live site until v2 is deployed.
 6. [x] Rename "Team Bio" menu → "Team Members". (Page URLs unchanged.)

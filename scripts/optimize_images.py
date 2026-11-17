@@ -23,12 +23,12 @@ SIZES = {
     "mark-headshot.png": ("mark-hughes.webp", 600),
     "libby-headshot.jpg": ("libby-brignon.webp", 600),
     "sue-na-headshot.png": ("sue-na.webp", 600),
-    "will-schneider-headshot.png": ("will-schneider.webp", 600),
+    "will-schneider-headshot-2026.jpg": ("will-schneider.webp", 600),
     "peter-kim-headshot-cropped.jpg": ("peter-kim.webp", 600),
     "ncv-ariel.jpg": ("listing-mark-hughes.webp", 1200),
     "libby-loopnet-listing-photo.jpg": ("listing-libby-brignon.webp", 1200),
     "sue-na-loopnet-listing-photo.jpg": ("listing-sue-na.webp", 1200),
-    "will-schneider-loopnet-listing-photo.jpg": ("listing-will-schneider.webp", 1200),
+    "will-schneider-grand-opening-lga.jpg": ("listing-will-schneider.webp", 1200),
 }
 
 

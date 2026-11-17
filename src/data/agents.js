@@ -98,6 +98,7 @@ export const agents = [
     loopnetLink: 'https://www.loopnet.com/brokerdirectory/profile/will-schneider/wb7jxwl',
     headshot: willHeadshot,
     listingImage: willListing,
+    listingAlt: 'Grand opening of Legacy Gymnastics Academy, a property represented by Will Schneider',
     bio: [
       'William “Will” Schneider is a Senior Broker-Associate for the KW Commercial Carmel Valley / Del Mar office in San Diego, CA. Will specializes in industrial and office sales and leasing, multi-family investment sales, and 1031 tax-deferred exchanges, an excellent way to build wealth through commercial real estate. Will has also joined the elite Pacific Commercial Partners Team at KW Commercial under Team Leader Mark Hughes, to provide a wider variety of commercial real estate services to his clients.',
       'Before joining KW Commercial, Will was a broker-associate for SVN (formerly Sperry Van Ness). Prior to that, he was the vice-president of multi-family investment sales for a boutique commercial real estate firm in San Diego. Will has also been a commercial mortgage broker who financed a variety of commercial properties including multi-family, industrial, and office buildings. He began his career as a loan officer for the Bank of America making consumer and commercial loans.',
