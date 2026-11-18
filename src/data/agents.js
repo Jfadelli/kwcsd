@@ -45,9 +45,10 @@ export const agents = [
       {
         heading: 'His major projects have included:',
         items: [
-          'The 330 acre Carlsbad Airport Centre, an upscale R & D development',
+          'The 550 unit North Coast Village multifamily beachfront project... from construction project management and lease-up as a garden apartment property, to conversion to a stock co-op and multi-million dollar sell-out.',
+          'The 330 acre Carlsbad Airport Centre, an upscale R & D land development',
           'Land acquisition, planning and entitlement of a $120 million mixed use project in Oceanside, California',
-          'The development and management of over 5,000 multifamily units in California, Arizona and Virginia',
+          'The development and/or management of over 5,000 multifamily units in California, Arizona and Virginia',
           'The development and expansion of over 350,000 sf of neighborhood shopping centers',
         ],
       },
@@ -61,6 +62,7 @@ export const agents = [
           'Former Director, Oceanside Economic Development Committee',
           'Former Chairman, Oceanside Redevelopment Advisory Committee',
           'Past President, Oceanside Merchants Association',
+          'Former member of the Board of Directors of the Oceanside Chamber of Commerce',
         ],
       },
       'Mr. Hughes’ extensive experience is more valuable than ever in today’s dynamic real estate market. Contact his KW Commercial office today.',
