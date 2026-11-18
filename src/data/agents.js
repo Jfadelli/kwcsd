@@ -20,6 +20,9 @@ import willListing from '../assets/images/listing-will-schneider.webp';
  *
  * `bio` is a list of blocks. A string is a paragraph; { heading, items } is a
  * bulleted list with a lead-in line.
+ *
+ * `headshotPosition` (optional) is the CSS object-position for the square
+ * headshot crop on the bio page. Default: 'center top'.
  */
 export const agents = [
   {
@@ -30,6 +33,9 @@ export const agents = [
     specialization: 'Team Lead | Generalist',
     loopnetLink: 'http://www.loopnet.com/brokerdirectory/profile/Mark%20Hughes/6glpewv',
     headshot: markHeadshot,
+    // This photo has a lot of sky above his head; without this the square
+    // crop cuts off his chin.
+    headshotPosition: 'center 45%',
     listingImage: markListing,
     bio: [
       'Mr. Hughes has over 30 years of experience covering all aspects of commercial real estate brokerage, development, marketing, finance, and management. He has made extensive development and civic contributions to San Diego County.',

@@ -59,7 +59,7 @@ export default function TeamBio() {
             component="img"
             image={agent.headshot}
             alt={`${agent.name} headshot`}
-            sx={{ height: 260, objectFit: 'cover', objectPosition: 'center top' }}
+            sx={{ height: 260, objectFit: 'cover', objectPosition: agent.headshotPosition || 'center top' }}
           />
           <CardContent sx={{ textAlign: 'center' }}>
             <Typography variant="h3" component="h1" sx={{ fontSize: '1.5rem', mb: 0.5 }}>
